@@ -1,2 +1,21 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+html {
+  background: $page-bg;
+}
+
+body > nav {
+  background: $nav-bg;
+  border: 0;
+}
+
+body > footer {
+  background: $footer-bg;
+  border: 0;
+  text-align: center;
+}
+
+span.toggle-sidebar {
+  display: none;
+}
