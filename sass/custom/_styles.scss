@@ -7,7 +7,41 @@ html {
 
 body > nav {
   background: $nav-bg;
-  border: 0;
+  border-top: 0;
+  border-bottom: 1px solid $nav-border-bottom;
+  padding-top: 0em;
+  padding-bottom: 0em;
+
+  ul.main-navigation li {
+    padding-top: .35em;
+    padding-bottom: .35em;
+  }
+
+  form {
+    .search {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      color: #888;
+      @include border-radius(0);
+      &:focus {
+        color: #555;
+        border-color: #279a9f;
+        outline: none;
+      }
+    }
+  }
+}
+
+body {
+  > div {
+    background: $sidebar-bg;
+    border-bottom: 1px solid $page-border-bottom;
+    > div {
+      background: $main-bg;
+      border-right: 1px solid $sidebar-border;
+    }
+  }
 }
 
 body > footer {
@@ -18,4 +52,31 @@ body > footer {
 
 span.toggle-sidebar {
   display: none;
+}
+
+a {
+  @include transition(color .25s);
+}
+
+article {
+  header h1 {
+    a, a:hover, a:active {
+      text-decoration: none !important;
+    }
+  }
+  .entry-content {
+    // text-align: justify;
+  }
+}
+
+ul, ol {
+  margin-left: 2em;
+}
+
+blockquote {
+  font-size: inherit;
+}
+
+aside.sidebar {
+  border-top: 0;
 }

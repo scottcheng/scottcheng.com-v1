@@ -1,6 +1,5 @@
 var github = (function(){
   function render(target, repos){
-    console.log(repos)
     var i = 0, fragment = '', t = $(target)[0];
 
     for(i = 0; i < repos.length; i++) {
