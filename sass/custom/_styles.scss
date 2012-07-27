@@ -5,6 +5,14 @@ html {
   background: $page-bg;
 }
 
+::selection {
+  background: $light-highlight-color;
+}
+
+::-moz-selection {
+  background: $light-highlight-color;
+}
+
 body > nav {
   background: $nav-bg;
   border-top: 0;
@@ -26,7 +34,7 @@ body > nav {
       @include border-radius(0);
       &:focus {
         color: #555;
-        border-color: #279a9f;
+        border-color: $highlight-color;
         outline: none;
       }
     }
@@ -56,6 +64,7 @@ span.toggle-sidebar {
 
 a {
   @include transition(color .25s);
+  text-decoration: none;
 }
 
 article {
@@ -64,8 +73,14 @@ article {
       text-decoration: none !important;
     }
   }
+  h2 {
+    background: none;
+  }
   .entry-content {
     // text-align: justify;
+    a {
+      border-bottom: 1px dotted #aaa;
+    }
   }
 }
 
@@ -73,9 +88,27 @@ ul, ol {
   margin-left: 2em;
 }
 
+ul {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
 ul, ol {
+  ul {
+    list-style-type: circle;
+  }
+  ol {
+    list-style-type: lower-alpha;
+  }
   ul, ol {
     margin-bottom: 0px;
+    ul {
+      list-style-type: square;
+    }
+    ol {
+      list-style-type: lower-roman;
+    }
     ul, ol {
       margin-bottom: 0px; 
     }
@@ -88,4 +121,34 @@ blockquote {
 
 aside.sidebar {
   border-top: 0;
+}
+
+.code-title {
+  background-color: #eee;
+  @include filter-gradient(#eee, #ddd, vertical);
+  @include background-image(linear-gradient(top, #eee 0%, #ddd 100%));
+  border: 0;
+  color: #555;
+  text-shadow: #fff 0 1px 0;
+}
+
+p, li {
+  code {
+    background: #fafafa;
+  }
+}
+
+#content .blog-index {
+  a[rel=full-article] {
+    background: transparent;
+    border-left: 9px solid darken($main-bg, 5);
+    color: mix($text-color, $text-color-light);
+    @extend .serif;
+    @include transition(color .25s, border-color .25s, background-color .25s);
+    &:hover {
+      border-left-color: darken($main-bg, 10);
+      text-shadow: none;
+      color: $main-bg;
+    }
+  }
 }

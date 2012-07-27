@@ -2,10 +2,13 @@
 // To give it a try, uncomment some of the lines below rebuild your blog, and see how it works.
 // If you need a handy color picker try http://hslpicker.com
 
+$highlight-color: #ed6812;
+$light-highlight-color: #f5aa7a;
+
 $link-color: inherit;
-$link-color-hover: #279a9f;
+$link-color-hover: $highlight-color;
 $link-color-visited: inherit;
-$link-color-active: #279a9f;
+$link-color-active: $highlight-color;
 
 $main-bg: #fff;
 $page-bg: #fff;
@@ -33,8 +36,8 @@ $solarized: light;
 //$base00:          #657b83; //dark gray
 //$base0:           #839496; //medium gray
 //$base1:           #93a1a1; //medium light gray
-//$base2:           #eee8d5; //cream
-//$base3:           #fdf6e3; //white
+$base2:           #f0f0f0;
+$base3:           #fafafa;
 //$solar-yellow:    #b58900;
 //$solar-orange:    #cb4b16;
 //$solar-red:       #dc322f;
