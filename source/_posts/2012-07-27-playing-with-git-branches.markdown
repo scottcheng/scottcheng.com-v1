@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Playing with Git Branches"
+title: "Playing With Git Branches"
 date: 2012-07-27 01:36
 comments: true
 categories: git
@@ -36,11 +36,11 @@ By `git rebase <branchname>`, e.g. `git rebase dev` on the master branch, the fo
 3. Your changes are put back on top of the dev commits in new commits.
    - Handle conflicts if necessary.
 
-See [here](http://gitready.com/beginner/2009/01/25/branching-and-merging.html) for more on `git branch`, and [here](http://gitready.com/intermediate/2009/01/31/intro-to-rebase.html) for more on `git rebase`. The difference between `git merge` and `git rebase` is elaborated [here](http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/) by Jarrod Spillers, thought [slightly flawed](http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/#dsq-comment-375332553).
+If you are interested in the detailed mechanism, [git-scm.com](http://git-scm.com/) has more on [branching / merging](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging) and [rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing). Jarrod Spillers [elaborated in a post](http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/) the difference between `git merge` and `git rebase` as well as when to use which, thought [slightly flawed](http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/#dsq-comment-375332553).
 
 I also found it interesting to learn that `git pull` is actually `git fetch` then `git merge`, whereas `git pull --rebase` is `git fetch` then `git rebase`, as is documented on the [man page](http://www.kernel.org/pub/software/scm/git/docs/git-pull.html).
 
-One thing that kinda surprised me is that different branches coexist in the same directory! As you switch branches using `git checkout <branchname>`, the files in that folder would actually change with it. It's like the [Room  of Requirement](http://harrypotter.wikia.com/wiki/Room_of_Requirement) in Harry Potter - it's the same room, but you can go in and see different things. Amazing. The interesting part is that when I create a file in the repo, it is visible in all branches; but when I `add` and `commit` it in a branch, it becomes "private" and vanishes in other branches. Similarly, when a file is modified in a branch, the change is visible everywhere. Sometimes, however, Git does not allow me to switch branches when there are modified files, and I have not figured out why:
+One thing that kinda surprised me is that different branches actually coexist in the same directory! As you switch branches using `git checkout <branchname>`, the files in that folder would actually change with it. It's like the [Room  of Requirement](http://harrypotter.wikia.com/wiki/Room_of_Requirement) in Harry Potter - it's the same room, but you can go in and see different things. Amazing. The interesting part is that when I create a file in the repo, it is visible in all branches; but when I `add` and `commit` it in a branch, it becomes "private" and vanishes in other branches. Similarly, when a file is modified in a branch, the change is visible everywhere. Sometimes, however, Git does not allow me to switch branches when there are modified files, and I have not figured out why:
 
 ``` bash
   # On dev branch and modified devonly.md
