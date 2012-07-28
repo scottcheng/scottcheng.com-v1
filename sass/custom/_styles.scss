@@ -1,6 +1,8 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+$serif: $sans;
+
 html {
   background: $page-bg;
 }
@@ -22,22 +24,35 @@ body > nav {
   padding-top: 0em;
   padding-bottom: 0em;
 
+  ul li,
+  form {
+    padding-top: .35em !important;
+  }
+
   ul.main-navigation li {
-    padding-top: .35em;
     padding-bottom: .35em;
   }
 
+  ul.subscription {
+    margin-left: 1.2em;
+  }
+
   form {
-    .search {
+    width: auto;
+    input.search {
       border-top: 0;
       border-left: 0;
       border-right: 0;
       color: #888;
+      width: 90px;
+      text-align: right;
       @include border-radius(0);
+      @include transition(border-bottom-color .25s, width .25s);
       &:focus {
         color: #555;
         border-color: $highlight-color;
         outline: none;
+        width: 180px;
       }
     }
   }
@@ -78,12 +93,20 @@ article {
   h2 {
     background: none;
   }
+  h1, h2 {
+    font-weight: normal;
+    color: #222;
+  }
   .entry-content {
     // text-align: justify;
     a {
       border-bottom: 1px dotted #aaa;
     }
   }
+}
+
+h1, h2, h3 {
+  margin-left: -.12em !important;  // font fix
 }
 
 ul, ol {
@@ -170,17 +193,20 @@ pre, .highlight, .gist-highlight {
   &::-webkit-scrollbar-thumb:horizontal { background: $solar-scroll-thumb;  -webkit-border-radius: 4px; border-radius: 4px };
 }
 
-#content .blog-index {
-  a[rel=full-article] {
-    background: transparent;
-    border-left: 9px solid darken($main-bg, 5);
-    color: mix($text-color, $text-color-light);
-    @extend .serif;
-    @include transition(color .25s, border-color .25s, background-color .25s);
-    &:hover {
-      border-left-color: darken($main-bg, 10);
-      text-shadow: none;
-      color: $main-bg;
+#content {
+  border-right: 0;
+  .blog-index {
+    a[rel=full-article] {
+      background: transparent;
+      border-left: 9px solid darken($main-bg, 5);
+      color: mix($text-color, $text-color-light);
+      @extend .serif;
+      @include transition(color .25s, border-color .25s, background-color .25s);
+      &:hover {
+        border-left-color: darken($main-bg, 10);
+        text-shadow: none;
+        color: $main-bg;
+      }
     }
   }
 }

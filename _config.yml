@@ -60,6 +60,8 @@ default_asides: [
 # post_asides:
 # page_asides:
 
+sidebar: collapse
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
