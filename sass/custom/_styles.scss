@@ -6,11 +6,13 @@ html {
 }
 
 ::selection {
-  background: $light-highlight-color;
+  background: $highlight-color;
+  color: $main-bg;
 }
 
 ::-moz-selection {
-  background: $light-highlight-color;
+  background: $highlight-color;
+  color: $main-bg;
 }
 
 body > nav {
@@ -118,10 +120,38 @@ ul, ol {
 blockquote {
   font-size: inherit;
   border-left-width: 6px;
+  @include transition(border-left-color .25s);
+  &:hover {
+    border-left-color: $highlight-color;
+  }
 }
 
 aside.sidebar {
   border-top: 0;
+}
+
+p, li {
+  code {
+    background: #fafafa;
+    border-color: #eee;
+    @include transition(border-color .25s, box-shadow .25s);
+    &:hover {
+      border-color: $highlight-color;
+      @include box-shadow(0 0 3px rgba($highlight-color, .75));
+    }
+  }
+}
+
+figure.code, .gist-file, pre {
+  @include box-shadow(0 0 3px rgba(#000, .1));
+  @include border-radius(9px);
+  overflow: hidden;
+  border: 1px solid #eee;
+  @include transition(border-color .25s, box-shadow .25s);
+  &:hover {
+    border-color: $highlight-color;
+    @include box-shadow(0 0 3px rgba($highlight-color, .75));
+  }
 }
 
 .code-title {
@@ -131,12 +161,13 @@ aside.sidebar {
   border: 0;
   color: #555;
   text-shadow: #fff 0 1px 0;
+  @include border-top-radius(9px);
 }
 
-p, li {
-  code {
-    background: #fafafa;
-  }
+pre, .highlight, .gist-highlight {
+  border: 0 !important;
+  &::-webkit-scrollbar {  height: .25em; background: $solar-scroll-bg; }
+  &::-webkit-scrollbar-thumb:horizontal { background: $solar-scroll-thumb;  -webkit-border-radius: 4px; border-radius: 4px };
 }
 
 #content .blog-index {
