@@ -1,0 +1,46 @@
+!!!
+
+html
+  head
+    meta(charset='utf-8')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    
+    title Scott Cheng
+    meta(name='author', content='Scott Cheng')
+    meta(name='description', content='Scott Cheng')
+
+    link(href='http://fonts.googleapis.com/css?family=Cantarell:400', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
+    //- link(href='http://fonts.googleapis.com/css?family=Rock+Salt', rel='stylesheet')
+    //- link(href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do', rel='stylesheet')
+    //- link(href='http://fonts.googleapis.com/css?family=Dawning+of+a+New+Day', rel='stylesheet')
+    //- link(href='http://fonts.googleapis.com/css?family=La+Belle+Aurore', rel='stylesheet')
+    //- link(href='http://fonts.googleapis.com/css?family=Megrim', rel='stylesheet')
+    link(href='stylesheets/index.css', rel='stylesheet')
+
+    link(rel="shortcut icon", href="favicon.png")
+    link(rel="apple-touch-icon", href="favicon-57.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="favicon-72.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="favicon-114.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="favicon-144.png")
+
+  body
+    #upper
+      .bg
+      #name Scott Cheng
+        
+    #lower
+      //- .bg
+      ul#links
+        li#blog.link
+          a(href='/blog/') Blog
+        li#about.link
+          a(href='/about') About
+
+    #upper-crcl-wrapper.crcl-wrapper
+      #upper-crcl.crcl
+    #lower-crcl-wrapper.crcl-wrapper
+      #lower-crcl.crcl
+
+    script(src='javascripts/libs/jquery.min.js')
+    script(src='javascripts/index.js')
