@@ -3,7 +3,7 @@ $sans: 'PT Sans', 'Helvetica Neue', Arial, sans-serif !default;
 $serif: $sans;  // "PT Serif", Georgia, Times, "Times New Roman", serif !default;
 $mono: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace !default;
 $heading-font-family: 'Cantarell', $sans;  // "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
-$header-title-font-family: $heading-font-family !default;
+$header-title-font-family: 'Poiret One', $heading-font-family !default;  // changed
 $header-subtitle-font-family: $heading-font-family !default;
 
 // Fonts

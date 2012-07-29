@@ -17,6 +17,39 @@ html {
   color: $main-bg;
 }
 
+body > header {
+  h1 {
+    position: relative;
+    display: block;
+    margin-left: 0 !important;
+    color: #3a3a3a !important;
+    opacity: .5;
+    padding-left: 45px;
+    padding-top: 1px;
+    font-size: 39px;
+    @include transition(opacity .25s);
+    #logo {
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url(/favicon-48.png);
+      @include transition(transform 1.5s cubic-bezier(.15, .85, .85, .15));
+    }
+    &:hover {
+      opacity: 1;
+      #logo {
+        -webkit-transform:rotate(90deg);
+        -moz-transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+        -o-transform:rotate(90deg);
+        transform:rotate(90deg);
+      }
+    }
+  }
+}
+
 body > nav {
   background: $nav-bg;
   border-top: 0;
@@ -94,7 +127,7 @@ article {
     background: none;
   }
   h1, h2 {
-    font-weight: normal;
+    font-weight: bold;
     color: #222;
   }
   .entry-content {
@@ -115,7 +148,7 @@ article {
   }
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   margin-left: -.12em !important;  // font fix
 }
 
