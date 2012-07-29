@@ -103,6 +103,16 @@ article {
       border-bottom: 1px dotted #aaa;
     }
   }
+
+  img, video, .flash-video {
+    @include box-shadow(0 0 6px rgba(#000, .25));
+    border: 1px solid #eee;
+    @include transition(box-shadow .25s, border-color .25s);
+    &:hover {
+      @include box-shadow(0 0 6px rgba($highlight-color, .75));
+      border-color: $highlight-color;
+    }
+  }
 }
 
 h1, h2, h3 {
