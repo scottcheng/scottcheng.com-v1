@@ -1,8 +1,6 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-$serif: $sans;
-
 html {
   background: $page-bg;
 }
@@ -130,7 +128,7 @@ article {
     font-weight: bold;
     color: #222;
   }
-  .entry-content {
+  p {
     // text-align: justify;
     a {
       border-bottom: 1px dotted #aaa;

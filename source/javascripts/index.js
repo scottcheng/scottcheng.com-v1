@@ -3,7 +3,8 @@ $(function() {
   var $crclWrappers = $('.crcl-wrapper')
     , $crcls = $('.crcl')
     , $window = $(window)
-    , $name = $('#name');
+    , $name = $('#name')
+    , $links = $('#links');
 
   var resize = function() {
     // Fix the circle sizes
@@ -28,8 +29,8 @@ $(function() {
     resize();
   });
 
-  // Text hover effect
-  $('#name, #links').hover(function() {
+  // Circle expansion effect
+  $links.hover(function() {
     $crclWrappers.toggleClass('expand');
   });
 });
