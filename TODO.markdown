@@ -4,6 +4,7 @@ TODO
 Short term
 ---
 
+* Put fonts into my site
 * Add an about page
 * Add a project page
 * Find a way to bring in Instagram stream
