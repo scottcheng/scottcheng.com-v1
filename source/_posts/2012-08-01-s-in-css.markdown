@@ -29,7 +29,6 @@ First draw a circle using `border-radius`.
   position: relative;
   width: 1em;  /* make it scale with font size */
   height: 1em;
-
   border: 1px solid $color;
   border-radius: 1em;  /* actually slightly over 0.5em is enough */
   /* vendor prefixes emitted for succinctness */
@@ -48,7 +47,7 @@ Then cover up the upper-right and lower-left part of the circle using a rotated 
 
   width: 0.707em;  /* = sqrt(2) / 2 */
   height: 1.2em;  /* exceed 1em to cover the border */
-  top: -0.1em;  /* = (1.2 - 1) / 2
+  top: -0.1em;  /* = (1.2 - 1) / 2 */
   left: 0.1465em;  /* = (1 - 0.707) / 2 */
   background-color: #fff;  /* fill with white */
   transform: rotate(45deg);  /* rotate 45 degrees clockwise */
