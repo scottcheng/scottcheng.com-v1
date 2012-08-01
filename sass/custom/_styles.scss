@@ -15,6 +15,39 @@ html {
   color: $main-bg;
 }
 
+.logo {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  @include border-radius(1em);
+  border: 1px solid #000;
+  &:before, &:after {
+    content: ' ';
+    position: absolute;
+    display: block;
+  }
+  &:before {
+    width: .707em;
+    height: 1.2em;
+    top: -.1em;
+    left: .1465em;
+    @include border-radius(.18em);
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  &:after {
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: .5em;
+    background-color: #000;
+  }
+}
+
 body > header {
   h1 {
     position: relative;
@@ -22,61 +55,25 @@ body > header {
     margin-left: 0 !important;
     color: #000 !important;
     opacity: .5;
-    padding-left: 45px;
+    padding-left: 42px;
     padding-top: 3px;
     font-size: 39px;
     @include transition(opacity .25s);
-    #logo {
+    .logo {
       position: absolute;
       left: 0;
       top: 0;
       @include transition(transform 1.5s cubic-bezier(.15, .85, .85, .15));
-
-      width: 1em;
-      height: 1em;
-      border-radius: .5em;
-      border: 1px solid #000;
-      &:before, &:after {
-        content: ' ';
-        position: absolute;
-        display: block;
-      }
-      &:before {
-        width: .707em;
-        height: 1.2em;
-        top: -.1em;
-        left: .155em;
-        background-color: white;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-      &:after {
-        height: 1px;
-        left: 0;
-        right: 0;
-        top: .5em;
-        background-color: #000;
-      }
     }
     &:hover {
       opacity: 1;
-      #logo {
+      .logo {
         -webkit-transform: rotate(90deg);
         -moz-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         transform: rotate(90deg);
       }
-    }
-
-    #logo {
-      z-index: 10;
-    }
-    .title {
-      z-index: 20;
     }
   }
 }
@@ -110,11 +107,12 @@ body > nav {
     }
   }
 
-  ul li, form {
-    padding-top: .35em !important;
+  ul.subscription, form {
+    padding-top: .45em;
   }
 
   ul.main-navigation li {
+    padding-top: .35em;
     padding-bottom: .35em;
     & + li {
       border-left-color: #f4f4f4;
@@ -303,4 +301,88 @@ pre, .highlight, .gist-highlight {
       }
     }
   }
+}
+
+
+
+// Post-specific
+
+// 1208 S in CSS
+
+#s-demo {
+  margin: 0 auto .1em;
+  font-size: 21em;
+  border-color: $highlight-color;
+  &:after {
+    background-color: $highlight-color;
+  }
+}
+
+#s-demo-1,
+#s-demo-2 {
+  margin: 0 auto .2em;
+  font-size: 6em;
+}
+
+#s-demo-1 {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  @include border-radius(1em);
+  border: 1px solid $highlight-color;
+}
+
+#s-demo-2 {
+  @extend #s-demo-1;
+  &:before, &:after {
+    content: ' ';
+    position: absolute;
+    display: block;
+  }
+  &:before {
+    width: .707em;
+    height: 1.2em;
+    top: -.1em;
+    left: .1465em;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+#s-demo-2-2 {
+  @extend #s-demo-2;
+  &:before {
+    background-color: rgba($highlight-color, .3);
+  }
+}
+
+#s-demo-3 {
+  @extend #s-demo-2;
+  &:after {
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: .5em;
+    background-color: $highlight-color;
+  }
+}
+
+#s-scale {
+  font-size: 1.5em;
+}
+
+#s-color {
+  color: $highlight-color;
+}
+
+#s-bold {
+  font-weight: bold;
+}
+
+#s-shadow {
+  text-shadow: 0 0 6px rgba(#000, .75);
 }

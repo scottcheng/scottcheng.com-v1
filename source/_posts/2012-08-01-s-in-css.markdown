@@ -1,0 +1,75 @@
+---
+layout: post
+title: "\"S\" in CSS"
+date: 2012-08-01 12:39
+comments: true
+categories: [webdev, css]
+---
+
+By "S" I'm not referring to "style" or "sheets"... I'm talking about the "S" in my logo -- I remade it with CSS (Take a look at upper left if you haven't noticed it). It's largely inspired by Nicolas Gallagher's genius [pure CSS GUI icons](http://nicolasgallagher.com/pure-css-gui-icons/).
+
+A closer look:
+
+<div id="s-demo" class="logo"></div>
+
+``` html It's one HTML element!
+<div id="s"></div>
+```
+
+Here is how I did it:
+
+First draw a circle using `border-radius`.
+
+<div id="s-demo-1"></div>
+
+``` scss Base circle
+#s {
+  position: relative;
+  width: 1em;  /* make it scale with font size */
+  height: 1em;
+  border-radius: 1em;  /* actually slightly over 0.5em is enough */
+  /* vendor prefixes emitted for succinctness */
+  border: 1px solid $color;
+}
+```
+
+Then cover up the upper-right and lower-left part of the circle using a rotated `:before` pseudo element.
+
+<div id="s-demo-2"></div>
+
+``` scss :before cover up
+#s:before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 0.707em;  /* = sqrt(2) / 2 */
+  height: 1.2em;
+  top: -0.1em;
+  left: 0.1465em;  /* = (1 - 0.707) / 2 */
+  background-color: #fff;  /* fill with white */
+  transform: rotate(45deg);  /* rotate 45 degree clockwise */
+}
+```
+
+The `:before` element is actually like this:
+
+<div id="s-demo-2-2"></div>
+
+Last, connect the two quarter circles with an `:after` pseudo element.
+
+<div id="s-demo-3"></div>
+
+``` scss :after horizontal line
+#s:after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  height: 1px;
+  left: 0;
+  right: 0;
+  top: 0.5em;
+  background-color: $color;
+}
+```
+
+That's it! Now I can <span id="s-scale">scale it</span>, <span id="s-color">change its color</span>, <span id="s-bold">make it "bold"</span> or <span id="s-shadow">add some drop shadow</span> without touching [Ai](http://www.adobe.com/products/illustrator.html).
