@@ -16,6 +16,8 @@ A closer look:
 <div id="s"></div>
 ```
 
+<!-- more -->
+
 Here is how I did it:
 
 First draw a circle using `border-radius`.
