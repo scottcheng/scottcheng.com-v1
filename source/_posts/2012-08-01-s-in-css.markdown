@@ -29,9 +29,10 @@ First draw a circle using `border-radius`.
   position: relative;
   width: 1em;  /* make it scale with font size */
   height: 1em;
+
+  border: 1px solid $color;
   border-radius: 1em;  /* actually slightly over 0.5em is enough */
   /* vendor prefixes emitted for succinctness */
-  border: 1px solid $color;
 }
 ```
 
@@ -44,12 +45,13 @@ Then cover up the upper-right and lower-left part of the circle using a rotated 
   content: ' ';
   position: absolute;
   display: block;
+
   width: 0.707em;  /* = sqrt(2) / 2 */
-  height: 1.2em;
-  top: -0.1em;
+  height: 1.2em;  /* exceed 1em to cover the border */
+  top: -0.1em;  /* = (1.2 - 1) / 2
   left: 0.1465em;  /* = (1 - 0.707) / 2 */
   background-color: #fff;  /* fill with white */
-  transform: rotate(45deg);  /* rotate 45 degree clockwise */
+  transform: rotate(45deg);  /* rotate 45 degrees clockwise */
 }
 ```
 
@@ -57,7 +59,7 @@ The `:before` element is actually like this:
 
 <div id="s-demo-2-2"></div>
 
-Last, connect the two quarter circles with an `:after` pseudo element.
+Last, connect the two quarter circles with a solid `:after` pseudo element.
 
 <div id="s-demo-3"></div>
 
@@ -66,6 +68,7 @@ Last, connect the two quarter circles with an `:after` pseudo element.
   content: ' ';
   position: absolute;
   display: block;
+
   height: 1px;
   left: 0;
   right: 0;
