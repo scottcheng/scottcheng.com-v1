@@ -168,6 +168,13 @@ a {
 }
 
 article {
+  header {
+    padding-top: 0;
+    p.meta {
+      position: relative !important;
+      margin-bottom: .25em;
+    }
+  }
   header h1 {
     a, a:hover, a:active {
       text-decoration: none !important;

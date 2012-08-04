@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-date: 2012-07-29 13:30
+<!-- date: 2012-07-29 13:30 -->
 comments: true
 sharing: true
 footer: true

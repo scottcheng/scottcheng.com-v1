@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Lab"
-date: 2012-08-04 16:53
+<!-- date: 2012-08-04 16:53 -->
 comments: true
 sharing: true
 footer: true
