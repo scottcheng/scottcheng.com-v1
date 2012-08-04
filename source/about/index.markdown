@@ -18,4 +18,4 @@ This website is powered by [Octopress](http://octopress.org) and hosted on [GitH
 License
 ---
 
-All original photographs and text on this website are Copyright &copy; {{ site.time | date: "%Y" }} [{{ site.author }}](http://scottcheng.com/) and licensed under a [CC BY 3.0 license](http://creativecommons.org/licenses/by/3.0/). All original code on this website is Copyright &copy; {{ site.time | date: "%Y" }} [{{ site.author }}](http://scottcheng.com/) and licensed under the [MIT license](http://opensource.org/comment/935).
+All original photographs, images and text on this website are Copyright &copy; {{ site.time | date: "%Y" }} [{{ site.author }}](http://scottcheng.com/) and licensed under a [CC BY 3.0 license](http://creativecommons.org/licenses/by/3.0/). All original code on this website is Copyright &copy; {{ site.time | date: "%Y" }} [{{ site.author }}](http://scottcheng.com/) and licensed under the [MIT license](http://opensource.org/comment/935).

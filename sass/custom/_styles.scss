@@ -124,6 +124,7 @@ body > nav {
   }
 
   form {
+    display: none;
     @media only screen and (min-width: 550px) {
       width: 135px;
     }
@@ -176,7 +177,7 @@ article {
     background: none;
   }
   h1, h2 {
-    font-weight: bold;
+    font-weight: normal;
     color: #222;
   }
   p {
@@ -299,6 +300,24 @@ pre, .highlight, .gist-highlight {
         text-shadow: none;
         color: $main-bg;
       }
+    }
+  }
+}
+
+
+// Lab
+
+ul#lab-list {
+  margin-left: 0;
+  li.lab {
+    list-style: none;
+    position: relative;
+    a {
+      white-space: normal;
+    }
+    .title {
+      position: absolute;
+      bottom: 0;
     }
   }
 }

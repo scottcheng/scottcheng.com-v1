@@ -1,6 +1,6 @@
 @import 'reset.css'
-@import 'mixins.styl'
-@import 'stybr.styl'
+@import '../stylesheets/libs/mixins.styl'
+@import '../stylesheets/libs/stybr.styl'
 
 $highlight-color = #ed6812
 $light-color = #f6f6f6
@@ -71,15 +71,19 @@ body
     text-transform lowercase
     z-index 100
     .link
-      margin-right 30px
+      margin-right 15px
+      color #000
+      text-shadow 0 1px rgba(#fff, .15)
+      &:nth-child(n+2):before
+        content '|'
+        margin-right 15px
       a
-        color #000
+        color inherit
         text-decoration none
-        text-shadow 0 1px rgba(#fff, .15)
-        transition color .25s, text-shadow .25s
         &:hover
           color $light-color
           text-shadow none
+          transition color .25s, text-shadow .25s
 
 .crcl-wrapper
   width 30%
