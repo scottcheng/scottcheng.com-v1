@@ -99,11 +99,11 @@ body > nav {
     }
     &:before {
       top: -24px;
-      @include box-shadow(0 9px 9px -9px rgba(#000, .15));
+      @include box-shadow(0 9px 9px -9px rgba(#000, .3));
     }
     &:after {
       bottom: -24px;
-      @include box-shadow(0 -9px 9px -9px rgba(#000, .15));
+      @include box-shadow(0 -9px 9px -9px rgba(#000, .3));
     }
   }
 
@@ -115,7 +115,7 @@ body > nav {
     padding-top: .35em;
     padding-bottom: .35em;
     & + li {
-      border-left-color: #f4f4f4;
+      border-left-color: #eee;
     }
   }
 
