@@ -48,6 +48,10 @@ html {
   }
 }
 
+body {
+  line-height: 1.65em;
+}
+
 body > header {
   h1 {
     position: relative;
@@ -64,6 +68,9 @@ body > header {
       left: 0;
       top: 0;
       @include transition(transform 1.5s cubic-bezier(.15, .85, .85, .15));
+      &:before {
+        left: .16em;
+      }
     }
     &:hover {
       opacity: 1;
@@ -111,11 +118,14 @@ body > nav {
     padding-top: .45em;
   }
 
-  ul.main-navigation li {
-    padding-top: .35em;
-    padding-bottom: .35em;
-    & + li {
-      border-left-color: #eee;
+  ul.main-navigation {
+    padding-top: 0;
+    li {
+      padding-top: .35em;
+      padding-bottom: .35em;
+      & + li {
+        border-left-color: #eee;
+      }
     }
   }
 
@@ -141,14 +151,12 @@ body > nav {
   }
 }
 
-body {
+body > div {
+  background: $sidebar-bg;
+  border-bottom: 1px solid $page-border-bottom;
   > div {
-    background: $sidebar-bg;
-    border-bottom: 1px solid $page-border-bottom;
-    > div {
-      background: $main-bg;
-      border-right: 1px solid $sidebar-border;
-    }
+    background: $main-bg;
+    border-right: 1px solid $sidebar-border;
   }
 }
 
@@ -164,6 +172,10 @@ span.toggle-sidebar {
 
 a {
   @include transition(color .25s);
+  text-decoration: none;
+}
+
+#blog-archives h1 a:hover {
   text-decoration: none;
 }
 
@@ -206,7 +218,7 @@ article {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-left: -.12em !important;  // font fix
+  // margin-left: -.12em !important;  // font fix
 }
 
 ul, ol {
@@ -300,6 +312,7 @@ pre, .highlight, .gist-highlight {
       background: transparent;
       border-left: 9px solid darken($main-bg, 5);
       color: mix($text-color, $text-color-light);
+      @include border-radius(2px);
       @extend .serif;
       @include transition(color .25s, border-color .25s, background-color .25s);
       &:hover {
