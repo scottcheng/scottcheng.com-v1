@@ -9,11 +9,11 @@ footer: true
 
 <!-- _About page version 0.1_ -->
 
-{% img right /images/scott.jpg 200 %}
+{% img right /images/scott.jpg 240 %}
 
 Hello there, my name is Scott Cheng / 程烨. I'm a [CS](http://en.wikipedia.org/wiki/Computer_science) undergraduate at [Peking University](http://www.pku.edu.cn/), and I'll most probably continue my graduate study in the United States.
 
-I'm passionate about technology in general, and I'm particularly fanatical about UX design and web design & development. I want to create things that people love.
+I'm passionate about technology in general, and I'm particularly fanatical about UX design and web design & development. I enjoy creating things that people love.
 
 I cannot live without music. I'm quite open to different genres; they are all beautiful in some way. Here is a [long list](http://www.xiami.com/space/lib-artist/u/1920321/page/1?mode=block) of artists that I follow, among which [X Japan](http://en.wikipedia.org/wiki/X_Japan), [Jason Mraz](http://en.wikipedia.org/wiki/Jason_Mraz), [Coldplay](http://en.wikipedia.org/wiki/Coldplay), [Muse](http://en.wikipedia.org/wiki/Muse_\(band\)), [東京事変 (Tokyo Incidents)](http://en.wikipedia.org/wiki/Tokyo_Jihen), [林宥嘉 (Yoga)](http://en.wikipedia.org/wiki/Yoga_Lin) are some of my favorites. I sing sometimes (as a hobby), and I go to [karaoke](http://en.wikipedia.org/wiki/Karaoke) with friends. I used to spend a lot of time playing the [Electone](http://en.wikipedia.org/wiki/Electone) as a little boy (I was top 5 nationwide!), but now I only occasionally play the [Piano](http://en.wikipedia.org/wiki/Piano). Besides, I've always wanted to learn [guitar](http://en.wikipedia.org/wiki/Guitar) and [drums](http://en.wikipedia.org/wiki/Drum_kit).
 
