@@ -4,6 +4,7 @@ title: "Why I Start to Blog"
 date: 2012-07-24 2:21
 comments: true
 categories: metablog
+keywords: blog, writing
 ---
 
 I have longed to start blogging for quite a while, but I never had a drive strong enough to make it real. Recently I read what [Jeff Atwood](http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html) and [Steve Yegge](https://sites.google.com/site/steveyegge2/you-should-write-blogs) said about blogging, where I realized tons of good reasons to start off, and start right now.

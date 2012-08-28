@@ -4,6 +4,7 @@ title: "Tags and #Hashtags"
 date: 2012-07-30 15:54
 comments: true
 categories: productdesign
+keywords: tag, hashtag, kippt
 ---
 
 [Karri Saarinen](http://karrisaarinen.com/) from [Kippt](https://kippt.com/) [hates](http://blog.kippt.com/2012/07/17/tags-are-here/) [tags](http://en.wikipedia.org/wiki/Tag_\(metadata\)), and brought [#hashtags](http://en.wikipedia.org/wiki/Hashtag) to his bookmarking service.

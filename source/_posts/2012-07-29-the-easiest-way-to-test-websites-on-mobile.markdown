@@ -4,6 +4,7 @@ title: "(Probably) the Easiest Way to Test Websites on Mobile"
 date: 2012-07-29 01:52
 comments: true
 categories: webdev
+keywords: mobile, website, test, phone, tablet
 ---
 
 This is probably _the_ easiest way to test your websites on a mobile device, especially if you don't have a server to host your site: (and it came to me when I wanted to test mine last night)

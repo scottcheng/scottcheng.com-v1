@@ -4,6 +4,7 @@ title: "\"S\" in CSS"
 date: 2012-08-01 12:39
 comments: true
 categories: [webdev, css]
+keywords: css, css3, pseudo element, css trasformation
 ---
 
 By "S" I'm not referring to "style" or "sheets"... I'm talking about the "S" in my logo --- I remade it with CSS (Take a look at upper left if you haven't noticed it). It's largely inspired by Nicolas Gallagher's genius [pure CSS GUI icons](http://nicolasgallagher.com/pure-css-gui-icons/).

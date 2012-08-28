@@ -4,6 +4,7 @@ title: "Playing With Git Branches"
 date: 2012-07-27 01:36
 comments: true
 categories: git
+keywords: git, branch, checkout, github pages
 ---
 
 Though it has been almost half a year since the first time I "gitted" (and I love it!), all git commands I've ever used are `clone`, `add`, `commit`, `pull` and `push`. But when I created [my first GitHub page](http://scottcheng.github.com/the-revolutionary-css3-impressjs/), I had to start dealing with branches. It's like a rewarding "stepping out of the comfort zone" experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.

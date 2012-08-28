@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "Elegantly Highlight the Current Nav Item"
+title: "Elegantly Highlight the Current Nav Item in Template"
 date: 2012-08-28 7:51
 comments: true
 categories: webdev
-keywords: jade template highlight navigation
-published: false
+keywords: jade, template, navigation, current, highlight, active
 ---
 
 It's one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See [my latest work](http://www.beijing3ds.org/) for a live example:
@@ -24,6 +23,8 @@ $('nav li > a[href*="' + link + '"]').parent().addClass('active');
 Which brings, well, additional script to run.
 
 A JavaScript fan though I am, I believe that this "active" style is static, and all static styles should be accomplished by the server, rather than by client-side script. None of the templating languages that I've used, however, natively provides an graceful way of doing this ordinary task (they _should!_).
+
+<!-- more -->
 
 I'll take my current favorite templating engine, [Jade](http://jade-lang.com/), for example. Here is a most direct method:
 
