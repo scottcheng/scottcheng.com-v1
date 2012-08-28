@@ -6,13 +6,15 @@ html {
 }
 
 ::selection {
-  background: $highlight-color;
-  color: $main-bg;
+  background: $highlight-color !important;
+  color: $main-bg !important;
+  text-shadow: none !important;
 }
 
 ::-moz-selection {
-  background: $highlight-color;
-  color: $main-bg;
+  background: $highlight-color !important;
+  color: $main-bg !important;
+  text-shadow: none !important;
 }
 
 .logo {
