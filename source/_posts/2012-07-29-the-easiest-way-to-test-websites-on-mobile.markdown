@@ -13,7 +13,7 @@ This is probably _the_ easiest way to test your websites on a mobile device, esp
 3. Connect your phone or tablet to the same local network with your "server" in it.
 4. Visit \<host_ip\>:\<port\> on your mobile browser.
 
-That's it -- start playing with your site on the mobile device! The best part is, every time you update something, just refresh on your mobile browser and the change is there. How can that be any simpler!
+That's it --- start playing with your site on the mobile device! The best part is, every time you update something, just refresh on your mobile browser and the change is there. How can that be any simpler!
 
 <!-- more -->
 

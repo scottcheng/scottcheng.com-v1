@@ -19,7 +19,7 @@ I cannot live without music. I'm quite open to different genres; they are all be
 
 I also love various [competitive sports](http://en.wikipedia.org/wiki/Competition#Competitive_sports): [tennis](http://en.wikipedia.org/wiki/Tennis), [squash](http://en.wikipedia.org/wiki/Squash_\(sport\)), [soccer](http://en.wikipedia.org/wiki/Association_football), [floorball](http://en.wikipedia.org/wiki/Floorball) and [slow-pitch softball](http://en.wikipedia.org/wiki/Softball). I play sometimes, but I'm no pro.
 
-If you are interested to learn more, find me on [GitHub](https://github.com/scottcheng) | [Instagram](http://luxogram.co/profile/scottcheng) | [Twitter](https://twitter.com/sctcheng) | [Renren](http://www.renren.com/scott_cheng) | [Jiepang](http://jiepang.com/user/263566308) | [Xiami](http://www.xiami.com/u/1920321), or say hello to &#104;&#105;&#64;scottcheng&#46;com.
+If you are interested to learn more, find me on [GitHub](https://github.com/scottcheng) | [Instagram](http://luxogram.co/profile/scottcheng) | [Twitter](https://twitter.com/sctcheng) | [Renren](http://www.renren.com/scott_cheng) | [Jiepang](http://jiepang.com/user/263566308) | [Xiami](http://www.xiami.com/u/1920321), or say hello to <aloha@scottcheng.com>.
 
 About this site
 ---
