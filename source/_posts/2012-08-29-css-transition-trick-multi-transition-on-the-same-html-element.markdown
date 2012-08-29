@@ -5,7 +5,6 @@ date: 2012-08-29 01:36
 comments: true
 categories: [webdev, css]
 keywords: css, css3, css transition, css trick
-published: false
 ---
 
 _It's one thing to know a tool, another to make the most of it._
@@ -24,11 +23,11 @@ a:hover {
 
 ```
 
-This is how I've always learned to use the transition property --- only apply one transition rule to the element. However, what if we declare another different transition property in the `:hover` block?
+This is how I've always learned to use the transition property -- only apply one transition rule to the element. However, what if we declare another different transition property in the `:hover` block?
 
 <!-- more -->
 
-Turns out it does magic:
+Turns out it does magic. Try moving your mouse in and out of the bar:
 
 <div id="multi-transition-bar">
   <div id="multi-transition-bar-inner"></div>

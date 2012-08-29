@@ -113,7 +113,7 @@ nav
 
 ```
 
-Works, with one caveat: Jade [doesn't support](https://github.com/visionmedia/jade/issues/502) multi-line array literal or JavaScript code, which means the entire navigation array (all the `link`s and `caption`s) has to be packed into a single line of code! Unreadable, hard to maintain --- not so appealing to me.
+Works, with one caveat: Jade [doesn't support](https://github.com/visionmedia/jade/issues/502) multi-line array literal or JavaScript code, which means the entire navigation array (all the `link`s and `caption`s) has to be packed into a single line of code! Unreadable, hard to maintain -- not so appealing to me.
 
 Here I'd like to propose a solution without too much in a line. It requires some repetition, but doesn't feel too WET:
 
@@ -135,6 +135,6 @@ nav
 
 ```
 
-I love it because (a) it's truly flexible, and (b) it's clever enough to take out the `if`. The key here is "invert mapping" --- from `menu -> <nav-item>` to `<nav-item> -> active`, made possible by a "dictionary" (Python jargon, I think more appropriate than "map" or "object" here).
+I love it because (a) it's truly flexible, and (b) it's clever enough to take out the `if`. The key here is "invert mapping" -- from `menu -> <nav-item>` to `<nav-item> -> active`, made possible by a "dictionary" (Python jargon, I think more appropriate than "map" or "object" here).
 
 Not perfect, but more elegant than the rest.
