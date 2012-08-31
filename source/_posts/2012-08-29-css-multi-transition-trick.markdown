@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CSS Transition Trick: Multi-Transition on the Same HTML Element"
+title: "CSS Multi-Transition Trick"
 date: 2012-08-29 01:36
 comments: true
 categories: [webdev, css]
@@ -29,8 +29,8 @@ This is how I've always learned to use the transition property -- only apply one
 
 Turns out it does magic. Try moving your mouse in and out of the bar:
 
-<div id="multi-transition-bar">
-  <div id="multi-transition-bar-inner"></div>
+<div id="multi-transition-demo-bar">
+  <div id="multi-transition-demo-bar-inner"></div>
 </div>
 
 ``` css Gentle-growing & rapid-dropping
@@ -51,7 +51,7 @@ Turns out it does magic. Try moving your mouse in and out of the bar:
 
 ```
 
-That is, make the bar move much slower when hovered than otherwise, i.e. much slower when growing than when dropping. Also, different delays and timing functions are applied to the different states.
+Here I defined different transition properties on the different "states" (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.
 
 I also used this multi-transition trick to create the trailing dots effect of [this experiment](/lab/grid/), where the dots fade in fast and fade out slowly.
 

@@ -431,7 +431,7 @@ ul#lab-list {
 
 // 1208 different transition on the same html element
 
-#multi-transition-bar {
+#multi-transition-demo-bar {
   width: 100%;
   height: 30px;
   position: relative;
@@ -445,7 +445,7 @@ ul#lab-list {
     @include box-shadow(0 0 6px rgba($highlight-color, .75));
     border-color: $highlight-color;
   }
-  #multi-transition-bar-inner {
+  #multi-transition-demo-bar-inner {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -456,7 +456,7 @@ ul#lab-list {
     @include background-image(linear-gradient(left, #f4a470 0%, $highlight-color 100%));
     @include transition(width .5s .5s ease-in);
   }
-  &:hover #multi-transition-bar-inner {
+  &:hover #multi-transition-demo-bar-inner {
     width: 100%;
     @include transition(width 10s 0 ease-out);
   }
