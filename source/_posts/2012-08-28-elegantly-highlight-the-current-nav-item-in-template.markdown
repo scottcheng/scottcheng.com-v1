@@ -24,8 +24,6 @@ Which brings, well, additional script to run.
 
 A JavaScript fan though I am, I believe that this "active" style is static, and all static styles should be accomplished by the server, rather than by client-side script. None of the templating languages that I've used, however, natively provides an graceful way of doing this ordinary task (they _should!_).
 
-<!-- more -->
-
 I'll take my current favorite templating engine, [Jade](http://jade-lang.com/), for example. Here is a most direct method:
 
 ``` jade Straightforward method

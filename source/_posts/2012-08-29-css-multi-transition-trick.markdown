@@ -25,8 +25,6 @@ a:hover {
 
 This is how I've always learned to use the transition property -- only apply one transition rule to the element. However, what if we declare another different transition property in the `:hover` block?
 
-<!-- more -->
-
 Turns out it does magic. Try moving your mouse in and out of the bar:
 
 <div id="multi-transition-demo-bar">
