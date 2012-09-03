@@ -116,7 +116,7 @@ body > nav {
     }
   }
 
-  ul.subscription, form {
+  ul.subscription {
     padding-top: .45em;
   }
 
@@ -136,7 +136,9 @@ body > nav {
   }
 
   form {
-    display: none;
+    fieldset[role='search'] {
+      display: none;
+    }
     @media only screen and (min-width: 550px) {
       width: 135px;
     }
@@ -197,7 +199,7 @@ article {
   h2 {
     background: none;
   }
-  h1, h2 {
+  h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     color: #222;
   }
