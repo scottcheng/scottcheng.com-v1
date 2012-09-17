@@ -3,7 +3,7 @@ layout: post
 title: "Pulling Anchor Targets out of the Fixed Header"
 date: 2012-09-01 22:23
 comments: true
-categories: [webdev, css]
+categories: webdev
 keywords: css, fixed header, jump link, in-page link, anchor
 ---
 

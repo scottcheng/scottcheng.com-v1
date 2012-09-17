@@ -3,7 +3,7 @@ layout: post
 title: "\"S\" in CSS"
 date: 2012-08-01 12:39
 comments: true
-categories: [webdev, css]
+categories: webdev
 keywords: css, css3, pseudo element, css trasformation
 ---
 

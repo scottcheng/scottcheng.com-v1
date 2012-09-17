@@ -8,7 +8,7 @@ footer: true
 
 {% img center /images/scott.jpg 360 %}
 
-Hello there, my name is 程烨 (CHENG Ye). You can call me Scott.
+Hello there, my name is 程烨 (CHENG Ye). Call me Scott.
 
 I'm a technology enthusiast, a design lover, and a [CS](http://en.wikipedia.org/wiki/Computer_science) undergraduate at [Peking University](http://www.pku.edu.cn/). I enjoy crafting stuffs that people love.
 

@@ -3,7 +3,7 @@ layout: post
 title: "CSS Multi-Transition Trick"
 date: 2012-08-29 01:36
 comments: true
-categories: [webdev, css]
+categories: webdev
 keywords: css, css3, css transition, css trick
 ---
 

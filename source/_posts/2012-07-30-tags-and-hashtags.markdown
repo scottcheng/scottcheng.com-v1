@@ -3,7 +3,7 @@ layout: post
 title: "Tags and #Hashtags"
 date: 2012-07-30 15:54
 comments: true
-categories: productdesign
+categories: thoughts
 keywords: tag, hashtag, kippt
 ---
 

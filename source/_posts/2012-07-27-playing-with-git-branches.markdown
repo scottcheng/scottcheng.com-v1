@@ -3,7 +3,7 @@ layout: post
 title: "Playing With Git Branches"
 date: 2012-07-27 01:36
 comments: true
-categories: git
+categories: dev
 keywords: git, branch, checkout, github pages
 ---
 
