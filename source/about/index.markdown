@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "About"
-<!-- date: 2012-07-29 13:30 -->
 comments: true
 sharing: true
 footer: true
@@ -9,9 +8,11 @@ footer: true
 
 {% img center /images/scott.jpg 360 %}
 
-Hello there, my name is 程烨 (CHENG Ye). Call me Scott.
+Hello there, my name is 程烨 (CHENG Ye). You can call me Scott.
 
-I'm a front end enthusiast, a design lover, and a [CS](http://en.wikipedia.org/wiki/Computer_science) undergraduate at [Peking University](http://www.pku.edu.cn/). I enjoy crafting stuffs that people love.
+I'm a technology enthusiast, a design lover, and a [CS](http://en.wikipedia.org/wiki/Computer_science) undergraduate at [Peking University](http://www.pku.edu.cn/). I enjoy crafting stuffs that people love.
+
+I believe that skills are cheap, and passion is everything.
 
 Find me on <span style="color:#000">[GitHub](https://github.com/scottcheng)</span> | <span style="color:#a37559">[Instagram](http://luxogram.co/profile/scottcheng)</span> | <span style="color:#4fd3ff">[Twitter](https://twitter.com/sctcheng)</span> | <span style="color:#005eac">[Renren](http://www.renren.com/scott_cheng)</span> | <span style="color:#dd3d31">[Jiepang](http://jiepang.com/user/263566308)</span> | <span style="color:#f50">[Xiami](http://www.xiami.com/u/1920321)</span>, or say hello to <span style="color:#e14f44"><aloha@scottcheng.com></span>.
 
