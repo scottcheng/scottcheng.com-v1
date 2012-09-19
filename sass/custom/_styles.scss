@@ -212,6 +212,7 @@ article {
 
   img, video, .flash-video {
     @include box-shadow(0 0 6px rgba(#000, .25));
+    @include border-radius(2px);
     border: 1px solid #eee;
     @include transition(box-shadow .25s, border-color .25s);
     &:hover {
