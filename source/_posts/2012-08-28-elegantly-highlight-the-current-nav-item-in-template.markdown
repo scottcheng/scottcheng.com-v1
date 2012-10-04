@@ -127,9 +127,9 @@ nav
     li(class='#{nav.home}')
       a(href='/') Home
     li(class='#{nav.blog}')
-      a(href='/about') Essays
+      a(href='/blog') Essays
     li(class='#{nav.about}')
-      a(href='/contact') Bio
+      a(href='/about') Bio
 
 ```
 
