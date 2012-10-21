@@ -59,5 +59,8 @@ $(function() {
           .attr('src', photo.img)))
       .appendTo($list);
   });
+  $list.find('img').click(function() {
+    _gaq.push(['_trackEvent', 'Photos', 'Click', $(this).parent().attr('href')]);
+  });
 });
 </script>
