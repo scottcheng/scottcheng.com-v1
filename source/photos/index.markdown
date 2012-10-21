@@ -19,7 +19,8 @@ Check out my complete Instagram feed [here](http://instajelly.com/scottcheng).
 
 <script src='/javascripts/libs/jquery.min.js'></script>
 <script>
-$(function() {
+$.noConflict();
+jQuery(function($) {
   var photos = [
     {link: 'http://instagram.com/p/Plyp_jt0Za/', img: 'http://distilleryimage2.s3.amazonaws.com/790c14aaff1511e1afe522000a1c8934_7.jpg'},
     // {link: 'http://instagram.com/p/PmYSC2t0bF/', img: 'http://distilleryimage1.s3.amazonaws.com/671ffd46ff4311e19dbc22000a1d0325_7.jpg'},

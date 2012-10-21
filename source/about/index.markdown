@@ -41,7 +41,8 @@ All original code on this website is Copyright &copy; {{ site.time | date: "%Y" 
 
 <script src='/javascripts/libs/jquery.min.js'></script>
 <script>
-$(function() {
+$.noConflict();
+jQuery(function($) {
   $('.social-link').click(function() {
     _gaq.push(['_trackEvent', 'About', 'Connect', $(this).text()]);
   });
