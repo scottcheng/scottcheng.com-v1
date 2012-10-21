@@ -6,7 +6,7 @@ sharing: true
 footer: true
 ---
 
-Life is beautiful, and I've learned to slow down to enjoy the moments as they slip away and appreciate what I have.
+Life is beautiful. I've learned to slow down to enjoy the moments as they slip away, and appreciate what I have.
 
 This is why I love Instagram, as the best way to capture and share my daily discoveries. Below is a selection of my Instagram feed, most of which are taken with my beloved [Xperia S](http://gdgt.com/sony/xperia/s/), others with [a Sony α DSLR](http://gdgt.com/sony/alpha/dslr-a330/).
 
@@ -60,6 +60,9 @@ jQuery(function($) {
           .attr('src', photo.img)))
       .appendTo($list);
   });
+  // TODO use space to scroll to next photo, centering it on screen
+  // maintain a `curPhoto` pointer
+  // detect scroll and update this pointer
   $list.find('img').click(function() {
     _gaq.push(['_trackEvent', 'Photos', 'Click', $(this).parent().attr('href')]);
   });
