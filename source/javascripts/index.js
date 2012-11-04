@@ -1,5 +1,4 @@
 $(function() {
-
   var $crclWrappers = $('.crcl-wrapper')
     , $crcls = $('.crcl')
     , $window = $(window)
@@ -7,8 +6,11 @@ $(function() {
     , $links = $('#links');
 
   var resize = function() {
+    var windowWidth = $window.width();
+
     // Fix the circle sizes
-    var crclWrapperWidth = $crclWrappers.width();
+    var crclWrapperWidth = windowWidth * 0.3;
+    $crclWrappers.width(crclWrapperWidth);
     if (!$crclWrappers.hasClass('expand')) {
       $crclWrappers.height(crclWrapperWidth);
       $crcls
@@ -17,13 +19,13 @@ $(function() {
     }
 
     // Change font size of #name
-    var windowWidth = $window.width();
     if (windowWidth <= 1280 && windowWidth >= 1122) {
       $name.css('fontSize', '3.6em')
     } else {
       $name.css('fontSize', '4.2em')
     }
   };
+  
   resize();
   $window.resize(function() {
     resize();
