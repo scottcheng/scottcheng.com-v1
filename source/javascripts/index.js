@@ -33,6 +33,8 @@ $(function() {
 
   // Circle expansion effect
   $links.hover(function() {
-    $crclWrappers.toggleClass('expand');
+    $crclWrappers.width($window.width() * 0.6);
+  }, function() {
+    $crclWrappers.width($window.width() * 0.3);
   });
 });
