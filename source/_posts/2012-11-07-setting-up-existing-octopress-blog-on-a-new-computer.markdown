@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setting Up Octopress on a New Computer"
+title: "Setting Up Existing Octopress Blog on a New Computer"
 date: 2012-11-07 23:14
 comments: true
 categories: 
