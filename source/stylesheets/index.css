@@ -15,7 +15,7 @@ body{background-image:url("/images/low_contrast_linen.png")}
 #upper #name::selection{background:#ed6812;color:#f6f6f6}
 #upper #name::-moz-selection{background:#ed6812;color:#f6f6f6}
 #lower{height:38%;background-color:transparent;-webkit-box-shadow:inset 0 6px 6px rgba(0,0,0,0.25);-moz-box-shadow:inset 0 6px 6px rgba(0,0,0,0.25);-ms-box-shadow:inset 0 6px 6px rgba(0,0,0,0.25);-o-box-shadow:inset 0 6px 6px rgba(0,0,0,0.25);box-shadow:inset 0 6px 6px rgba(0,0,0,0.25);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
-#lower #links{display:block;font-family:'Cantarell',sans-serif;position:absolute;left:50%;top:30px;font-size:1.5em;text-transform:lowercase;z-index:100;}
+#lower #links{display:block;font-family:'Cantarell',sans-serif;position:absolute;left:50%;top:30px;font-size:1.35em;text-transform:lowercase;z-index:100;}
 #lower #links > div,#lower #links > nav,#lower #links > ul,#lower #links > li{float:left}
 #lower #links:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
 #lower #links .link{margin-right:15px;color:#000;text-shadow:0 1px rgba(255,255,255,0.15);}
