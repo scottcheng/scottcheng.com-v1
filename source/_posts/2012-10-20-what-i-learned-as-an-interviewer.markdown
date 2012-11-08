@@ -4,7 +4,7 @@ title: "What I Learned as an Interviewer"
 date: 2012-10-20 01:18
 comments: true
 categories: thoughts
-
+keywords: interview, application, startup
 ---
 
 Recently I got an unexpected opportunity to interview some applicants for [a startup event](http://www.beijing3ds.org/). It was a unique experience that gave me a fresh perspective, and I'd like to share some of my discoveries as a first time interviewer (may sound extremely naive and stupid to you :p).
