@@ -16,7 +16,7 @@ I believe that skills are cheap; passion and taste make all the difference.
 
 Hit me up on
 <span class="social-link" style="color:#000">[GitHub](https://github.com/scottcheng)</span> |
-<span class="social-link" style="color:#a37559">[Instagram](http://instajelly.com/scottcheng)</span> |
+<span class="social-link" style="color:#a37559">[Instagram](http://instagram.com/scottcheng)</span> |
 <span class="social-link" style="color:#4fd3ff">[Twitter](https://twitter.com/sctcheng)</span> |
 <span class="social-link" style="color:#005eac">[Renren](http://www.renren.com/scott_cheng)</span> |
 <span class="social-link" style="color:#dd3d31">[Jiepang](http://jiepang.com/user/263566308)</span> |
