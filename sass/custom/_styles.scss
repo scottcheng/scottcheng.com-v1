@@ -363,6 +363,9 @@ ul#lab-list {
     &:last-child {
       margin-bottom: 0;
     }
+    a {
+      border-bottom: none;
+    }
     img {
       // width: 360px;
     }

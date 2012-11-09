@@ -14,7 +14,7 @@ This is why I love Instagram, as the best way to capture and share my daily disc
 <li><em>Loading...</em></li>
 </ul>
 
-Check out my complete Instagram feed [here](http://instajelly.com/scottcheng).
+Check out my complete Instagram feed [here](http://instagram.com/scottcheng).
 
 
 <script src='/javascripts/libs/jquery.min.js'></script>
