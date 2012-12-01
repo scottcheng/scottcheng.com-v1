@@ -22,6 +22,7 @@ Check out my complete Instagram feed [here](http://instagram.com/scottcheng).
 $.noConflict();
 jQuery(function($) {
   var photos = [
+    {link: 'http://instagram.com/p/RwE51wN0Q2/', img: 'http://distilleryimage2.s3.amazonaws.com/ff6feabe294811e280a722000a9e28dc_7.jpg'},
     {link: 'http://instagram.com/p/Plyp_jt0Za/', img: 'http://distilleryimage2.s3.amazonaws.com/790c14aaff1511e1afe522000a1c8934_7.jpg'},
     // {link: 'http://instagram.com/p/PmYSC2t0bF/', img: 'http://distilleryimage1.s3.amazonaws.com/671ffd46ff4311e19dbc22000a1d0325_7.jpg'},
     {link: 'http://instagram.com/p/O0c9ARt0QS/', img: 'http://distilleryimage6.s3.amazonaws.com/dae20806f00611e18e1522000a1ea03a_7.jpg'},
