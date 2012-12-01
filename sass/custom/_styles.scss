@@ -215,12 +215,12 @@ article {
   }
 
   img, video, .flash-video {
-    @include box-shadow(0 0 6px rgba(#000, .25));
+    @include box-shadow(0 0 6px rgba(#000, .5));
     @include border-radius(2px);
-    border: 1px solid #eee;
+    border: 0;
     @include transition(box-shadow .25s, border-color .25s);
     &:hover {
-      @include box-shadow(0 0 6px rgba($highlight-color, .75));
+      @include box-shadow(0 0 6px rgba($highlight-color, 1));
       border-color: $highlight-color;
     }
   }
