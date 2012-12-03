@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Scott Cheng]]></title>
+  <link href="http://scottcheng.github.com/scottcheng/atom.xml" rel="self"/>
+  <link href="http://scottcheng.github.com/scottcheng/"/>
+  <updated>2012-12-03T21:35:37+08:00</updated>
+  <id>http://scottcheng.github.com/scottcheng/</id>
+  <author>
+    <name><![CDATA[Scott Cheng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setting Up Existing Octopress Blog on a New Computer]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/"/>
+    <updated>2012-11-07T23:14:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer</id>
+    <content type="html"><![CDATA[<p>A good blogging system must support users to easily start composing and publishing from multiple devices. However, the Octopress website only teaches <a href="http://octopress.org/docs/setup/">how to create a fresh blog</a>, but talks nothing about setting up an existing blog on a fresh computer. This operation turned out to be somewhat confusing to me, and obviously I&#8217;m <a href="https://github.com/imathis/octopress/issues/755">not alone on this</a>. So here I record the process, partly for my later reference, partly in hope to help others.</p>
+
+<p>Here is a context: I&#8217;m using GitHub user pages (<a href="http://scottcheng.github.com/">scottcheng.github.com</a>) to host my Octopress blog, so this walk-through may or may not apply to your case. It shouldn&#8217;t be too far off, though.</p>
+
+<ol>
+<li>Clone your old blog repo with all your previous posts in it (instead of <a href="https://github.com/imathis/octopress">a fresh Octopress repo</a>).</li>
+<li>Unless you changed the repo&#8217;s default branch, you now have the master branch containing the static site. In this case, use <code>git checkout source</code> to grab the source files.</li>
+<li><a href="http://octopress.org/docs/setup/">Install the dependencies</a> if you haven&#8217;t yet.</li>
+<li>Run <code><a href="http://octopress.org/docs/deploying/github/">rake setup_github_pages</a></code>, and Octopress will point your generated site (in _deploy folder) to the master branch &#8211; you can deploy now.</li>
+<li>Remove master branch locally with <code>git branch -d master</code>. Otherwise, every time you do <code>git push</code>, git will alert conflicts on the master branch.
+
+<ul>
+<li>Alternative 1: <code>git push origin source</code> all the time.</li>
+<li>Alternative 2: use <code><a href="http://git-scm.com/docs/git-config">git config</a> push.default current</code> to only push the current branch (i.e. source branch) by default in <code>git push</code>.</li>
+</ul>
+</li>
+<li>Start blogging!</li>
+</ol>
+
+
+<p>Be a happy owner of your new machine, and don&#8217;t let Octopress get in the way ;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What I Learned as an Interviewer]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer/"/>
+    <updated>2012-10-20T01:18:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer</id>
+    <content type="html"><![CDATA[<p>Recently I got an unexpected opportunity to interview some applicants for <a href="http://www.beijing3ds.org/">a startup event</a>. It was a unique experience that gave me a fresh perspective, and I&#8217;d like to share some of my discoveries as a first time interviewer (may sound extremely naive and stupid to you :p).</p>
+
+<ol>
+<li><p>An applicant might expect the interviewer to be familiar with everything in his application packet. I suppose I totally should, if I want to be a nice interviewer, but the fact is that I&#8217;m simply not able to bring back all the details of the guy sitting in front of me right after the previous one had left, when I have to talk to 6 applicants back-to-back in an hour. Point is, if there is something important in your materials that you think would significantly increase your chance, be sure to bring it up and remind the interviewer of it &#8211; he might miss it otherwise!</p></li>
+<li><p>As recruiters, all we really care about is whether an applicant <em>fits</em> the position. In other words, whether you&#8217;ll excel at the job, and whether you&#8217;ll be happy doing it. Some folks in my pool appeared very sophisticated at what they do, but failed to demonstrate the skills and qualities that we were looking for, so we had to reject them. Also, it&#8217;s totally cool to have hobbies (music, sports, etc), and I&#8217;ll think of you as an interesting person, but it doesn&#8217;t make up for your aptitude (if you lack it), and doesn&#8217;t have much to do with your chance of getting in.</p></li>
+<li><p>Passion and motivation can be very appealing, and it&#8217;s quite easy to tell whether they are genuine or not.</p></li>
+<li><p>For the inexperienced: proficiency matters. It&#8217;s definitely important to be a fast learner, but relevant experiences tend to be more impressive. Of course there has to be a first step to any new field in life, in which case it helps if you have taken the initiative and got some preliminary experience or research on your own, which also reflects motivation.</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Waterfall and Footnote]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/waterfall-and-footnote/"/>
+    <updated>2012-10-09T15:57:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/waterfall-and-footnote</id>
+    <content type="html"><![CDATA[<p>Popularized by <a href="http://pinterest.com/">Pinterest</a>, waterfall layout is a smart invention because it could elegantly take up the entire window with flexible positioning. By default, waterfall doesn&#8217;t paginate; instead, &#8220;pages&#8221; are automatically loaded and appended as a user reaches the bottom of the page, providing a non-stop browsing experience, which, in itself, is nice.</p>
+
+<p>So people start to mock it, as they always would, and some of these implementations left a page footer there, right below the waterfall. Predictably, the poor footer gets constantly &#8220;flushed&#8221; downwards every time I try to have a good look at it, and I can <em>never</em> reach it. (Here is a workaround: disconnect the Internet and the page will stop growing)</p>
+
+<p>If some part of a webpage can never be read and clicked on under reasonably good network condition, what is the point of it being there at all? It gets especially annoying if that part is somewhat intriguing that people want to interact with.</p>
+
+<p>I totally understand that footer is a default web element, but please think twice before going with traditions, especially when trying out something unprecedented. Don&#8217;t take rules for granted &#8211; they may be flawed, even fallacious. Think about why things are the way they are, and how they can be tweaked or redesigned to better fit a specific case. Question authorities; question everything.</p>
+
+<p>This is my little complaint after 20 seconds of unsuccessful attempts to catch the contacts in the footer of <a href="http://www.meishimeike.com/">Meishimeike</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beauty of Loop]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/beauty-of-loop/"/>
+    <updated>2012-10-04T22:24:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/beauty-of-loop</id>
+    <content type="html"><![CDATA[<p>Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of numbers or enumerables (e.g. calculating a Fibonacci number). If the problem space is dynamic (e.g. calculating the sum of 1 to <em>n</em>), loop is often the standard way of traversal (the alternative is recursion); otherwise, it contributes to DRY code by avoiding duplication (compared to an unraveled loop).</p>
+
+<p>However, loop doesn&#8217;t easily come to mind when handling a fixed data set that you would have to hard-code anyway. For example, when writing a table of names and titles on a webpage (in Jade), the common approach is:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Chairman
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://alice.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Alice
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Recruiting
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://bob.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Bob
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Marketing
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://chris.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Chris
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We see the repetitive pattern of table rows, containing a data set that is not literally an array. Repetition is evil, so we should <em>make an array</em> out of the data and loop through it.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="c">//- Turn the data into an array</span>
+</span><span class='line'><span class="p">-</span> <span class="k">var</span> <span class="n">people</span> <span class="k">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chariman</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Alice</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://alice.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Recruiting</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Bob</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://bob.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">2</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Marketing</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chris</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://chris.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">each</span> person in people
+</span><span class='line'>      <span class="nt">tr</span>
+</span><span class='line'>        <span class="nt">th</span><span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">position</span>
+</span><span class='line'>        <span class="nt">td</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;#{person.link}&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>)<span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This way, we only have to define the format of each person once, which conforms to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY principle</a> (of course, DRY principle is a lot deeper than creating loops):</p>
+
+<blockquote><p>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</p></blockquote>
+
+<p>The code becomes cleaner, more maintainable, and less error-prone. You could imagine how much benefit it could bring if there are 50 people in the list.</p>
+
+<p>However, generalization comes at the cost of flexibility, which I&#8217;ve discussed a bit in <a href="http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">a previous post</a>. For example, if there are two Marketing people, and one of them doesn&#8217;t have a website, then the table should look like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Chairman
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://alice.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Alice
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span>(<span class="na">rowspan=</span><span class="s">&#39;2&#39;</span>) Marketing
+</span><span class='line'>      <span class="nt">td</span> Bob
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://chris.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Chris
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And the loop solution would be:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="p">-</span> <span class="k">var</span> <span class="n">positions</span> <span class="k">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chairman</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">people</span><span class="k">:</span> <span class="err">[]</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">0</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Alice</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://alice.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Marketing</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">people</span><span class="k">:</span> <span class="err">[]</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Bob</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chris</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://chris.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">mixin</span> person(person)
+</span><span class='line'>  <span class="nt">if</span> person.link
+</span><span class='line'>    <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;#{person.link}&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>)<span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span>
+</span><span class='line'>  <span class="nt">else</span>
+</span><span class='line'>    <span class="err">= </span><span class="nt">person</span><span class="nc">.name</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">each</span> pos in positions
+</span><span class='line'>      <span class="nt">tr</span>
+</span><span class='line'>        <span class="nt">th</span>(<span class="na">rowspan=</span><span class="s">&#39;#{pos.people.length}&#39;</span>)<span class="p">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">position</span>
+</span><span class='line'>        <span class="nt">td</span>
+</span><span class='line'>          <span class="nt">mixin</span> person(pos.people[0])
+</span><span class='line'>      <span class="p">-</span> <span class="k">for</span> <span class="o">(</span><span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+</span><span class='line'>        <span class="nt">tr</span>
+</span><span class='line'>          <span class="nt">td</span>
+</span><span class='line'>            <span class="nt">mixin</span> person(pos.people[i])
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So it&#8217;s always a trade-off. If there are not many items to operate on and the operation for each item is simple (or in some cases, wildly different from each other), perhaps loop isn&#8217;t the best way out. Despite of that, I&#8217;d advocate applying loops whenever possible, because they can make your code a lot more beautiful, and you&#8217;ll find your life so much easier because of them.</p>
+
+<p>Bottom line is, don&#8217;t make a <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET cart</a> :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Respond to Me]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/respond-to-me/"/>
+    <updated>2012-09-19T18:04:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/respond-to-me</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not talking about the lightning speed that <a href="https://speakerdeck.com/u/mikeyk/p/secrets-to-lightning-fast-mobile-design">Instagram has achieved</a>, but that the UI should provide <em>instantaneous feedback</em> to every meaningful action the user performs &#8211; <em>respond to him</em>.</p>
+
+<p>Hover effect is a good example of responsiveness. On this website, <a href="#">links</a> turn orange when you move your mouse over them, assuring you that &#8220;you are pointing to the link, click ahead&#8221;.</p>
+
+<p>Responsiveness is more crucial for user actions to which the handler would take some time to &#8220;return&#8221;. A UI does not have to be lightning fast (though it&#8217;s definitely good to be). In fact, the processing speed is sometimes out of the developers&#8217; control, e.g. if remote API calls are involved. A user can wait, but the UI has to <em>explicitly tell the user</em> that &#8220;your request is being processed, please wait&#8221;. Otherwise, the user would wonder: did I really click the button? Should I keep waiting, or should I repeat the click? What is going on behind the screen? Put another way, the UI should be upfront about what it is doing, so that the user doesn&#8217;t have to guess.</p>
+
+<h2>Pocket over Readability</h2>
+
+<p>I prefer Pocket over Readability, because Pocket&#8217;s Chrome extension is more responsive than its competitor. When I press Ctrl+Shift+P (Pocket&#8217;s shortcut), it instantly pops up a banner that reads &#8220;Saving to Pocket&#8221;, and after a brief wait, the text changes to &#8220;Page saved&#8221;. When I hit Shift+` (Readability&#8217;s shortcut), however, I&#8217;ll have to wait several seconds before anything happens, which I find extremely annoying.</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-pocket.png"></p>
+
+<h2>My Practices</h2>
+
+<p>I&#8217;ve been striving to offer best responsiveness in the UIs I build.</p>
+
+<p>In <a href="https://chrome.google.com/webstore/detail/deoibeabfchdpckcmamaadeccohilbkp">Save2Drive</a>, after user clicks &#8220;Save to Drive&#8221;, I first pop up a <a href="http://www.html5rocks.com/en/tutorials/notifications/quick/">desktop notification</a> that says &#8220;Saving link to Google Drive&#8221;:</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-s2d-saving.png"></p>
+
+<p>Then I send the HTTP request. After the callback fires, it either changes to &#8220;Link saved to Google Drive&#8221;:</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-s2d-saved.png"></p>
+
+<p>Or &#8220;Failed to save link to Google Drive&#8221;:</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-s2d-failed.png"></p>
+
+<p><a href="https://chrome.google.com/webstore/detail/enmkdplopmpkfnlefdldpkbcmihgcdec">Renren Album Downloader</a> is a bit more complicated. After the user asks to download an album, the extension will follow these steps, all with explicit real-time status update (UI update happens <em>before</em> the corresponding code runs):</p>
+
+<ol>
+  <li>
+    <p>Look for photo URLs in the HTML:</p>
+    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-analyzing.png" /></p>
+  </li>
+  <li>
+    <p>Fetch the photos:</p>
+    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-fetching.png" /></p>
+  </li>
+  <li>
+    <p>Put everything into a zip:</p>
+    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-zipping.png" /></p>
+  </li>
+  <li>
+    <p>Finally, tell user it&#8217;s done:</p>
+    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-done.png" /><p>
+  </li>
+</ol>
+
+
+<p>Rule of thumb: if you have the user waiting, tell him he&#8217;s waiting, and preferably tell him what he&#8217;s waiting for.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iPad is Best Naked]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/ipad-is-best-naked/"/>
+    <updated>2012-09-17T10:19:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/ipad-is-best-naked</id>
+    <content type="html"><![CDATA[<p>If your iPad wears a screen protector like mine used to, I suggest you rip it off right now. I took the film off three days ago, and the screen has become <em>way more gorgeous</em> than what I had been looking at for an entire summer &#8211; the peerless retina display is finally rescued from being completely obscured. And the screen feels much more smooth and sleek too!</p>
+
+<p>Four months ago, before I even began using my new iPad, I installed a matte screen protector because I hate scratches. I still do, but I&#8217;ve just learned that the iPad screen itself is in fact <a href="http://www.joachim-scholz.com/academipad/2012/03/02/ipad-accessories-not-buy-screen-protectors/">highly scratch resistant</a>. If used at home, the screen is unlikely to be threatened at all. However, if often carried around in a bag like mine is, it could use some protection. Smart cover is an option, but I don&#8217;t enjoy holding the device with extraneous plastic. So I got <a href="http://instagr.am/p/PmgqG3t0Rq/">a stylish case</a> from <a href="http://detail.tmall.com/item.htm?id=13001145027">SkinAt</a>.</p>
+
+<p><img class="center" src="http://distilleryimage2.instagram.com/a09e3678ff4d11e1bd9022000a1c8857_7.jpg" width="306"></p>
+
+<p>I&#8217;m so happy with the discovery and the change.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pulling Anchor Targets out of the Fixed Header]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
+    <updated>2012-09-01T22:23:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve been using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> in <a href="http://www.beijing3ds.org/">my latest website</a> (if you haven&#8217;t tried Bootstrap, you really should! It makes lots of things <em>worlds</em> easier, and has taught me a handful of good practices), where I used a fix-positioned navigation header, one that always stays at the top of the window. In <a href="http://www.beijing3ds.org/about/">longer pages</a>, I used a secondary in-page navigation.</p>
+
+<p>One particular issue I encountered is that when I click on one of those in-page navs, a big portion of that section will be covered by the header! In case you don&#8217;t know what I&#8217;m talking about &#8211; instead of looking like this as it should:</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/anchor-and-header-should.png"></p>
+
+<p>It looked like this:</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/anchor-and-header-actual.png"></p>
+
+<p>See? The &#8220;before the weekend&#8221; heading goes beneath the nav bar.</p>
+
+<p>So I went to the Bootstrap site, where in-page nav is <a href="http://twitter.github.com/bootstrap/getting-started.html">pervasively used</a>, seeking the &#8220;official&#8221; solution. A <code>padding-top: 30px;</code> <a href="http://twitter.github.com/bootstrap/getting-started.html#download-bootstrap">did the trick for them</a>.</p>
+
+<p>But this is not a perfect fix for me. The Bootstrap header is merely 40px high, whereas mine is 87px (main nav and sub nav stacked). 30px between sections is acceptable, 80px isn&#8217;t.</p>
+
+<p>To solve my problem, while applying a big <code>padding-top</code>, I have to keep the spacing between sections from going too wide &#8211; negative <code>margin-top</code> immediately came to mind. So here comes my final solution that pulls the content from behind the nav bar:</p>
+
+<figure class='code'><figcaption><span>My final solution</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">section</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">padding-top</span><span class="o">:</span> <span class="m">87px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">margin-top</span><span class="o">:</span> <span class="m">-87px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>See it in action in <a href="http://jsfiddle.net/sybrix/ktPqd/">this fiddle</a>.</p>
+
+<p>P.S. As I was trying to find out what others have to say on this topic on Stack Overflow, <a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors#answer-9618795">an answer</a> took me to <a href="http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/">Nicolas Gallagher&#8217;s master list of solutions to this very problem</a>, with analyses on each of his five methods. Great work!</p>
+
+<p>P.P.S. Pardon my ignorance, but what is the official terminology of the &#8220;in-page link&#8221; I&#8217;ve talked about in this post? &#8220;Jump link&#8221;? I found a few uses of &#8220;jump link&#8221; after Googling, but honestly I&#8217;ve never heard of this term before, and it doesn&#8217;t look very much like <em>the</em> way it&#8217;s called to me.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS Multi-Transition Trick]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick/"/>
+    <updated>2012-08-29T01:36:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick</id>
+    <content type="html"><![CDATA[<p><em>It&#8217;s one thing to know a tool, another to make the most of it.</em></p>
+
+<p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
+
+<figure class='code'><figcaption><span>Smooth hover color change (anchor)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">a</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">transiton</span><span class="o">:</span> <span class="k">color</span> <span class="m">.25s</span><span class="p">;</span>  <span class="c">/* vendor prefix emitted */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#ed6812</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is how I&#8217;ve always learned to use the transition property &#8211; only apply one transition rule to the element. However, what if we declare another different transition property in the <code>:hover</code> block?</p>
+
+<p>Turns out it does magic. Try moving your mouse in and out of the bar:</p>
+
+<div id="multi-transition-demo-bar">
+  <div id="multi-transition-demo-bar-inner"></div>
+</div>
+
+
+
+
+<figure class='code'><figcaption><span>Gentle-growing & rapid-dropping</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nf">#bar-inner</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">/* transition rule when not hovered */</span>
+</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">.5s</span> <span class="m">.5s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">#bar</span><span class="nd">:hover</span> <span class="o">&gt;</span> <span class="nf">#bar-inner</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">/* transition rule when hovered */</span>
+</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">10s</span> <span class="m">0</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here I defined different transition properties on the different &#8220;states&#8221; (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.</p>
+
+<p>I also used this multi-transition trick to create the trailing dots effect of <a href="http://scottcheng.github.com/scottcheng/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
+
+<p>It&#8217;s just exhilarating to explore new power of familiar tools.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Elegantly Highlight the Current Nav Item in Template]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
+    <updated>2012-08-28T07:51:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
+    <content type="html"><![CDATA[<p>It&#8217;s one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/beijing3ds-navbar.png"></p>
+
+<p>Some suggest a <a href="http://hicksdesign.co.uk/journal/highlighting-current-page-with-css">CSS solution</a>, which introduces additional coupling between CSS rules and navigation HTML markup. Some use simple JavaScript hacks and match the current location against the nav link, something like:</p>
+
+<figure class='code'><figcaption><span>A jQuery solution</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;nav li &gt; a[href*=&quot;&#39;</span> <span class="o">+</span> <span class="nx">link</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which brings, well, additional script to run.</p>
+
+<p>A JavaScript fan though I am, I believe that this &#8220;active&#8221; style is static, and all static styles should be accomplished by the server, rather than by client-side script. None of the templating languages that I&#8217;ve used, however, natively provides an graceful way of doing this ordinary task (they <em>should!</em>).</p>
+
+<p>I&#8217;ll take my current favorite templating engine, <a href="http://jade-lang.com/">Jade</a>, for example. Here is a most direct method:</p>
+
+<figure class='code'><figcaption><span>Straightforward method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
+</span><span class='line'>  <span class="nt">ul</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c">//- Suppose we have a local variable `menu`</span>
+</span><span class='line'>    <span class="c">//- indicating the nav item to highlight</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">if</span> menu === &#39;home&#39;
+</span><span class='line'>      <span class="nt">li</span><span class="nc">.active</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/&#39;</span>) Home
+</span><span class='line'>    <span class="nt">else</span>
+</span><span class='line'>      <span class="nt">li</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/&#39;</span>) Home
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">if</span> menu === &#39;blog&#39;
+</span><span class='line'>      <span class="nt">li</span><span class="nc">.active</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/blog&#39;</span>) Blog
+</span><span class='line'>    <span class="nt">else</span>
+</span><span class='line'>      <span class="nt">li</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/blog&#39;</span>) Blog
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">if</span> menu === &#39;about&#39;
+</span><span class='line'>      <span class="nt">li</span><span class="nc">.active</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/about&#39;</span>) About
+</span><span class='line'>    <span class="nt">else</span>
+</span><span class='line'>      <span class="nt">li</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/about&#39;</span>) About
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Too much duplication! When the code is <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET</a>, we can almost always <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY</a> things up a bit with loops (inspired by <a href="http://peterlyons.com/">Peter</a>&#8217;s <a href="http://stackoverflow.com/questions/10713923/node-js-jade-express-how-can-i-create-a-navigation-that-will-set-class-acti#answer-10714267">solution</a>):</p>
+
+<figure class='code'><figcaption><span>Loop method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
+</span><span class='line'>  <span class="nt">ul</span>
+</span><span class='line'>    <span class="nt">each</span> nav in [&#39;home&#39;, &#39;blog&#39;, &#39;about&#39;]
+</span><span class='line'>      <span class="nt">if</span> menu === nav
+</span><span class='line'>        <span class="nt">li</span><span class="nc">.active</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
+</span><span class='line'>          <span class="c">//- Use CSS to control case, e.g.,</span>
+</span><span class='line'>          <span class="c">//- `text-transform: capitalize`</span>
+</span><span class='line'>      <span class="nt">else</span>
+</span><span class='line'>        <span class="nt">li</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Lookin&#8217; neat, except the &#8220;Home&#8221; link should point to root instead of <code>/home</code>. A dirty hack will do:</p>
+
+<figure class='code'><figcaption><span>Revised loop method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
+</span><span class='line'>  <span class="nt">ul</span>
+</span><span class='line'>    <span class="nt">each</span> nav in [&#39;home&#39;, &#39;blog&#39;, &#39;about&#39;]
+</span><span class='line'>      <span class="nt">if</span> menu === nav
+</span><span class='line'>        <span class="nt">li</span><span class="nc">.active</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav === &#39;</span><span class="na">home</span><span class="err">&#39;</span> <span class="err">?</span> <span class="err">&#39;&#39;</span> <span class="na">:</span> <span class="na">nav</span><span class="err">}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
+</span><span class='line'>      <span class="nt">else</span>
+</span><span class='line'>        <span class="nt">li</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav === &#39;</span><span class="na">home</span><span class="err">&#39;</span> <span class="err">?</span> <span class="err">&#39;&#39;</span> <span class="na">:</span> <span class="na">nav</span><span class="err">}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This looks good, as long as it meets the need. However, what if we want some anchor text <em>wildly</em> different from the links? We can further tweak it:</p>
+
+<figure class='code'><figcaption><span>Further revised loop method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
+</span><span class='line'>  <span class="nt">ul</span>
+</span><span class='line'>    <span class="nt">each</span> nav in [{link: &#39;&#39;, caption: &#39;home&#39;}, {link: &#39;blog&#39;, caption: &#39;Essays&#39;}, {link: &#39;about&#39;, caption: &#39;Bio&#39;}]
+</span><span class='line'>
+</span><span class='line'>      <span class="c">//- Suppose we have a local variable `navlink`</span>
+</span><span class='line'>      <span class="c">//- indicating the link of the nav item to highlight</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nt">if</span> navlink === nav.link
+</span><span class='line'>        <span class="nt">li</span><span class="nc">.active</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav.link}&#39;</span>)<span class="p">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">caption</span>
+</span><span class='line'>      <span class="nt">else</span>
+</span><span class='line'>        <span class="nt">li</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav.link}&#39;</span>)<span class="p">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">caption</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Works, with one caveat: Jade <a href="https://github.com/visionmedia/jade/issues/502">doesn&#8217;t support</a> multi-line array literal or JavaScript code, which means the entire navigation array (all the <code>link</code>s and <code>caption</code>s) has to be packed into a single line of code! Unreadable, hard to maintain &#8211; not so appealing to me.</p>
+
+<p>Here I&#8217;d like to propose a solution without too much in a line. It requires some repetition, but doesn&#8217;t feel too WET:</p>
+
+<figure class='code'><figcaption><span>My favorite method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">//- pass `menu` to li class attribute</span>
+</span><span class='line'>  <span class="c">//- through a dictionary `nav`</span>
+</span><span class='line'>  <span class="p">-</span> <span class="k">var</span> <span class="n">nav</span> <span class="k">=</span> <span class="o">{};</span> <span class="n">nav</span><span class="o">[</span><span class="kt">menu</span><span class="o">]</span> <span class="k">=</span> <span class="-Symbol">&#39;active</span><span class="err">&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">ul</span>
+</span><span class='line'>    <span class="nt">li</span>(<span class="na">class=</span><span class="s">&#39;#{nav.home}&#39;</span>)
+</span><span class='line'>      <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/&#39;</span>) Home
+</span><span class='line'>    <span class="nt">li</span>(<span class="na">class=</span><span class="s">&#39;#{nav.blog}&#39;</span>)
+</span><span class='line'>      <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/blog&#39;</span>) Essays
+</span><span class='line'>    <span class="nt">li</span>(<span class="na">class=</span><span class="s">&#39;#{nav.about}&#39;</span>)
+</span><span class='line'>      <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/about&#39;</span>) Bio
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I love it because (a) it&#8217;s truly flexible, and (b) it&#8217;s clever enough to take out the <code>if</code>. The key here is &#8220;invert mapping&#8221; &#8211; from <code>menu -&gt; &lt;nav-item&gt;</code> to <code>&lt;nav-item&gt; -&gt; active</code>, made possible by a &#8220;dictionary&#8221; (Python jargon, I think more appropriate than &#8220;map&#8221; or &#8220;object&#8221; here).</p>
+
+<p>Not perfect, but more elegant than the rest.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA["S" in CSS]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css/"/>
+    <updated>2012-08-01T12:39:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css</id>
+    <content type="html"><![CDATA[<p>By &#8220;S&#8221; I&#8217;m not referring to &#8220;style&#8221; or &#8220;sheets&#8221;&#8230; I&#8217;m talking about the &#8220;S&#8221; in my logo &#8211; I remade it with CSS (Take a look at upper left if you haven&#8217;t noticed it). It&#8217;s largely inspired by Nicolas Gallagher&#8217;s genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
+
+<p>A closer look:</p>
+
+<div id="s-demo" class="logo"></div>
+
+
+
+
+<figure class='code'><figcaption><span>It&#8217;s one HTML element!</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;s&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p>Here is how I did it:</p>
+
+<p>First draw a circle using <code>border-radius</code>.</p>
+
+<div id="s-demo-1"></div>
+
+
+
+
+<figure class='code'><figcaption><span>Base circle</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nn">#s</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">position</span><span class="o">:</span> <span class="no">relative</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">width</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>  <span class="cm">/* make it scale with font size */</span>
+</span><span class='line'>  <span class="na">height</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">border</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span> <span class="nv">$color</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">border-radius</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>  <span class="cm">/* actually slightly over 0.5em is enough */</span>
+</span><span class='line'>  <span class="cm">/* vendor prefixes emitted for succinctness */</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then cover up the upper-right and lower-left part of the circle using a rotated <code>:before</code> pseudo element.</p>
+
+<div id="s-demo-2"></div>
+
+
+
+
+<figure class='code'><figcaption><span>:before cover up</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nn">#s</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">content</span><span class="o">:</span> <span class="s1">&#39;</span><span class="s2"> &#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">position</span><span class="o">:</span> <span class="no">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="na">width</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.707</span><span class="kt">em</span><span class="p">;</span>  <span class="cm">/* = sqrt(2) / 2 */</span>
+</span><span class='line'>  <span class="na">height</span><span class="o">:</span> <span class="mi">1</span><span class="mf">.2</span><span class="kt">em</span><span class="p">;</span>  <span class="cm">/* exceed 1em to cover the border */</span>
+</span><span class='line'>  <span class="na">top</span><span class="o">:</span> <span class="mi">-0</span><span class="mf">.1</span><span class="kt">em</span><span class="p">;</span>  <span class="cm">/* = (1.2 - 1) / 2 */</span>
+</span><span class='line'>  <span class="na">left</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.1465</span><span class="kt">em</span><span class="p">;</span>  <span class="cm">/* = (1 - 0.707) / 2 */</span>
+</span><span class='line'>  <span class="na">background-color</span><span class="o">:</span> <span class="mh">#fff</span><span class="p">;</span>  <span class="cm">/* fill with white */</span>
+</span><span class='line'>  <span class="na">transform</span><span class="o">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">);</span>  <span class="cm">/* rotate 45 degrees clockwise */</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>:before</code> element is actually like this:</p>
+
+<div id="s-demo-2-2"></div>
+
+
+<p>Last, connect the two quarter circles with a solid <code>:after</code> pseudo element.</p>
+
+<div id="s-demo-3"></div>
+
+
+
+
+<figure class='code'><figcaption><span>:after horizontal line</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nn">#s</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="na">content</span><span class="o">:</span> <span class="s1">&#39;</span><span class="s2"> &#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">position</span><span class="o">:</span> <span class="no">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="na">height</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">left</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">right</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">top</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.5</span><span class="kt">em</span><span class="p">;</span>
+</span><span class='line'>  <span class="na">background-color</span><span class="o">:</span> <span class="nv">$color</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&#8217;s it! Now I can <span id="s-scale">scale it</span>, <span id="s-color">change its color</span>, <span id="s-bold">make it &#8220;bold&#8221;</span> or <span id="s-shadow">add some drop shadow</span> without touching <a href="http://www.adobe.com/products/illustrator.html">Ai</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tags and #Hashtags]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags/"/>
+    <updated>2012-07-30T15:54:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags</id>
+    <content type="html"><![CDATA[<p><a href="http://karrisaarinen.com/">Karri Saarinen</a> from <a href="https://kippt.com/">Kippt</a> <a href="http://blog.kippt.com/2012/07/17/tags-are-here/">hates</a> <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>, and brought <a href="http://en.wikipedia.org/wiki/Hashtag">#hashtags</a> to his bookmarking service.</p>
+
+<p>I do agree that hashtagging is superior to tagging in some way. Hashtags can be defined right inside the item body, whereas tags are conventionally separate from the content. So instead of noting &#8220;Nice color scheme&#8221; and tagging &#8220;color scheme&#8221;, I can just write &#8220;Nice #colorscheme&#8221;. For a brief note on a link, in Kippt&#8217;s case, this simplifies the bookmarking workflow. However, is hashtagging universally applicable? Imagine taking an detailed lecture note in Evernote, and hashtagging some keywords which are scattered over the 1,000 words. See the point? <strong>Hashtagging is good only if the content is short</strong>. It&#8217;s perfect for <a href="https://support.twitter.com/articles/49309-what-are-hashtags-symbols">Twitter</a> and <a href="http://help.instagram.com/customer/portal/articles/95731-tagging-your-photos-using-hashtags">Instagram</a> for this very reason.</p>
+
+<p>Besides that, hashtags and tags are almost the same thing. Karri says users should not be required to <em>&#8220;describe the content&#8221;</em> with tags, but lets them <em>&#8220;channel or filter&#8221;</em> the links with hashtags, which sounds pretty messed up to me. Tags and hashtags are both created to <em>describe</em> the content, and can both be used to <em>channel or filter</em> information. Describing comes in when you attach the tag / hashtag to an item, and channeling and filtering come in when tags / hashtags get indexed and become searchable. These are two intrinsic properties of <em>both</em> tags and hashtags.</p>
+
+<p>Though hashtags can be a good choice for Kippt (since bookmark notes are usually short), they are not making the most of it. One important reason is that hashtag list is missing. I cannot find my frequently used hashtags; I cannot find any of my hashtags. I can only search them. But how is searching a hashtag anything different from searching the keyword without that hash? Well there <em>is</em> a difference: searching hashtags requires strict match, meaning you have to get the entire hashtag right before you can find what you are looking for.</p>
+
+<p>Karri also disputes tags because some tags only have one item in them. Yes it happens, but how does hashtag alleviate the problem in any way? It makes things worse if Kippt does not prompt my existing hashtags when I hit # (and in fact it doesn&#8217;t; Evernote does good on this). Am I expected to magically remember the entire set of my Kippt hashtags, or am I expected to log into Kippt and find out whether I used #idea or #ideas in my previous bookmarks every time I add new ones? If I don&#8217;t, I&#8217;ll end up having multiple synonym hashtags, and bookmarks that belong to the same channel fall apart.</p>
+
+<p>To make tags or hashtags work efficiently in an information management system, <strong>they have to be listed, and they have to auto-complete</strong>. Twitter doesn&#8217;t list hashtags or auto-complete them because <strong>tweets aren&#8217;t meant to be managed</strong>, at least not in the way bookmarks are. In other words, the purpose of hashtags in Kippt and in Twitter are fundamentally different.</p>
+
+<p>Karri is right that tags are not ideal for &#8220;channeling and filtering&#8221; information, but it&#8217;s not because they are inherently broken or they miss a hash, but because they are often not used in the optimal way. It&#8217;s okay to have synonym tags, and it&#8217;s okay to have some one-item tags. We are not born librarians, and we are not supposed to precisely categorize stuffs the first time they land in our collection. But we should <strong>revisit our tag list</strong> (or tag hierarchy in Evernote). We should keep them organized by merging synonyms and by removing the rarely used and the meaningless. <strong>Our desk needs to be tidied regularly, so does information</strong>. We need to remind ourselves to come back and put things in order every once in a while, and we <em>need an easy way</em> to put them in order.</p>
+
+<p>P.S. speaking of Kippt, I suddenly realized a couple of days ago what Jori Lallo meant by <a href="http://techcrunch.com/2012/06/14/yc-backed-kippt-goes-collaborative/">creating GitHub for links</a> &#8211; make lists just like repos! Now Kippt lists are already collaboratable and watchable, let&#8217;s see when they&#8217;ll become forkable.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[(Probably) the Easiest Way to Test Websites on Mobile]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
+    <updated>2012-07-29T01:52:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
+    <content type="html"><![CDATA[<p>This is probably <em>the</em> easiest way to test your websites on a mobile device, especially if you don&#8217;t have a server to host your site: (and it came to me when I wanted to test mine last night)</p>
+
+<ol>
+<li>Run a localhost on your machine, may it be <a href="http://expressjs.com/">express</a>, <a href="http://httpd.apache.org/">Apache</a>, or anything that responds to HTTP requests.</li>
+<li>Find out your machine&#8217;s IP address <em>in its local network</em>.</li>
+<li>Connect your phone or tablet to the same local network with your &#8220;server&#8221; in it.</li>
+<li>Visit &lt;host_ip>:&lt;port> on your mobile browser.</li>
+</ol>
+
+
+<p>That&#8217;s it &#8211; start playing with your site on the mobile device! The best part is, every time you update something, just refresh on your mobile browser and the change is there. How can that be any simpler!</p>
+
+<p>Below is how this post looks on my <a href="http://www.sonymobile.com/global-en/products/phones/xperia-s/">Xperia S</a>. I&#8217;m using Octopress preview, and it runs on port 4000 by default.</p>
+
+<p><img src="http://scottcheng.github.com/scottcheng/images/posts/octopress-on-xperia-s.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing With Git Branches]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/playing-with-git-branches/"/>
+    <updated>2012-07-27T01:36:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/playing-with-git-branches</id>
+    <content type="html"><![CDATA[<p>Though it has been almost half a year since the first time I &#8220;gitted&#8221; (and I love it!), all git commands I&#8217;ve ever used are <code>clone</code>, <code>add</code>, <code>commit</code>, <code>pull</code> and <code>push</code>. But when I created <a href="http://scottcheng.github.com/the-revolutionary-css3-impressjs/">my first GitHub page</a>, I had to start dealing with branches. It&#8217;s like a rewarding &#8220;stepping out of the comfort zone&#8221; experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.</p>
+
+<!-- more -->
+
+
+<h2>Branching 101</h2>
+
+<p>First, the very basics of branch management:</p>
+
+<ul>
+<li>Use <code>git branch &lt;branchname&gt;</code> or <code>git checkout -b &lt;branchname&gt;</code> to create a new branch.
+
+<ul>
+<li>If you want the new branch to exist on the remote, push it with <code>git push origin &lt;branchname&gt;</code>.</li>
+</ul>
+</li>
+<li>Use <code>git branch</code> to view all branches, and find out what branch you are at.</li>
+<li>Use <code>git checkout &lt;branchname&gt;</code> to switch between branches.</li>
+<li>Use <code>git branch -d &lt;branchname&gt;</code> to delete a branch locally.</li>
+<li>Use <code>git push origin :&lt;branchname&gt;</code> (with the colon) to delete it on the remote.</li>
+</ul>
+
+
+<h2>Merging and Rebasing</h2>
+
+<p>Branches often need to interact by merging their changes. There are at least two ways to &#8220;merge&#8221; changes in different branches: <code>git merge</code> and <code>git rebase</code>. By <code>git merge &lt;branchname&gt;</code>, e.g. <code>git merge dev</code> on the master branch, the following happens:</p>
+
+<ol>
+<li>Commits in dev branch are merged into master.
+
+<ul>
+<li>Handle conflicts if necessary.</li>
+</ul>
+</li>
+<li>A new merge commit is created on top of the two branches.</li>
+</ol>
+
+
+<p>By <code>git rebase &lt;branchname&gt;</code>, e.g. <code>git rebase dev</code> on the master branch, the following will happen:</p>
+
+<ol>
+<li>Commits between the last merge and present on the master branch will be erased (and kept somewhere temporarily).</li>
+<li>Commits on dev branch will be appended to the original <code>HEAD</code> on master (the last merge point).</li>
+<li>Your changes are put back on top of the dev commits in new commits.
+
+<ul>
+<li>Handle conflicts if necessary.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>If you are interested in the detailed mechanism, <a href="http://git-scm.com/">git-scm.com</a> has more on <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">branching / merging</a> and <a href="http://git-scm.com/book/en/Git-Branching-Rebasing">rebasing</a>. Jarrod Spillers <a href="http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/">elaborated in a post</a> the difference between <code>git merge</code> and <code>git rebase</code> as well as when to use which, thought <a href="http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/#dsq-comment-375332553">slightly flawed</a>.</p>
+
+<p>I also found it interesting to learn that <code>git pull</code> is actually <code>git fetch</code> then <code>git merge</code>, whereas <code>git pull --rebase</code> is <code>git fetch</code> then <code>git rebase</code>, as is documented on the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-pull.html">man page</a>.</p>
+
+<p>One thing that kinda surprised me is that different branches actually coexist in the same directory! As you switch branches using <code>git checkout &lt;branchname&gt;</code>, the files in that folder would actually change with it. It&#8217;s like the <a href="http://harrypotter.wikia.com/wiki/Room_of_Requirement">Room  of Requirement</a> in Harry Potter &#8211; it&#8217;s the same room, but you can go in and see different things. Amazing. The interesting part is that when I create a file in the repo, it is visible in all branches; but when I <code>add</code> and <code>commit</code> it in a branch, it becomes &#8220;private&#8221; and vanishes in other branches. Similarly, when a file is modified in a branch, the change is visible everywhere. Sometimes, however, Git does not allow me to switch branches when there are modified files, and I have not figured out why:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="c"># On dev branch and modified devonly.md</span>
+</span><span class='line'><span class="nv">$ </span>git checkout master
+</span><span class='line'>  error: Your <span class="nb">local </span>changes to the following files would be
+</span><span class='line'>  overwritten by checkout:
+</span><span class='line'>    devonly.md
+</span><span class='line'>  Please, commit your changes or stash them before you can
+</span><span class='line'>  switch branches.
+</span><span class='line'>  Aborting
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Branching gh-pages</h2>
+
+<p>Now I&#8217;ll put the branching theory to practice and build my GitHub page. The <a href="https://help.github.com/articles/creating-project-pages-manually">GitHub pages documentation</a> is perfect if you want to create a page from scratch. I believe this is useful for most projects, but not for <a href="https://github.com/scottcheng/the-revolutionary-css3-impressjs">mine</a>, where I want the project itself to be the GitHub page.</p>
+
+<figure class='code'><figcaption><span>Create gh-pages branch</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git checkout -b gh-pages
+</span><span class='line'><span class="nv">$ </span>git push origin gh-pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now gh-pages and master branch are on the same &#8220;page&#8221;. From this point on, If you want to keep the gh-pages in sync with master branch, you should only commit changes to the master branch, and merge them to gh-pages when the page is ready to go public, using <code>git merge master</code> or <code>git rebase master</code> (as Lea Verou <a href="http://lea.verou.me/2011/10/easily-keep-gh-pages-in-sync-with-master/">does it</a>) on the gh-pages branch.</p>
+
+<p>However, my need is somewhat different: I don&#8217;t want the <code>src</code> directory in gh-pages branch; the HTML, CSS and JavaScirpt are sufficient for my static page. So I did <code>git rm -r src</code> on gh-pages branch. The problem is, future merges will most probably pose conflicts, since I will constantly update <code>src</code> on the master branch which I just deleted on the gh-pages branch. No worries, here is a solution. As Nicolas Gallagher <a href="http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/">points out</a>, instead of merging the entire branch, I can choose to only merge changes in specific files:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git checkout gh-pages
+</span><span class='line'><span class="nv">$ </span>git checkout master -- index.html style.css
+</span><span class='line'>  <span class="c"># Only merge index.html and style.css</span>
+</span><span class='line'><span class="nv">$ </span>git commit -m <span class="s1">&#39;commit message&#39;</span>
+</span><span class='line'><span class="nv">$ </span>git push
+</span><span class='line'>  <span class="c"># Add `origin gh-pages` if you don&#39;t want to push to master</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Side note: if the project is all about the web page, Oli Studholme offered <a href="http://oli.jp/2011/github-pages-workflow/#setup">another solution</a> to simply delete the master branch and only keep gh-pages. This could also work for me.</p>
+
+<p>This is pretty much all I need to know to handle my page, but there&#8217;s more. I&#8217;ve learned from <a href="http://get.inject.io/n/XxsZ6RE7">this snippet</a> that a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">git hook</a> can be used to automate this syncing process, and I have tailored it to my use case:</p>
+
+<figure class='code'><figcaption><span>post-commit</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
+</span><span class='line'>git checkout gh-pages
+</span><span class='line'>git checkout master -- index.html style.css
+</span><span class='line'>git commit -m <span class="s1">&#39;updated gh page&#39;</span>  <span class="c"># Commit loop!</span>
+</span><span class='line'>git checkout master
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Name it as <code>post-commit</code>, put it under <code>repo/.git/hooks</code>, and the script will run after each commit (as the name &#8220;post-commit&#8221; suggests). This way, gh-pages branch will automagically sync with master! Just don&#8217;t forget to make sure <code>post-commit</code> is executable.</p>
+
+<p>The caveat here is the <code>git commit</code> in the hook script (line 4) &#8211; it will cause an unwanted commit loop. There seems <a href="http://comments.gmane.org/gmane.comp.version-control.git/69365">no way</a> to bypass the post-commit hook (<code>--no-verify</code> or <code>-n</code> only bypasses <a href="http://www.kernel.org/pub/software/scm/git/docs/githooks.html#_pre_commit">pre-commit</a> and <a href="http://www.kernel.org/pub/software/scm/git/docs/githooks.html#_commit_msg">commit_msg</a>). Fortunately, git is smart enough to kill the loop soon enough before it goes bad, so basically this hook works alright.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why I Start to Blog]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/why-i-start-to-blog/"/>
+    <updated>2012-07-24T02:21:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/why-i-start-to-blog</id>
+    <content type="html"><![CDATA[<p>I have longed to start blogging for quite a while, but I never had a drive strong enough to make it real. Recently I read what <a href="http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html">Jeff Atwood</a> and <a href="https://sites.google.com/site/steveyegge2/you-should-write-blogs">Steve Yegge</a> said about blogging, where I realized tons of good reasons to start off, and start right now.</p>
+
+<!-- more -->
+
+
+<p>In a sense, I blog to help clarify my thinking. One thing that gradually dawned on me over the last six months is that, you don&#8217;t really understand something until you try to write it down and explain it to others. You might think you get it when you hear it, read it, and absolutely agree with it, but hey, try not to stop there; try to take it further and retell the story. It&#8217;s important to have a mental picture, but it&#8217;s not enough &#8211; the image is all too often not as clear as you think it is. The tiny little flaws (even fundamental fallacies) in the mental picture can be indiscernible until you truly figure out how the elements are logically structured, link them up with a smooth curve, and squeeze everything into linear natural language. By writing, I get to think about questions that I do not normally think about, and I develop ideas that might otherwise slip away. Meanwhile, by maintaining a blog, I will tend to think more and harder in everyday life.</p>
+
+<p>Also, I blog to practice my articulation, both in a logical sense and a literary sense. Writing is hard, and it only takes practice to get better. I do not expect to achieve writing mastery, but I&#8217;ll be pleased to <a href="http://www.codinghorror.com/blog/2006/03/sucking-less-every-year.html">suck less every year</a>.</p>
+
+<p>This reminds me of how Daniel talked about scientific communication in many of his Research Methodology lectures last semester. Writing is critical: your work is meaningless if you cannot prove otherwise to your audience; and in the scientific world, you prove it by writing. Yet writing a technical report is hard. According to him, researchers typically revisit a paper (for major revision, not spell check) >5 times before submitting. I can testify that with my own experience in Daniel&#8217;s practicum. It gets especially hard when the object of the writing is at once complex and brand new, as it is in our case. It&#8217;s complex, so we have to put numerous parts, some of which are merely marginally related, into the box. It&#8217;s brand new, so not many previous works could be utilized, and we have to explain our concepts from the ground up, adding more material to the box. This isn&#8217;t the end &#8211; we have to be extra careful when structuring what&#8217;s in the box to make sure that everything is perfectly coherent and understandable to outsiders.</p>
+
+<p>Hard as it was (we as a team worked for weeks on the report), I kind of enjoyed the process. I enjoyed producing paragraphs that make sense, and I even thought it&#8217;s such a pity that we don&#8217;t write technical reports more often.</p>
+
+<p>Apparently I didn&#8217;t realize back then how blogging resembles writing papers in terms of communicating thoughts, though composing a blog post is probably much easier, in that:</p>
+
+<ul>
+<li>Blogging is way more casual.</li>
+<li>The topic of a blog post is probably not as complex.</li>
+<li>I will not have to explain <em>everything</em>, since the topic is probably not brand new for my audience (if I have any).</li>
+</ul>
+
+
+<p>Even though what I have to say has been said a million times before, I would still write them down, in my own words, sprung from my own thinking and researching. I like the way Steve <a href="https://sites.google.com/site/steveyegge2/you-should-write-blogs">puts it</a>:</p>
+
+<blockquote><p>Often I&#8217;ll get discouraged because I feel like I&#8217;m writing about things that have already been discussed into the ground by others. The thing I have to remember is that there&#8217;s a &#8220;right time&#8221; to learn something, and it&#8217;s different for everyone.</p>
+
+<p>&#8230;&#8230;</p>
+
+<p>Each person in your audience is on a different clock, and all of them are ahead of you in some ways and behind you in others. The point of blogging is that we all agree to share where we&#8217;re at, and not poke fun at people who seem to be behind us, because they may know other things that we won&#8217;t truly understand for years, if ever.</p></blockquote>
+
+<p>These are my reasons to blog. Hopefully I&#8217;ll discover more as I carry it on.</p>
+]]></content>
+  </entry>
+  
+</feed>

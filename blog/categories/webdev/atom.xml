@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: webdev | Scott Cheng]]></title>
+  <link href="http://scottcheng.github.com/scottcheng/blog/categories/webdev/atom.xml" rel="self"/>
+  <link href="http://scottcheng.github.com/scottcheng/"/>
+  <updated>2012-12-03T21:35:37+08:00</updated>
+  <id>http://scottcheng.github.com/scottcheng/</id>
+  <author>
+    <name><![CDATA[Scott Cheng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pulling Anchor Targets out of the Fixed Header]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
+    <updated>2012-09-01T22:23:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
+    <content type="html"><![CDATA[<p>I've been using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> in <a href="http://www.beijing3ds.org/">my latest website</a> (if you haven't tried Bootstrap, you really should! It makes lots of things <em>worlds</em> easier, and has taught me a handful of good practices), where I used a fix-positioned navigation header, one that always stays at the top of the window. In <a href="http://www.beijing3ds.org/about/">longer pages</a>, I used a secondary in-page navigation.</p>
+
+<p>One particular issue I encountered is that when I click on one of those in-page navs, a big portion of that section will be covered by the header! In case you don't know what I'm talking about -- instead of looking like this as it should:</p>
+
+<p><img src="/images/posts/anchor-and-header-should.png"></p>
+
+<p>It looked like this:</p>
+
+<p><img src="/images/posts/anchor-and-header-actual.png"></p>
+
+<p>See? The "before the weekend" heading goes beneath the nav bar.</p>
+
+<p>So I went to the Bootstrap site, where in-page nav is <a href="http://twitter.github.com/bootstrap/getting-started.html">pervasively used</a>, seeking the "official" solution. A <code>padding-top: 30px;</code> <a href="http://twitter.github.com/bootstrap/getting-started.html#download-bootstrap">did the trick for them</a>.</p>
+
+<p>But this is not a perfect fix for me. The Bootstrap header is merely 40px high, whereas mine is 87px (main nav and sub nav stacked). 30px between sections is acceptable, 80px isn't.</p>
+
+<p>To solve my problem, while applying a big <code>padding-top</code>, I have to keep the spacing between sections from going too wide -- negative <code>margin-top</code> immediately came to mind. So here comes my final solution that pulls the content from behind the nav bar:</p>
+
+<p>``` css My final solution</p>
+
+<p>section {
+  padding-top: 87px;
+  margin-top: -87px;
+}</p>
+
+<p>```</p>
+
+<p>See it in action in <a href="http://jsfiddle.net/sybrix/ktPqd/">this fiddle</a>.</p>
+
+<p>P.S. As I was trying to find out what others have to say on this topic on Stack Overflow, <a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors#answer-9618795">an answer</a> took me to <a href="http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/">Nicolas Gallagher's master list of solutions to this very problem</a>, with analyses on each of his five methods. Great work!</p>
+
+<p>P.P.S. Pardon my ignorance, but what is the official terminology of the "in-page link" I've talked about in this post? "Jump link"? I found a few uses of "jump link" after Googling, but honestly I've never heard of this term before, and it doesn't look very much like <em>the</em> way it's called to me.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS Multi-Transition Trick]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick/"/>
+    <updated>2012-08-29T01:36:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick</id>
+    <content type="html"><![CDATA[<p><em>It's one thing to know a tool, another to make the most of it.</em></p>
+
+<p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
+
+<p>``` css Smooth hover color change (anchor)</p>
+
+<p>a {
+  color: #555;
+  transiton: color .25s;  /<em> vendor prefix emitted </em>/
+}
+a:hover {
+  color: #ed6812;
+}</p>
+
+<p>```</p>
+
+<p>This is how I've always learned to use the transition property -- only apply one transition rule to the element. However, what if we declare another different transition property in the <code>:hover</code> block?</p>
+
+<p>Turns out it does magic. Try moving your mouse in and out of the bar:</p>
+
+<div id="multi-transition-demo-bar">
+  <div id="multi-transition-demo-bar-inner"></div>
+</div>
+
+
+<p>``` css Gentle-growing &amp; rapid-dropping</p>
+
+<h1>bar-inner {</h1>
+
+<p>  width: 5%;</p>
+
+<p>  /<em> transition rule when not hovered </em>/
+  transition: width .5s .5s ease-in;
+}</p>
+
+<h1>bar:hover > #bar-inner {</h1>
+
+<p>  width: 100%;</p>
+
+<p>  /<em> transition rule when hovered </em>/
+  transition: width 10s 0 ease-out;
+}</p>
+
+<p>```</p>
+
+<p>Here I defined different transition properties on the different "states" (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.</p>
+
+<p>I also used this multi-transition trick to create the trailing dots effect of <a href="/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
+
+<p>It's just exhilarating to explore new power of familiar tools.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Elegantly Highlight the Current Nav Item in Template]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
+    <updated>2012-08-28T07:51:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
+    <content type="html"><![CDATA[<p>It's one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
+
+<p><img src="/images/posts/beijing3ds-navbar.png"></p>
+
+<p>Some suggest a <a href="http://hicksdesign.co.uk/journal/highlighting-current-page-with-css">CSS solution</a>, which introduces additional coupling between CSS rules and navigation HTML markup. Some use simple JavaScript hacks and match the current location against the nav link, something like:</p>
+
+<p>``` javascript A jQuery solution</p>
+
+<p>var link = window.location.pathname.match(/\w+/)[0];
+$('nav li > a[href*="' + link + '"]').parent().addClass('active');</p>
+
+<p>```</p>
+
+<p>Which brings, well, additional script to run.</p>
+
+<p>A JavaScript fan though I am, I believe that this "active" style is static, and all static styles should be accomplished by the server, rather than by client-side script. None of the templating languages that I've used, however, natively provides an graceful way of doing this ordinary task (they <em>should!</em>).</p>
+
+<p>I'll take my current favorite templating engine, <a href="http://jade-lang.com/">Jade</a>, for example. Here is a most direct method:</p>
+
+<p>``` jade Straightforward method</p>
+
+<p>nav
+  ul</p>
+
+<pre><code>//- Suppose we have a local variable `menu`
+//- indicating the nav item to highlight
+
+if menu === 'home'
+  li.active
+    a(href='/') Home
+else
+  li
+    a(href='/') Home
+
+if menu === 'blog'
+  li.active
+    a(href='/blog') Blog
+else
+  li
+    a(href='/blog') Blog
+
+if menu === 'about'
+  li.active
+    a(href='/about') About
+else
+  li
+    a(href='/about') About
+</code></pre>
+
+<p>```</p>
+
+<p>Too much duplication! When the code is <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET</a>, we can almost always <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY</a> things up a bit with loops (inspired by <a href="http://peterlyons.com/">Peter</a>'s <a href="http://stackoverflow.com/questions/10713923/node-js-jade-express-how-can-i-create-a-navigation-that-will-set-class-acti#answer-10714267">solution</a>):</p>
+
+<p>``` jade Loop method</p>
+
+<p>nav
+  ul</p>
+
+<pre><code>each nav in ['home', 'blog', 'about']
+  if menu === nav
+    li.active
+      a(href='/#{nav}')= nav
+      //- Use CSS to control case, e.g.,
+      //- `text-transform: capitalize`
+  else
+    li
+      a(href='/#{nav}')= nav
+</code></pre>
+
+<p>```</p>
+
+<p>Lookin' neat, except the "Home" link should point to root instead of <code>/home</code>. A dirty hack will do:</p>
+
+<p>``` jade Revised loop method</p>
+
+<p>nav
+  ul</p>
+
+<pre><code>each nav in ['home', 'blog', 'about']
+  if menu === nav
+    li.active
+      a(href='/#{nav === 'home' ? '' : nav}')= nav
+  else
+    li
+      a(href='/#{nav === 'home' ? '' : nav}')= nav
+</code></pre>
+
+<p>```</p>
+
+<p>This looks good, as long as it meets the need. However, what if we want some anchor text <em>wildly</em> different from the links? We can further tweak it:</p>
+
+<p>``` jade Further revised loop method</p>
+
+<p>nav
+  ul</p>
+
+<pre><code>each nav in [{link: '', caption: 'home'}, {link: 'blog', caption: 'Essays'}, {link: 'about', caption: 'Bio'}]
+
+  //- Suppose we have a local variable `navlink`
+  //- indicating the link of the nav item to highlight
+
+  if navlink === nav.link
+    li.active
+      a(href='/#{nav.link}')= nav.caption
+  else
+    li
+      a(href='/#{nav.link}')= nav.caption
+</code></pre>
+
+<p>```</p>
+
+<p>Works, with one caveat: Jade <a href="https://github.com/visionmedia/jade/issues/502">doesn't support</a> multi-line array literal or JavaScript code, which means the entire navigation array (all the <code>link</code>s and <code>caption</code>s) has to be packed into a single line of code! Unreadable, hard to maintain -- not so appealing to me.</p>
+
+<p>Here I'd like to propose a solution without too much in a line. It requires some repetition, but doesn't feel too WET:</p>
+
+<p>``` jade My favorite method</p>
+
+<p>nav</p>
+
+<p>  //- pass <code>menu</code> to li class attribute
+  //- through a dictionary <code>nav</code>
+  - var nav = {}; nav[menu] = 'active'</p>
+
+<p>  ul</p>
+
+<pre><code>li(class='#{nav.home}')
+  a(href='/') Home
+li(class='#{nav.blog}')
+  a(href='/blog') Essays
+li(class='#{nav.about}')
+  a(href='/about') Bio
+</code></pre>
+
+<p>```</p>
+
+<p>I love it because (a) it's truly flexible, and (b) it's clever enough to take out the <code>if</code>. The key here is "invert mapping" -- from <code>menu -&gt; &lt;nav-item&gt;</code> to <code>&lt;nav-item&gt; -&gt; active</code>, made possible by a "dictionary" (Python jargon, I think more appropriate than "map" or "object" here).</p>
+
+<p>Not perfect, but more elegant than the rest.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA["S" in CSS]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css/"/>
+    <updated>2012-08-01T12:39:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css</id>
+    <content type="html"><![CDATA[<p>By "S" I'm not referring to "style" or "sheets"... I'm talking about the "S" in my logo -- I remade it with CSS (Take a look at upper left if you haven't noticed it). It's largely inspired by Nicolas Gallagher's genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
+
+<p>A closer look:</p>
+
+<div id="s-demo" class="logo"></div>
+
+
+<p>``` html It's one HTML element!</p>
+
+<div id="s"></div>
+
+
+<p>```</p>
+
+<!-- more -->
+
+
+<p>Here is how I did it:</p>
+
+<p>First draw a circle using <code>border-radius</code>.</p>
+
+<div id="s-demo-1"></div>
+
+
+<p>``` scss Base circle</p>
+
+<h1>s {</h1>
+
+<p>  position: relative;
+  width: 1em;  /<em> make it scale with font size </em>/
+  height: 1em;
+  border: 1px solid $color;
+  border-radius: 1em;  /<em> actually slightly over 0.5em is enough </em>/
+  /<em> vendor prefixes emitted for succinctness </em>/
+}
+```</p>
+
+<p>Then cover up the upper-right and lower-left part of the circle using a rotated <code>:before</code> pseudo element.</p>
+
+<div id="s-demo-2"></div>
+
+
+<p>``` scss :before cover up</p>
+
+<h1>s:before {</h1>
+
+<p>  content: ' ';
+  position: absolute;
+  display: block;</p>
+
+<p>  width: 0.707em;  /<em> = sqrt(2) / 2 </em>/
+  height: 1.2em;  /<em> exceed 1em to cover the border </em>/
+  top: -0.1em;  /<em> = (1.2 - 1) / 2 </em>/
+  left: 0.1465em;  /<em> = (1 - 0.707) / 2 </em>/
+  background-color: #fff;  /<em> fill with white </em>/
+  transform: rotate(45deg);  /<em> rotate 45 degrees clockwise </em>/
+}
+```</p>
+
+<p>The <code>:before</code> element is actually like this:</p>
+
+<div id="s-demo-2-2"></div>
+
+
+<p>Last, connect the two quarter circles with a solid <code>:after</code> pseudo element.</p>
+
+<div id="s-demo-3"></div>
+
+
+<p>``` scss :after horizontal line</p>
+
+<h1>s:after {</h1>
+
+<p>  content: ' ';
+  position: absolute;
+  display: block;</p>
+
+<p>  height: 1px;
+  left: 0;
+  right: 0;
+  top: 0.5em;
+  background-color: $color;
+}
+```</p>
+
+<p>That's it! Now I can <span id="s-scale">scale it</span>, <span id="s-color">change its color</span>, <span id="s-bold">make it "bold"</span> or <span id="s-shadow">add some drop shadow</span> without touching <a href="http://www.adobe.com/products/illustrator.html">Ai</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[(Probably) the Easiest Way to Test Websites on Mobile]]></title>
+    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
+    <updated>2012-07-29T01:52:00+08:00</updated>
+    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
+    <content type="html"><![CDATA[<p>This is probably <em>the</em> easiest way to test your websites on a mobile device, especially if you don't have a server to host your site: (and it came to me when I wanted to test mine last night)</p>
+
+<ol>
+<li>Run a localhost on your machine, may it be <a href="http://expressjs.com/">express</a>, <a href="http://httpd.apache.org/">Apache</a>, or anything that responds to HTTP requests.</li>
+<li>Find out your machine's IP address <em>in its local network</em>.</li>
+<li>Connect your phone or tablet to the same local network with your "server" in it.</li>
+<li>Visit &lt;host_ip>:&lt;port> on your mobile browser.</li>
+</ol>
+
+
+<p>That's it -- start playing with your site on the mobile device! The best part is, every time you update something, just refresh on your mobile browser and the change is there. How can that be any simpler!</p>
+
+<p>Below is how this post looks on my <a href="http://www.sonymobile.com/global-en/products/phones/xperia-s/">Xperia S</a>. I'm using Octopress preview, and it runs on port 4000 by default.</p>
+
+<p><img src="/images/posts/octopress-on-xperia-s.png"></p>
+]]></content>
+  </entry>
+  
+</feed>

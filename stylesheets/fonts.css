@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('PT Sans Italic'), local('PTSans-Italic'), url(/stylesheets/fonts/ptsans-italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(/stylesheets/fonts/ptsans.woff) format('woff');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url(/stylesheets/fonts/ptsans-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url(/stylesheets/fonts/ptsans-bold-italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Cantarell Bold Oblique'), local('Cantarell-BoldOblique'), url(/stylesheets/fonts/cantarell-bold-oblique.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cantarell';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cantarell Bold'), local('Cantarell-Bold'), url(/stylesheets/fonts/cantarell-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cantarell';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Cantarell Oblique'), local('Cantarell-Oblique'), url(/stylesheets/fonts/cantarell-oblique.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cantarell';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cantarell Regular'), local('Cantarell-Regular'), url(/stylesheets/fonts/cantarell.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poiret One'), local('PoiretOne-Regular'), url(/stylesheets/fonts/poiretone.woff) format('woff');
+}
