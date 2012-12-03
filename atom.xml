@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Scott Cheng]]></title>
-  <link href="http://scottcheng.github.com/scottcheng/atom.xml" rel="self"/>
-  <link href="http://scottcheng.github.com/scottcheng/"/>
-  <updated>2012-12-03T21:35:37+08:00</updated>
-  <id>http://scottcheng.github.com/scottcheng/</id>
+  <link href="http://scottcheng.com//atom.xml" rel="self"/>
+  <link href="http://scottcheng.com//"/>
+  <updated>2012-12-03T22:14:12+08:00</updated>
+  <id>http://scottcheng.com//</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Setting Up Existing Octopress Blog on a New Computer]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/"/>
+    <link href="http://scottcheng.com//blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/"/>
     <updated>2012-11-07T23:14:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer</id>
+    <id>http://scottcheng.com//blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer</id>
     <content type="html"><![CDATA[<p>A good blogging system must support users to easily start composing and publishing from multiple devices. However, the Octopress website only teaches <a href="http://octopress.org/docs/setup/">how to create a fresh blog</a>, but talks nothing about setting up an existing blog on a fresh computer. This operation turned out to be somewhat confusing to me, and obviously I&#8217;m <a href="https://github.com/imathis/octopress/issues/755">not alone on this</a>. So here I record the process, partly for my later reference, partly in hope to help others.</p>
 
 <p>Here is a context: I&#8217;m using GitHub user pages (<a href="http://scottcheng.github.com/">scottcheng.github.com</a>) to host my Octopress blog, so this walk-through may or may not apply to your case. It shouldn&#8217;t be too far off, though.</p>
@@ -44,9 +44,9 @@
   
   <entry>
     <title type="html"><![CDATA[What I Learned as an Interviewer]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer/"/>
+    <link href="http://scottcheng.com//blog/2012/10/what-i-learned-as-an-interviewer/"/>
     <updated>2012-10-20T01:18:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer</id>
+    <id>http://scottcheng.com//blog/2012/10/what-i-learned-as-an-interviewer</id>
     <content type="html"><![CDATA[<p>Recently I got an unexpected opportunity to interview some applicants for <a href="http://www.beijing3ds.org/">a startup event</a>. It was a unique experience that gave me a fresh perspective, and I&#8217;d like to share some of my discoveries as a first time interviewer (may sound extremely naive and stupid to you :p).</p>
 
 <ol>
@@ -61,9 +61,9 @@
   
   <entry>
     <title type="html"><![CDATA[Waterfall and Footnote]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/waterfall-and-footnote/"/>
+    <link href="http://scottcheng.com//blog/2012/10/waterfall-and-footnote/"/>
     <updated>2012-10-09T15:57:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/waterfall-and-footnote</id>
+    <id>http://scottcheng.com//blog/2012/10/waterfall-and-footnote</id>
     <content type="html"><![CDATA[<p>Popularized by <a href="http://pinterest.com/">Pinterest</a>, waterfall layout is a smart invention because it could elegantly take up the entire window with flexible positioning. By default, waterfall doesn&#8217;t paginate; instead, &#8220;pages&#8221; are automatically loaded and appended as a user reaches the bottom of the page, providing a non-stop browsing experience, which, in itself, is nice.</p>
 
 <p>So people start to mock it, as they always would, and some of these implementations left a page footer there, right below the waterfall. Predictably, the poor footer gets constantly &#8220;flushed&#8221; downwards every time I try to have a good look at it, and I can <em>never</em> reach it. (Here is a workaround: disconnect the Internet and the page will stop growing)</p>
@@ -78,9 +78,9 @@
   
   <entry>
     <title type="html"><![CDATA[Beauty of Loop]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/beauty-of-loop/"/>
+    <link href="http://scottcheng.com//blog/2012/10/beauty-of-loop/"/>
     <updated>2012-10-04T22:24:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/beauty-of-loop</id>
+    <id>http://scottcheng.com//blog/2012/10/beauty-of-loop</id>
     <content type="html"><![CDATA[<p>Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of numbers or enumerables (e.g. calculating a Fibonacci number). If the problem space is dynamic (e.g. calculating the sum of 1 to <em>n</em>), loop is often the standard way of traversal (the alternative is recursion); otherwise, it contributes to DRY code by avoiding duplication (compared to an unraveled loop).</p>
 
 <p>However, loop doesn&#8217;t easily come to mind when handling a fixed data set that you would have to hard-code anyway. For example, when writing a table of names and titles on a webpage (in Jade), the common approach is:</p>
@@ -153,7 +153,7 @@
 
 <p>The code becomes cleaner, more maintainable, and less error-prone. You could imagine how much benefit it could bring if there are 50 people in the list.</p>
 
-<p>However, generalization comes at the cost of flexibility, which I&#8217;ve discussed a bit in <a href="http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">a previous post</a>. For example, if there are two Marketing people, and one of them doesn&#8217;t have a website, then the table should look like:</p>
+<p>However, generalization comes at the cost of flexibility, which I&#8217;ve discussed a bit in <a href="http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">a previous post</a>. For example, if there are two Marketing people, and one of them doesn&#8217;t have a website, then the table should look like:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -243,9 +243,9 @@
   
   <entry>
     <title type="html"><![CDATA[Respond to Me]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/respond-to-me/"/>
+    <link href="http://scottcheng.com//blog/2012/09/respond-to-me/"/>
     <updated>2012-09-19T18:04:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/respond-to-me</id>
+    <id>http://scottcheng.com//blog/2012/09/respond-to-me</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not talking about the lightning speed that <a href="https://speakerdeck.com/u/mikeyk/p/secrets-to-lightning-fast-mobile-design">Instagram has achieved</a>, but that the UI should provide <em>instantaneous feedback</em> to every meaningful action the user performs &#8211; <em>respond to him</em>.</p>
 
 <p>Hover effect is a good example of responsiveness. On this website, <a href="#">links</a> turn orange when you move your mouse over them, assuring you that &#8220;you are pointing to the link, click ahead&#8221;.</p>
@@ -256,7 +256,7 @@
 
 <p>I prefer Pocket over Readability, because Pocket&#8217;s Chrome extension is more responsive than its competitor. When I press Ctrl+Shift+P (Pocket&#8217;s shortcut), it instantly pops up a banner that reads &#8220;Saving to Pocket&#8221;, and after a brief wait, the text changes to &#8220;Page saved&#8221;. When I hit Shift+` (Readability&#8217;s shortcut), however, I&#8217;ll have to wait several seconds before anything happens, which I find extremely annoying.</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-pocket.png"></p>
+<p><img src="http://scottcheng.com//images/posts/responsiveness-pocket.png"></p>
 
 <h2>My Practices</h2>
 
@@ -264,34 +264,34 @@
 
 <p>In <a href="https://chrome.google.com/webstore/detail/deoibeabfchdpckcmamaadeccohilbkp">Save2Drive</a>, after user clicks &#8220;Save to Drive&#8221;, I first pop up a <a href="http://www.html5rocks.com/en/tutorials/notifications/quick/">desktop notification</a> that says &#8220;Saving link to Google Drive&#8221;:</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-s2d-saving.png"></p>
+<p><img src="http://scottcheng.com//images/posts/responsiveness-s2d-saving.png"></p>
 
 <p>Then I send the HTTP request. After the callback fires, it either changes to &#8220;Link saved to Google Drive&#8221;:</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-s2d-saved.png"></p>
+<p><img src="http://scottcheng.com//images/posts/responsiveness-s2d-saved.png"></p>
 
 <p>Or &#8220;Failed to save link to Google Drive&#8221;:</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-s2d-failed.png"></p>
+<p><img src="http://scottcheng.com//images/posts/responsiveness-s2d-failed.png"></p>
 
 <p><a href="https://chrome.google.com/webstore/detail/enmkdplopmpkfnlefdldpkbcmihgcdec">Renren Album Downloader</a> is a bit more complicated. After the user asks to download an album, the extension will follow these steps, all with explicit real-time status update (UI update happens <em>before</em> the corresponding code runs):</p>
 
 <ol>
   <li>
     <p>Look for photo URLs in the HTML:</p>
-    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-analyzing.png" /></p>
+    <p><img src="http://scottcheng.com//images/posts/responsiveness-rad-analyzing.png" /></p>
   </li>
   <li>
     <p>Fetch the photos:</p>
-    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-fetching.png" /></p>
+    <p><img src="http://scottcheng.com//images/posts/responsiveness-rad-fetching.png" /></p>
   </li>
   <li>
     <p>Put everything into a zip:</p>
-    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-zipping.png" /></p>
+    <p><img src="http://scottcheng.com//images/posts/responsiveness-rad-zipping.png" /></p>
   </li>
   <li>
     <p>Finally, tell user it&#8217;s done:</p>
-    <p><img src="http://scottcheng.github.com/scottcheng/images/posts/responsiveness-rad-done.png" /><p>
+    <p><img src="http://scottcheng.com//images/posts/responsiveness-rad-done.png" /><p>
   </li>
 </ol>
 
@@ -302,9 +302,9 @@
   
   <entry>
     <title type="html"><![CDATA[iPad is Best Naked]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/ipad-is-best-naked/"/>
+    <link href="http://scottcheng.com//blog/2012/09/ipad-is-best-naked/"/>
     <updated>2012-09-17T10:19:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/ipad-is-best-naked</id>
+    <id>http://scottcheng.com//blog/2012/09/ipad-is-best-naked</id>
     <content type="html"><![CDATA[<p>If your iPad wears a screen protector like mine used to, I suggest you rip it off right now. I took the film off three days ago, and the screen has become <em>way more gorgeous</em> than what I had been looking at for an entire summer &#8211; the peerless retina display is finally rescued from being completely obscured. And the screen feels much more smooth and sleek too!</p>
 
 <p>Four months ago, before I even began using my new iPad, I installed a matte screen protector because I hate scratches. I still do, but I&#8217;ve just learned that the iPad screen itself is in fact <a href="http://www.joachim-scholz.com/academipad/2012/03/02/ipad-accessories-not-buy-screen-protectors/">highly scratch resistant</a>. If used at home, the screen is unlikely to be threatened at all. However, if often carried around in a bag like mine is, it could use some protection. Smart cover is an option, but I don&#8217;t enjoy holding the device with extraneous plastic. So I got <a href="http://instagr.am/p/PmgqG3t0Rq/">a stylish case</a> from <a href="http://detail.tmall.com/item.htm?id=13001145027">SkinAt</a>.</p>
@@ -317,18 +317,18 @@
   
   <entry>
     <title type="html"><![CDATA[Pulling Anchor Targets out of the Fixed Header]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
+    <link href="http://scottcheng.com//blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
     <updated>2012-09-01T22:23:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
+    <id>http://scottcheng.com//blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> in <a href="http://www.beijing3ds.org/">my latest website</a> (if you haven&#8217;t tried Bootstrap, you really should! It makes lots of things <em>worlds</em> easier, and has taught me a handful of good practices), where I used a fix-positioned navigation header, one that always stays at the top of the window. In <a href="http://www.beijing3ds.org/about/">longer pages</a>, I used a secondary in-page navigation.</p>
 
 <p>One particular issue I encountered is that when I click on one of those in-page navs, a big portion of that section will be covered by the header! In case you don&#8217;t know what I&#8217;m talking about &#8211; instead of looking like this as it should:</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/anchor-and-header-should.png"></p>
+<p><img src="http://scottcheng.com//images/posts/anchor-and-header-should.png"></p>
 
 <p>It looked like this:</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/anchor-and-header-actual.png"></p>
+<p><img src="http://scottcheng.com//images/posts/anchor-and-header-actual.png"></p>
 
 <p>See? The &#8220;before the weekend&#8221; heading goes beneath the nav bar.</p>
 
@@ -359,9 +359,9 @@
   
   <entry>
     <title type="html"><![CDATA[CSS Multi-Transition Trick]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick/"/>
+    <link href="http://scottcheng.com//blog/2012/08/css-multi-transition-trick/"/>
     <updated>2012-08-29T01:36:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick</id>
+    <id>http://scottcheng.com//blog/2012/08/css-multi-transition-trick</id>
     <content type="html"><![CDATA[<p><em>It&#8217;s one thing to know a tool, another to make the most of it.</em></p>
 
 <p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
@@ -425,7 +425,7 @@
 
 <p>Here I defined different transition properties on the different &#8220;states&#8221; (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.</p>
 
-<p>I also used this multi-transition trick to create the trailing dots effect of <a href="http://scottcheng.github.com/scottcheng/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
+<p>I also used this multi-transition trick to create the trailing dots effect of <a href="http://scottcheng.com//lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
 
 <p>It&#8217;s just exhilarating to explore new power of familiar tools.</p>
 ]]></content>
@@ -433,12 +433,12 @@
   
   <entry>
     <title type="html"><![CDATA[Elegantly Highlight the Current Nav Item in Template]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
+    <link href="http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
     <updated>2012-08-28T07:51:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
+    <id>http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
     <content type="html"><![CDATA[<p>It&#8217;s one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/beijing3ds-navbar.png"></p>
+<p><img src="http://scottcheng.com//images/posts/beijing3ds-navbar.png"></p>
 
 <p>Some suggest a <a href="http://hicksdesign.co.uk/journal/highlighting-current-page-with-css">CSS solution</a>, which introduces additional coupling between CSS rules and navigation HTML markup. Some use simple JavaScript hacks and match the current location against the nav link, something like:</p>
 
@@ -632,9 +632,9 @@
   
   <entry>
     <title type="html"><![CDATA["S" in CSS]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css/"/>
+    <link href="http://scottcheng.com//blog/2012/08/s-in-css/"/>
     <updated>2012-08-01T12:39:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css</id>
+    <id>http://scottcheng.com//blog/2012/08/s-in-css</id>
     <content type="html"><![CDATA[<p>By &#8220;S&#8221; I&#8217;m not referring to &#8220;style&#8221; or &#8220;sheets&#8221;&#8230; I&#8217;m talking about the &#8220;S&#8221; in my logo &#8211; I remade it with CSS (Take a look at upper left if you haven&#8217;t noticed it). It&#8217;s largely inspired by Nicolas Gallagher&#8217;s genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
 
 <p>A closer look:</p>
@@ -759,9 +759,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tags and #Hashtags]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags/"/>
+    <link href="http://scottcheng.com//blog/2012/07/tags-and-hashtags/"/>
     <updated>2012-07-30T15:54:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags</id>
+    <id>http://scottcheng.com//blog/2012/07/tags-and-hashtags</id>
     <content type="html"><![CDATA[<p><a href="http://karrisaarinen.com/">Karri Saarinen</a> from <a href="https://kippt.com/">Kippt</a> <a href="http://blog.kippt.com/2012/07/17/tags-are-here/">hates</a> <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>, and brought <a href="http://en.wikipedia.org/wiki/Hashtag">#hashtags</a> to his bookmarking service.</p>
 
 <p>I do agree that hashtagging is superior to tagging in some way. Hashtags can be defined right inside the item body, whereas tags are conventionally separate from the content. So instead of noting &#8220;Nice color scheme&#8221; and tagging &#8220;color scheme&#8221;, I can just write &#8220;Nice #colorscheme&#8221;. For a brief note on a link, in Kippt&#8217;s case, this simplifies the bookmarking workflow. However, is hashtagging universally applicable? Imagine taking an detailed lecture note in Evernote, and hashtagging some keywords which are scattered over the 1,000 words. See the point? <strong>Hashtagging is good only if the content is short</strong>. It&#8217;s perfect for <a href="https://support.twitter.com/articles/49309-what-are-hashtags-symbols">Twitter</a> and <a href="http://help.instagram.com/customer/portal/articles/95731-tagging-your-photos-using-hashtags">Instagram</a> for this very reason.</p>
@@ -782,9 +782,9 @@
   
   <entry>
     <title type="html"><![CDATA[(Probably) the Easiest Way to Test Websites on Mobile]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
+    <link href="http://scottcheng.com//blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
     <updated>2012-07-29T01:52:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
+    <id>http://scottcheng.com//blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
     <content type="html"><![CDATA[<p>This is probably <em>the</em> easiest way to test your websites on a mobile device, especially if you don&#8217;t have a server to host your site: (and it came to me when I wanted to test mine last night)</p>
 
 <ol>
@@ -799,15 +799,15 @@
 
 <p>Below is how this post looks on my <a href="http://www.sonymobile.com/global-en/products/phones/xperia-s/">Xperia S</a>. I&#8217;m using Octopress preview, and it runs on port 4000 by default.</p>
 
-<p><img src="http://scottcheng.github.com/scottcheng/images/posts/octopress-on-xperia-s.png"></p>
+<p><img src="http://scottcheng.com//images/posts/octopress-on-xperia-s.png"></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Playing With Git Branches]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/playing-with-git-branches/"/>
+    <link href="http://scottcheng.com//blog/2012/07/playing-with-git-branches/"/>
     <updated>2012-07-27T01:36:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/playing-with-git-branches</id>
+    <id>http://scottcheng.com//blog/2012/07/playing-with-git-branches</id>
     <content type="html"><![CDATA[<p>Though it has been almost half a year since the first time I &#8220;gitted&#8221; (and I love it!), all git commands I&#8217;ve ever used are <code>clone</code>, <code>add</code>, <code>commit</code>, <code>pull</code> and <code>push</code>. But when I created <a href="http://scottcheng.github.com/the-revolutionary-css3-impressjs/">my first GitHub page</a>, I had to start dealing with branches. It&#8217;s like a rewarding &#8220;stepping out of the comfort zone&#8221; experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.</p>
 
 <!-- more -->
@@ -940,9 +940,9 @@
   
   <entry>
     <title type="html"><![CDATA[Why I Start to Blog]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/why-i-start-to-blog/"/>
+    <link href="http://scottcheng.com//blog/2012/07/why-i-start-to-blog/"/>
     <updated>2012-07-24T02:21:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/why-i-start-to-blog</id>
+    <id>http://scottcheng.com//blog/2012/07/why-i-start-to-blog</id>
     <content type="html"><![CDATA[<p>I have longed to start blogging for quite a while, but I never had a drive strong enough to make it real. Recently I read what <a href="http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html">Jeff Atwood</a> and <a href="https://sites.google.com/site/steveyegge2/you-should-write-blogs">Steve Yegge</a> said about blogging, where I realized tons of good reasons to start off, and start right now.</p>
 
 <!-- more -->

@@ -1,103 +1,97 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/07/why-i-start-to-blog/</loc>
+        <loc>http://scottcheng.com//blog/2012/07/why-i-start-to-blog/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/07/playing-with-git-branches/</loc>
+        <loc>http://scottcheng.com//blog/2012/07/playing-with-git-branches/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/
-        </loc>
+        <loc>http://scottcheng.com//blog/2012/07/the-easiest-way-to-test-websites-on-mobile/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags/</loc>
+        <loc>http://scottcheng.com//blog/2012/07/tags-and-hashtags/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/
-        </loc>
+        <loc>http://scottcheng.com//blog/2012/08/s-in-css/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick/
+            http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/
         </loc>
+        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com//blog/2012/08/css-multi-transition-trick/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/
+            http://scottcheng.com//blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/
         </loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/09/ipad-is-best-naked/</loc>
+        <loc>http://scottcheng.com//blog/2012/09/ipad-is-best-naked/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/09/respond-to-me/</loc>
+        <loc>http://scottcheng.com//blog/2012/09/respond-to-me/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/10/beauty-of-loop/</loc>
+        <loc>http://scottcheng.com//blog/2012/10/beauty-of-loop/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/2012/10/waterfall-and-footnote/</loc>
+        <loc>http://scottcheng.com//blog/2012/10/waterfall-and-footnote/</loc>
+        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com//blog/2012/10/what-i-learned-as-an-interviewer/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer/
+            http://scottcheng.com//blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/
         </loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://scottcheng.github.com/scottcheng/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/
-        </loc>
+        <loc>http://scottcheng.com//about/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/about/</loc>
+        <loc>http://scottcheng.com//blog/archives/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/archives/</loc>
+        <loc>http://scottcheng.com//blog/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/blog/</loc>
+        <loc>http://scottcheng.com//lab/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/lab/</loc>
+        <loc>http://scottcheng.com//photos/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/photos/</loc>
+        <loc>http://scottcheng.com//projects/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/projects/</loc>
+        <loc>http://scottcheng.com//projects/save2drive/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.github.com/scottcheng/projects/save2drive/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://scottcheng.github.com/scottcheng/projects/yourong/</loc>
+        <loc>http://scottcheng.com//projects/yourong/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
 </urlset>

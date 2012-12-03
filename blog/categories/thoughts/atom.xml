@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: thoughts | Scott Cheng]]></title>
-  <link href="http://scottcheng.github.com/scottcheng/blog/categories/thoughts/atom.xml" rel="self"/>
-  <link href="http://scottcheng.github.com/scottcheng/"/>
-  <updated>2012-12-03T21:35:37+08:00</updated>
-  <id>http://scottcheng.github.com/scottcheng/</id>
+  <link href="http://scottcheng.com//blog/categories/thoughts/atom.xml" rel="self"/>
+  <link href="http://scottcheng.com//"/>
+  <updated>2012-12-03T22:14:12+08:00</updated>
+  <id>http://scottcheng.com//</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[What I Learned as an Interviewer]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer/"/>
+    <link href="http://scottcheng.com//blog/2012/10/what-i-learned-as-an-interviewer/"/>
     <updated>2012-10-20T01:18:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/10/what-i-learned-as-an-interviewer</id>
+    <id>http://scottcheng.com//blog/2012/10/what-i-learned-as-an-interviewer</id>
     <content type="html"><![CDATA[<p>Recently I got an unexpected opportunity to interview some applicants for <a href="http://www.beijing3ds.org/">a startup event</a>. It was a unique experience that gave me a fresh perspective, and I'd like to share some of my discoveries as a first time interviewer (may sound extremely naive and stupid to you :p).</p>
 
 <ol>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tags and #Hashtags]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags/"/>
+    <link href="http://scottcheng.com//blog/2012/07/tags-and-hashtags/"/>
     <updated>2012-07-30T15:54:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/tags-and-hashtags</id>
+    <id>http://scottcheng.com//blog/2012/07/tags-and-hashtags</id>
     <content type="html"><![CDATA[<p><a href="http://karrisaarinen.com/">Karri Saarinen</a> from <a href="https://kippt.com/">Kippt</a> <a href="http://blog.kippt.com/2012/07/17/tags-are-here/">hates</a> <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>, and brought <a href="http://en.wikipedia.org/wiki/Hashtag">#hashtags</a> to his bookmarking service.</p>
 
 <p>I do agree that hashtagging is superior to tagging in some way. Hashtags can be defined right inside the item body, whereas tags are conventionally separate from the content. So instead of noting "Nice color scheme" and tagging "color scheme", I can just write "Nice #colorscheme". For a brief note on a link, in Kippt's case, this simplifies the bookmarking workflow. However, is hashtagging universally applicable? Imagine taking an detailed lecture note in Evernote, and hashtagging some keywords which are scattered over the 1,000 words. See the point? <strong>Hashtagging is good only if the content is short</strong>. It's perfect for <a href="https://support.twitter.com/articles/49309-what-are-hashtags-symbols">Twitter</a> and <a href="http://help.instagram.com/customer/portal/articles/95731-tagging-your-photos-using-hashtags">Instagram</a> for this very reason.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: webdev | Scott Cheng]]></title>
-  <link href="http://scottcheng.github.com/scottcheng/blog/categories/webdev/atom.xml" rel="self"/>
-  <link href="http://scottcheng.github.com/scottcheng/"/>
-  <updated>2012-12-03T21:35:37+08:00</updated>
-  <id>http://scottcheng.github.com/scottcheng/</id>
+  <link href="http://scottcheng.com//blog/categories/webdev/atom.xml" rel="self"/>
+  <link href="http://scottcheng.com//"/>
+  <updated>2012-12-03T22:14:12+08:00</updated>
+  <id>http://scottcheng.com//</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Pulling Anchor Targets out of the Fixed Header]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
+    <link href="http://scottcheng.com//blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
     <updated>2012-09-01T22:23:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
+    <id>http://scottcheng.com//blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
     <content type="html"><![CDATA[<p>I've been using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> in <a href="http://www.beijing3ds.org/">my latest website</a> (if you haven't tried Bootstrap, you really should! It makes lots of things <em>worlds</em> easier, and has taught me a handful of good practices), where I used a fix-positioned navigation header, one that always stays at the top of the window. In <a href="http://www.beijing3ds.org/about/">longer pages</a>, I used a secondary in-page navigation.</p>
 
 <p>One particular issue I encountered is that when I click on one of those in-page navs, a big portion of that section will be covered by the header! In case you don't know what I'm talking about -- instead of looking like this as it should:</p>
@@ -55,9 +55,9 @@
   
   <entry>
     <title type="html"><![CDATA[CSS Multi-Transition Trick]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick/"/>
+    <link href="http://scottcheng.com//blog/2012/08/css-multi-transition-trick/"/>
     <updated>2012-08-29T01:36:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/css-multi-transition-trick</id>
+    <id>http://scottcheng.com//blog/2012/08/css-multi-transition-trick</id>
     <content type="html"><![CDATA[<p><em>It's one thing to know a tool, another to make the most of it.</em></p>
 
 <p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
@@ -113,9 +113,9 @@ a:hover {
   
   <entry>
     <title type="html"><![CDATA[Elegantly Highlight the Current Nav Item in Template]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
+    <link href="http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
     <updated>2012-08-28T07:51:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
+    <id>http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
     <content type="html"><![CDATA[<p>It's one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
 
 <p><img src="/images/posts/beijing3ds-navbar.png"></p>
@@ -259,9 +259,9 @@ li(class='#{nav.about}')
   
   <entry>
     <title type="html"><![CDATA["S" in CSS]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css/"/>
+    <link href="http://scottcheng.com//blog/2012/08/s-in-css/"/>
     <updated>2012-08-01T12:39:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/08/s-in-css</id>
+    <id>http://scottcheng.com//blog/2012/08/s-in-css</id>
     <content type="html"><![CDATA[<p>By "S" I'm not referring to "style" or "sheets"... I'm talking about the "S" in my logo -- I remade it with CSS (Take a look at upper left if you haven't noticed it). It's largely inspired by Nicolas Gallagher's genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
 
 <p>A closer look:</p>
@@ -353,9 +353,9 @@ li(class='#{nav.about}')
   
   <entry>
     <title type="html"><![CDATA[(Probably) the Easiest Way to Test Websites on Mobile]]></title>
-    <link href="http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
+    <link href="http://scottcheng.com//blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
     <updated>2012-07-29T01:52:00+08:00</updated>
-    <id>http://scottcheng.github.com/scottcheng/blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
+    <id>http://scottcheng.com//blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
     <content type="html"><![CDATA[<p>This is probably <em>the</em> easiest way to test your websites on a mobile device, especially if you don't have a server to host your site: (and it came to me when I wanted to test mine last night)</p>
 
 <ol>
