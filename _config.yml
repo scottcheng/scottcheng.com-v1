@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://scottcheng.github.com/scottcheng
+url: http://scottcheng.com/
 title: Scott Cheng
 subtitle:
 author: Scott Cheng
 simple_search: http://google.com/search
-description: Scott Cheng's personal website
+description: Scott Cheng's Personal Website
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
