@@ -194,6 +194,9 @@ article {
       position: relative !important;
       margin-bottom: .25em;
     }
+    p.back-to a {
+      border-bottom: none;
+    }
   }
   header h1 {
     a, a:hover, a:active {
@@ -369,6 +372,24 @@ ul#lab-list {
     img {
       // width: 360px;
     }
+  }
+}
+
+
+// Projects
+
+#project-list {
+  a {
+    border-bottom: none;
+  }
+  h3 a {
+    border-bottom: 1px dotted #aaa;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  h3 {
+    padding-top: .5em;
   }
 }
 
