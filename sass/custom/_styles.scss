@@ -124,8 +124,8 @@ body > nav {
   ul.main-navigation {
     padding-top: 0;
     li {
-      padding-top: .35em;
-      padding-bottom: .35em;
+      padding-top: .45em;
+      padding-bottom: .45em;
       & + li {
         border-left-color: #eee;
         a {
@@ -226,6 +226,18 @@ article {
       @include box-shadow(0 0 6px rgba($highlight-color, 1));
       border-color: $highlight-color;
     }
+    &.no-shadow {
+      @include box-shadow(none);
+    }
+  }
+
+  hr {
+    border-top: 1px solid #ccc;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 }
 
@@ -379,17 +391,14 @@ ul#lab-list {
 // Projects
 
 #project-list {
-  a {
-    border-bottom: none;
-  }
   h3 a {
     border-bottom: 1px dotted #aaa;
   }
   p {
-    margin-bottom: 1em;
+    margin-bottom: .75em;
   }
   h3 {
-    padding-top: .5em;
+    padding-top: .75em;
   }
 }
 
