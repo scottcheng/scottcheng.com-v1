@@ -16,6 +16,15 @@ Renren Album Downloader is a Chrome extension that enables you to download an en
 
 Renren Album Downloader creates a "download" button on a Renren album page. When triggered, it analyzes the DOM, fetches the photos, packs them into a zip, and sends it to your disk.
 
-<!-- TODO re-screenshot -->
+[{% img /images/projects/renren-album-downloader/scrshot2.eng.jpg %}](/images/projects/renren-album-downloader/scrshot2.eng.jpg)
 
 There are millions of interesting albums on Renren, and I sometimes wish I could somehow collect these beautiful or inspiring images. Storing them in my hard drive is a good choice, but downloading albums of 100 photos is a disaster. Also, very often do we see a long list of comments like "please pack and email album to me at foo@bar.com" under popular albums. I doubt if the album owners ever fulfill these demands. Apparently, Renren users are calling for the feature of full-album download. That's where I set off to create my first Chrome extension.
+
+
+<script src='/javascripts/libs/jquery.min.js'></script>
+<script>
+$.noConflict();
+jQuery(function($) {
+  $('a:has(img)').css('border-bottom', 'none');
+});
+</script>
