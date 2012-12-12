@@ -6,13 +6,15 @@ sharing: true
 footer: true
 ---
 
-{% img center /images/scott.jpg 360 %}
+{% img right /images/scott.jpg 190 %}
 
 Hello there, my name is 程烨 (CHENG Ye). Call me Scott.
 
 I'm a technology enthusiast, a design lover, and a [CS](http://en.wikipedia.org/wiki/Computer_science) undergraduate at [Peking University](http://www.pku.edu.cn/). I enjoy crafting stuffs that people love.
 
-I believe that skills are cheap; passion and taste make all the difference.
+<!-- I am currently applying for CS graduate schools in the US, and I wish to go to [Stanford](http://cs.stanford.edu/). -->
+
+<!-- I believe that skills are cheap; passion and taste make all the difference. -->
 
 Hit me up on
 <span class="social-link" style="color:#000">[GitHub](https://github.com/scottcheng)</span> |
