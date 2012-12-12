@@ -15,7 +15,7 @@ published: false
 
 I created this application during my internship at Jiepang in summer 2011, as my first step into the world of startups and web technologies. This was the very first time that I made something for the mass users, and it was amazing. I was truly fascinated by how rapidly products are shaped and shipped at a startup.
 
-I was fortunate to have gone through the entire process of creating this software -- I was at once the manager, product designer, interaction designer and developer of this mini project. The stunning visual design was created by our talented designer [Abiling](http://weibo.com/abiling). I would also like to thank Yuancheng, Zhengwei, Izzy, Zakk, 帅哥, 芋头, Maoz, as well as everyone at Jiepang, for your extraordinary support and help!
+I was fortunate to have gone through the entire process of creating this software -- I was at once the manager, product designer, interaction designer and developer of this mini project. The stunning visual design was created by our talented designer [Abiling](http://weibo.com/abiling). I would also like to thank Yuancheng, Zhengwei, Izzy, Zakk, 帅哥, 芋头, Maoz, and everyone at Jiepang, for your extraordinary support and help!
 
 Jiepang Profile was featured on [36kr](http://www.36kr.com/p/42609.html), China's leading tech blog.
 

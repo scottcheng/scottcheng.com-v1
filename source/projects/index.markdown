@@ -78,7 +78,7 @@ A Chrome extension that enables you to download an entire Renren album with one 
 
 <h3><a href="jieprofile/" class="external">街旁档案 (Jiepang Profile)</a></h3>
 
-<!-- TODO -->
+Jiepang Profile is a web application that analyzes and visualizes the data of individual Jiepang users.
 
 <p style="text-align:center"><a href="jieprofile/"><img src="/images/projects/jieprofile/splash.png" width="418" class="no-shadow" /></a></p>
 
