@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://scottcheng.com//photos/">
+  <link rel="canonical" href="http://scottcheng.com/photos/">
   <link href="/stylesheets/fonts.css" rel="stylesheet", type="text/css">  <!-- localized google web fonts -->
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,7 +69,7 @@
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:scottcheng.com/" />
+    <input type="hidden" name="q" value="site:scottcheng.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -90,6 +90,7 @@
 <article role="article">
   
   <header>
+    
     
     <h1 class="entry-title">Photos</h1>
   </header>
@@ -151,7 +152,7 @@ jQuery(function($) {
           .attr('src', photo.img)))
       .appendTo($list);
   });
-  // TODO use space to scroll to next photo, centering it on screen
+  // TODO use space / up down arrow to scroll to next photo, centering it on screen
   // maintain a `curPhoto` pointer
   // detect scroll and update this pointer
   $list.find('img').click(function() {
@@ -163,6 +164,7 @@ jQuery(function($) {
 
   
     <footer>
+      
       
       
         <div class="sharing">
@@ -194,7 +196,7 @@ jQuery(function($) {
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Scott Cheng -
+  Copyright &copy; 2012 - <a href="http://scottcheng.com">Scott Cheng</a> -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and Hosted on <a href="http://pages.github.com/">GitHub</a></span>
 </p>
 
@@ -206,8 +208,8 @@ jQuery(function($) {
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://scottcheng.com//photos/index.html';
-        var disqus_url = 'http://scottcheng.com//photos/index.html';
+        var disqus_identifier = 'http://scottcheng.com/photos/index.html';
+        var disqus_url = 'http://scottcheng.com/photos/index.html';
         var disqus_script = 'embed.js';
       
     (function () {

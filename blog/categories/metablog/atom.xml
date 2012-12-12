@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: metablog | Scott Cheng]]></title>
-  <link href="http://scottcheng.com//blog/categories/metablog/atom.xml" rel="self"/>
-  <link href="http://scottcheng.com//"/>
-  <updated>2012-12-07T16:11:03+08:00</updated>
-  <id>http://scottcheng.com//</id>
+  <link href="http://scottcheng.com/blog/categories/metablog/atom.xml" rel="self"/>
+  <link href="http://scottcheng.com/"/>
+  <updated>2012-12-12T11:39:32+08:00</updated>
+  <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Why I Start to Blog]]></title>
-    <link href="http://scottcheng.com//blog/2012/07/why-i-start-to-blog/"/>
+    <link href="http://scottcheng.com/blog/2012/07/why-i-start-to-blog/"/>
     <updated>2012-07-24T02:21:00+08:00</updated>
-    <id>http://scottcheng.com//blog/2012/07/why-i-start-to-blog</id>
+    <id>http://scottcheng.com/blog/2012/07/why-i-start-to-blog</id>
     <content type="html"><![CDATA[<p>I have longed to start blogging for quite a while, but I never had a drive strong enough to make it real. Recently I read what <a href="http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html">Jeff Atwood</a> and <a href="https://sites.google.com/site/steveyegge2/you-should-write-blogs">Steve Yegge</a> said about blogging, where I realized tons of good reasons to start off, and start right now.</p>
 
 <!-- more -->

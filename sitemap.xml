@@ -1,97 +1,125 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://scottcheng.com//blog/2012/07/why-i-start-to-blog/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/blog/2012/07/why-i-start-to-blog/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/2012/07/playing-with-git-branches/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/blog/2012/07/playing-with-git-branches/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/2012/07/the-easiest-way-to-test-websites-on-mobile/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/2012/07/tags-and-hashtags/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/blog/2012/07/tags-and-hashtags/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/2012/08/s-in-css/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://scottcheng.com//blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/
-        </loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://scottcheng.com//blog/2012/08/css-multi-transition-trick/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/blog/2012/08/s-in-css/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://scottcheng.com//blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/
+            http://scottcheng.com/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/
         </loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/2012/09/ipad-is-best-naked/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://scottcheng.com//blog/2012/09/respond-to-me/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://scottcheng.com//blog/2012/10/beauty-of-loop/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://scottcheng.com//blog/2012/10/waterfall-and-footnote/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://scottcheng.com//blog/2012/10/what-i-learned-as-an-interviewer/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/blog/2012/08/css-multi-transition-trick/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://scottcheng.com//blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/
+            http://scottcheng.com/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/
         </loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/2012/09/ipad-is-best-naked/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/2012/09/respond-to-me/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/2012/10/beauty-of-loop/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/2012/10/waterfall-and-footnote/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/2012/10/what-i-learned-as-an-interviewer/</loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://scottcheng.com/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/
+        </loc>
+        <lastmod>2012-12-11T17:08:41+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/about/</loc>
+        <lastmod>2012-12-12T11:27:08+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/archives/</loc>
+        <lastmod>2012-12-08T18:51:38+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/blog/</loc>
         <lastmod>2012-12-03T21:28:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//about/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/lab/</loc>
+        <lastmod>2012-12-08T18:51:38+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/archives/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/photos/</loc>
+        <lastmod>2012-12-08T18:51:38+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//blog/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/projects/gre-wallpapers/</loc>
+        <lastmod>2012-12-08T22:36:38+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//lab/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/projects/</loc>
+        <lastmod>2012-12-12T11:19:48+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//photos/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/projects/jieprofile/</loc>
+        <lastmod>2012-12-12T11:19:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//projects/</loc>
-        <lastmod>2012-12-07T16:01:14+08:00</lastmod>
+        <loc>http://scottcheng.com/projects/juxing/</loc>
+        <lastmod>2012-12-08T18:52:37+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//projects/save2drive/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/projects/omni-image-search/</loc>
+        <lastmod>2012-12-11T17:24:21+08:00</lastmod>
     </url>
     <url>
-        <loc>http://scottcheng.com//projects/yourong/</loc>
-        <lastmod>2012-12-03T21:28:24+08:00</lastmod>
+        <loc>http://scottcheng.com/projects/outliner/</loc>
+        <lastmod>2012-12-11T17:09:09+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/projects/renren-album-downloader/</loc>
+        <lastmod>2012-12-11T17:18:01+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/projects/save2drive/</loc>
+        <lastmod>2012-12-11T15:54:58+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/projects/talking-gmail/</loc>
+        <lastmod>2012-12-11T16:03:03+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://scottcheng.com/projects/yourong/</loc>
+        <lastmod>2012-12-12T02:39:56+08:00</lastmod>
     </url>
 </urlset>
