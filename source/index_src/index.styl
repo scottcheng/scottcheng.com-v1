@@ -40,20 +40,22 @@ body
     text-align right
     margin 0
     font-family 'Poiret One', sans-serif
-    text-shadow 0 1px #fff
+    text-shadow 0 2px #fff
     z-index 100
     color $dark-color
-    transition color .25s
+    transition color 1s
     &:hover
       color $highlight-color
+      transition color .25s
     
     &::selection
-      background: $highlight-color;
-      color: $light-color;
+      background $highlight-color
+      color $light-color
+      text-shadow none
 
     &::-moz-selection
-      background: $highlight-color;
-      color: $light-color;
+      background $highlight-color
+      color $light-color
 
 #lower
   height 38%
