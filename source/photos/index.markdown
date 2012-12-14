@@ -61,7 +61,7 @@ jQuery(function($) {
           .attr('src', photo.img)))
       .appendTo($list);
   });
-  // TODO use space to scroll to next photo, centering it on screen
+  // TODO use space / up down arrow to scroll to next photo, centering it on screen
   // maintain a `curPhoto` pointer
   // detect scroll and update this pointer
   $list.find('img').click(function() {
