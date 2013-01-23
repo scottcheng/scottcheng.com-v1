@@ -7,7 +7,7 @@ categories: dev
 keywords: git, branch, checkout, github pages
 ---
 
-Though it has been almost half a year since the first time I "gitted" (and I love it!), all git commands I've ever used are `clone`, `add`, `commit`, `pull` and `push`. But when I created [my first GitHub page](http://scottcheng.github.com/the-revolutionary-css3-impressjs/), I had to start dealing with branches. It's like a rewarding "stepping out of the comfort zone" experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.
+Though it has been almost half a year since the first time I "gitted" (and I love it!), all git commands I've ever used are `clone`, `add`, `commit`, `pull` and `push`. But when I created [my first GitHub page](http://scottcheng.github.com/revolutionary-css3/), I had to start dealing with branches. It's like a rewarding "stepping out of the comfort zone" experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.
 
 <!-- more -->
 
@@ -59,7 +59,7 @@ $ git checkout master
 Branching gh-pages
 ---
 
-Now I'll put the branching theory to practice and build my GitHub page. The [GitHub pages documentation](https://help.github.com/articles/creating-project-pages-manually) is perfect if you want to create a page from scratch. I believe this is useful for most projects, but not for [mine](https://github.com/scottcheng/the-revolutionary-css3-impressjs), where I want the project itself to be the GitHub page.
+Now I'll put the branching theory to practice and build my GitHub page. The [GitHub pages documentation](https://help.github.com/articles/creating-project-pages-manually) is perfect if you want to create a page from scratch. I believe this is useful for most projects, but not for [mine](https://github.com/scottcheng/revolutionary-css3), where I want the project itself to be the GitHub page.
 
 ``` bash Create gh-pages branch
 $ git checkout -b gh-pages
