@@ -109,6 +109,9 @@
 <script src='/javascripts/libs/jquery.min.js'></script>
 
 
+<script src='/javascripts/libs/mousetrap.js'></script>
+
+
 <script>
 $.noConflict();
 jQuery(function($) {
@@ -155,6 +158,23 @@ jQuery(function($) {
   // TODO use space / up down arrow to scroll to next photo, centering it on screen
   // maintain a `curPhoto` pointer
   // detect scroll and update this pointer
+  // http://pagescroller.com/
+  // https://github.com/flesler/jquery.scrollTo
+  // http://craig.is/killing/mice
+  // http://imakewebthings.com/jquery-waypoints/#get-started
+  // http://stackoverflow.com/questions/2168739/using-arrow-keys-with-jquery-scrollto
+  // http://www.webdistortion.com/2009/03/01/6-must-see-sites-with-unique-keyboard-navigation/
+  // http://www.awwwards.com/10-websites-with-keyboard-navigation.html
+
+  // https://www.striking.ly/
+  (function() {
+    Mousetrap.bind('up', function() {
+      console.log('up');
+    });
+    Mousetrap.bind(['down', 'space'], function() {
+
+    })
+  });
   $list.find('img').click(function() {
     _gaq.push(['_trackEvent', 'Photos', 'Click', $(this).parent().attr('href')]);
   });
@@ -196,7 +216,7 @@ jQuery(function($) {
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - <a href="http://scottcheng.com">Scott Cheng</a> -
+  Copyright &copy; 2013 - <a href="http://scottcheng.com">Scott Cheng</a> -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and Hosted on <a href="http://pages.github.com/">GitHub</a></span>
 </p>
 
