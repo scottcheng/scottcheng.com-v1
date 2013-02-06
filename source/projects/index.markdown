@@ -8,6 +8,13 @@ footer: true
 
 I enjoy crafting things. Here are some of my creations.
 
+<h3><a href="http://scottcheng.github.com/weibo-time-vis/" class="external">Weibo Visualization</a></h3>
+
+An experimental visualization of a Weibo dataset, trying to illustrate the time-wise evolution of topics.
+
+<p><a href="http://scottcheng.github.com/weibo-time-vis/"><img src="/images/projects/weibo-time-vis/scrshot.png" class="no-shadow" /></a></p>
+
+
 <h3><a href="http://scottcheng.github.com/bj-air-vis/" class="external">Visualization of Beijing Air Pollution</a></h3>
 
 This interactive visualization demonstrates the intensity distribution of several major pollutants in Beijing over two weeks.
