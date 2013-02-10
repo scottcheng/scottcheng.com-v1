@@ -9,6 +9,10 @@ categories:
 Last weekend marked [the first long technical talk](http://scottcheng.github.com/d3js-101/) of my life. I spoke about [D3.js](http://d3js.org/) at [State Grid](http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China), a global Fortune 500 company (in fact it [ranked 7 in 2012](http://money.cnn.com/magazines/fortune/global500/2012/snapshots/10840.html)).
 If there's one thing I've taken away from this first time experience, it's that I learned just how much fun speaking can be.
 
+<p style="text-align:center;font-style:italic">
+  <a style="border:none" href="http://instagram.com/p/VQASKlt0WY/"><img width="306" height="306" src="http://distilleryimage8.s3.amazonaws.com/5bb657f06d9f11e2bf8b22000a1fb004_7.jpg" /><br />Sunset from the State Grid tower, after the talk</a>
+</p>
+
 <!-- more -->
 
 I wasn't nearly as terrified as I thought I would be as a first time speaker. I have never been the most talkative guy among my peers. I was "the PPT guy behind the scene" for every single presentation back in high school (partly because I made gorgeous PPT slides :) I did make my efforts to practice public speaking skills in college, but my talks had hardly got out of the classroom. Lecturing for 1 hour and 50 minutes in a conference room of over fifty people, all of whom are more senior than I am, was definitely a challenge for me.
@@ -19,4 +23,4 @@ What's even more surprising is that, the next morning when I woke up, I saw an e
 
 As a brief reflection to speaking, I think speaking is like blogging, in that they are both about sharing ideas and knowledge with others. But speaking is more instantaneous, engaging and interactive, which make it even more fun. Like composing a blog post, preparing for a talk requires much effort and well-rounded knowledge on the topic to be presented. So I took this opportunity and had a closer look at how things really work in D3, for example the mechanisms of [enter and exit](http://scottcheng.github.com/d3js-101/#/enter-exit), and formulated some thoughts like ["visualization is all about binding data to visual elements"](http://scottcheng.github.com/d3js-101/#/data-binding). I learned a lot in the preparation process.
 
-I'd thank my lab advisor, Prof. [Xiaoru Yuan](http://vis.pku.edu.cn/yuanxiaoru/index_en.html, for giving me this incredible opportunity, and for teaching me how to teach. I'm really looking forward to my next talk, and hopefully someday I'll be talking about something built by myself.
+I'd thank my lab advisor, Prof. [Xiaoru Yuan](http://vis.pku.edu.cn/yuanxiaoru/index_en.html), for giving me this incredible opportunity, and for teaching me how to teach. I'm really looking forward to my next talk, and hopefully someday I'll be talking about something built by myself.
