@@ -4,7 +4,7 @@
   <title><![CDATA[Scott Cheng]]></title>
   <link href="http://scottcheng.com/atom.xml" rel="self"/>
   <link href="http://scottcheng.com/"/>
-  <updated>2013-02-10T21:41:57+08:00</updated>
+  <updated>2013-02-10T22:58:42+08:00</updated>
   <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
@@ -32,7 +32,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
 
 <p>As a brief reflection to speaking, I think speaking is like blogging, in that they are both about sharing ideas and knowledge with others. But speaking is more instantaneous, engaging and interactive, which make it even more fun. Like composing a blog post, preparing for a talk requires much effort and well-rounded knowledge on the topic to be presented. So I took this opportunity and had a closer look at how things really work in D3, for example the mechanisms of <a href="http://scottcheng.github.com/d3js-101/#/enter-exit">enter and exit</a>, and formulated some thoughts like <a href="http://scottcheng.github.com/d3js-101/#/data-binding">&#8220;visualization is all about binding data to visual elements&#8221;</a>. I learned a lot in the preparation process.</p>
 
-<p>I&#8217;d thank my lab advisor, Prof. [Xiaoru Yuan](http://vis.pku.edu.cn/yuanxiaoru/index_en.html, for giving me this incredible opportunity, and for teaching me how to teach. I&#8217;m really looking forward to my next talk, and hopefully someday I&#8217;ll be talking about something built by myself.</p>
+<p>I&#8217;d thank my lab advisor, Prof. <a href="http://vis.pku.edu.cn/yuanxiaoru/index_en.html">Xiaoru Yuan</a>, for giving me this incredible opportunity, and for teaching me how to teach. I&#8217;m really looking forward to my next talk, and hopefully someday I&#8217;ll be talking about something built by myself.</p>
 ]]></content>
   </entry>
   
