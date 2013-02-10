@@ -9,7 +9,7 @@
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="A good blogging system must support users to easily start composing and publishing from multiple devices. However, the Octopress website only teaches &hellip;">
+  <meta name="description" content="Last weekend marked the first long technical talk of my life. I spoke about D3.js at State Grid, a global Fortune 500 company (in fact it ranked 7 in &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,48 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T18:53:00+08:00" pubdate data-updated="true">February 10, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/speaking-is-fun/">Speaking Is Fun</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last weekend marked <a href="http://scottcheng.github.com/d3js-101/">the first long technical talk</a> of my life. I spoke about <a href="http://d3js.org/">D3.js</a> at <a href="http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China">State Grid</a>, a global Fortune 500 company (in fact it <a href="http://money.cnn.com/magazines/fortune/global500/2012/snapshots/10840.html">ranked 7 in 2012</a>).
+If there&#8217;s one thing I&#8217;ve taken away from this first time experience, it&#8217;s that I learned just how much fun speaking can be.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/speaking-is-fun/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -418,92 +460,6 @@
 <p>So it&#8217;s always a trade-off. If there are not many items to operate on and the operation for each item is simple (or in some cases, wildly different from each other), perhaps loop isn&#8217;t the best way out. Despite of that, I&#8217;d advocate applying loops whenever possible, because they can make your code a lot more beautiful, and you&#8217;ll find your life so much easier because of them.</p>
 
 <p>Bottom line is, don&#8217;t make a <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET cart</a> :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-19T18:04:00+08:00" pubdate data-updated="true">September 19, 2012</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/respond-to-me/">Respond to Me</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not talking about the lightning speed that <a href="https://speakerdeck.com/u/mikeyk/p/secrets-to-lightning-fast-mobile-design">Instagram has achieved</a>, but that the UI should provide <em>instantaneous feedback</em> to every meaningful action the user performs &#8211; <em>respond to him</em>.</p>
-
-<p>Hover effect is a good example of responsiveness. On this website, <a href="#">links</a> turn orange when you move your mouse over them, assuring you that &#8220;you are pointing to the link, click ahead&#8221;.</p>
-
-<p>Responsiveness is more crucial for user actions to which the handler would take some time to &#8220;return&#8221;. A UI does not have to be lightning fast (though it&#8217;s definitely good to be). In fact, the processing speed is sometimes out of the developers&#8217; control, e.g. if remote API calls are involved. A user can wait, but the UI has to <em>explicitly tell the user</em> that &#8220;your request is being processed, please wait&#8221;. Otherwise, the user would wonder: did I really click the button? Should I keep waiting, or should I repeat the click? What is going on behind the screen? Put another way, the UI should be upfront about what it is doing, so that the user doesn&#8217;t have to guess.</p>
-
-<h2>Pocket over Readability</h2>
-
-<p>I prefer Pocket over Readability, because Pocket&#8217;s Chrome extension is more responsive than its competitor. When I press Ctrl+Shift+P (Pocket&#8217;s shortcut), it instantly pops up a banner that reads &#8220;Saving to Pocket&#8221;, and after a brief wait, the text changes to &#8220;Page saved&#8221;. When I hit Shift+` (Readability&#8217;s shortcut), however, I&#8217;ll have to wait several seconds before anything happens, which I find extremely annoying.</p>
-
-<p><img src="/images/posts/responsiveness-pocket.png"></p>
-
-<h2>My Practices</h2>
-
-<p>I&#8217;ve been striving to offer best responsiveness in the UIs I build.</p>
-
-<p>In <a href="https://chrome.google.com/webstore/detail/deoibeabfchdpckcmamaadeccohilbkp">Save2Drive</a>, after user clicks &#8220;Save to Drive&#8221;, I first pop up a <a href="http://www.html5rocks.com/en/tutorials/notifications/quick/">desktop notification</a> that says &#8220;Saving link to Google Drive&#8221;:</p>
-
-<p><img src="/images/posts/responsiveness-s2d-saving.png"></p>
-
-<p>Then I send the HTTP request. After the callback fires, it either changes to &#8220;Link saved to Google Drive&#8221;:</p>
-
-<p><img src="/images/posts/responsiveness-s2d-saved.png"></p>
-
-<p>Or &#8220;Failed to save link to Google Drive&#8221;:</p>
-
-<p><img src="/images/posts/responsiveness-s2d-failed.png"></p>
-
-<p><a href="https://chrome.google.com/webstore/detail/enmkdplopmpkfnlefdldpkbcmihgcdec">Renren Album Downloader</a> is a bit more complicated. After the user asks to download an album, the extension will follow these steps, all with explicit real-time status update (UI update happens <em>before</em> the corresponding code runs):</p>
-
-<ol>
-  <li>
-    <p>Look for photo URLs in the HTML:</p>
-    <p><img src="/images/posts/responsiveness-rad-analyzing.png" /></p>
-  </li>
-  <li>
-    <p>Fetch the photos:</p>
-    <p><img src="/images/posts/responsiveness-rad-fetching.png" /></p>
-  </li>
-  <li>
-    <p>Put everything into a zip:</p>
-    <p><img src="/images/posts/responsiveness-rad-zipping.png" /></p>
-  </li>
-  <li>
-    <p>Finally, tell user it&#8217;s done:</p>
-    <p><img src="/images/posts/responsiveness-rad-done.png" /><p>
-  </li>
-</ol>
-
-
-<p>Rule of thumb: if you have the user waiting, tell him he&#8217;s waiting, and preferably tell him what he&#8217;s waiting for.</p>
 </div>
   
   

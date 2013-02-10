@@ -9,7 +9,7 @@
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="If your iPad wears a screen protector like mine used to, I suggest you rip it off right now. I took the film off three days ago, and the screen has &hellip;">
+  <meta name="description" content="I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,92 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T18:04:00+08:00" pubdate data-updated="true">September 19, 2012</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/respond-to-me/">Respond to Me</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not talking about the lightning speed that <a href="https://speakerdeck.com/u/mikeyk/p/secrets-to-lightning-fast-mobile-design">Instagram has achieved</a>, but that the UI should provide <em>instantaneous feedback</em> to every meaningful action the user performs &#8211; <em>respond to him</em>.</p>
+
+<p>Hover effect is a good example of responsiveness. On this website, <a href="#">links</a> turn orange when you move your mouse over them, assuring you that &#8220;you are pointing to the link, click ahead&#8221;.</p>
+
+<p>Responsiveness is more crucial for user actions to which the handler would take some time to &#8220;return&#8221;. A UI does not have to be lightning fast (though it&#8217;s definitely good to be). In fact, the processing speed is sometimes out of the developers&#8217; control, e.g. if remote API calls are involved. A user can wait, but the UI has to <em>explicitly tell the user</em> that &#8220;your request is being processed, please wait&#8221;. Otherwise, the user would wonder: did I really click the button? Should I keep waiting, or should I repeat the click? What is going on behind the screen? Put another way, the UI should be upfront about what it is doing, so that the user doesn&#8217;t have to guess.</p>
+
+<h2>Pocket over Readability</h2>
+
+<p>I prefer Pocket over Readability, because Pocket&#8217;s Chrome extension is more responsive than its competitor. When I press Ctrl+Shift+P (Pocket&#8217;s shortcut), it instantly pops up a banner that reads &#8220;Saving to Pocket&#8221;, and after a brief wait, the text changes to &#8220;Page saved&#8221;. When I hit Shift+` (Readability&#8217;s shortcut), however, I&#8217;ll have to wait several seconds before anything happens, which I find extremely annoying.</p>
+
+<p><img src="/images/posts/responsiveness-pocket.png"></p>
+
+<h2>My Practices</h2>
+
+<p>I&#8217;ve been striving to offer best responsiveness in the UIs I build.</p>
+
+<p>In <a href="https://chrome.google.com/webstore/detail/deoibeabfchdpckcmamaadeccohilbkp">Save2Drive</a>, after user clicks &#8220;Save to Drive&#8221;, I first pop up a <a href="http://www.html5rocks.com/en/tutorials/notifications/quick/">desktop notification</a> that says &#8220;Saving link to Google Drive&#8221;:</p>
+
+<p><img src="/images/posts/responsiveness-s2d-saving.png"></p>
+
+<p>Then I send the HTTP request. After the callback fires, it either changes to &#8220;Link saved to Google Drive&#8221;:</p>
+
+<p><img src="/images/posts/responsiveness-s2d-saved.png"></p>
+
+<p>Or &#8220;Failed to save link to Google Drive&#8221;:</p>
+
+<p><img src="/images/posts/responsiveness-s2d-failed.png"></p>
+
+<p><a href="https://chrome.google.com/webstore/detail/enmkdplopmpkfnlefdldpkbcmihgcdec">Renren Album Downloader</a> is a bit more complicated. After the user asks to download an album, the extension will follow these steps, all with explicit real-time status update (UI update happens <em>before</em> the corresponding code runs):</p>
+
+<ol>
+  <li>
+    <p>Look for photo URLs in the HTML:</p>
+    <p><img src="/images/posts/responsiveness-rad-analyzing.png" /></p>
+  </li>
+  <li>
+    <p>Fetch the photos:</p>
+    <p><img src="/images/posts/responsiveness-rad-fetching.png" /></p>
+  </li>
+  <li>
+    <p>Put everything into a zip:</p>
+    <p><img src="/images/posts/responsiveness-rad-zipping.png" /></p>
+  </li>
+  <li>
+    <p>Finally, tell user it&#8217;s done:</p>
+    <p><img src="/images/posts/responsiveness-rad-done.png" /><p>
+  </li>
+</ol>
+
+
+<p>Rule of thumb: if you have the user waiting, tell him he&#8217;s waiting, and preferably tell him what he&#8217;s waiting for.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -522,61 +608,6 @@
 <p>Not perfect, but more elegant than the rest.</p>
 </div>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-01T12:39:00+08:00" pubdate data-updated="true">August 01, 2012</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/s-in-css/">&#8220;S&#8221; in CSS</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>By &#8220;S&#8221; I&#8217;m not referring to &#8220;style&#8221; or &#8220;sheets&#8221;&#8230; I&#8217;m talking about the &#8220;S&#8221; in my logo &#8211; I remade it with CSS (Take a look at upper left if you haven&#8217;t noticed it). It&#8217;s largely inspired by Nicolas Gallagher&#8217;s genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
-
-<p>A closer look:</p>
-
-<div id="s-demo" class="logo"></div>
-
-
-
-
-<figure class='code'><figcaption><span>It&#8217;s one HTML element!</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;s&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/08/s-in-css/">Read on &rarr;</a>
-    </footer>
   
 
 

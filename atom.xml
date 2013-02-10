@@ -4,7 +4,7 @@
   <title><![CDATA[Scott Cheng]]></title>
   <link href="http://scottcheng.com/atom.xml" rel="self"/>
   <link href="http://scottcheng.com/"/>
-  <updated>2013-02-09T20:15:27+08:00</updated>
+  <updated>2013-02-10T21:41:57+08:00</updated>
   <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Speaking is Fun]]></title>
+    <link href="http://scottcheng.com/blog/2013/02/speaking-is-fun/"/>
+    <updated>2013-02-10T18:53:00+08:00</updated>
+    <id>http://scottcheng.com/blog/2013/02/speaking-is-fun</id>
+    <content type="html"><![CDATA[<p>Last weekend marked <a href="http://scottcheng.github.com/d3js-101/">the first long technical talk</a> of my life. I spoke about <a href="http://d3js.org/">D3.js</a> at <a href="http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China">State Grid</a>, a global Fortune 500 company (in fact it <a href="http://money.cnn.com/magazines/fortune/global500/2012/snapshots/10840.html">ranked 7 in 2012</a>).
+If there&#8217;s one thing I&#8217;ve taken away from this first time experience, it&#8217;s that I learned just how much fun speaking can be.</p>
+
+<!-- more -->
+
+
+<p>I wasn&#8217;t nearly as terrified as I thought I would be as a first time speaker. I have never been the most talkative guy among my peers. I was &#8220;the PPT guy behind the scene&#8221; for every single presentation back in high school (partly because I made gorgeous PPT slides :) I did make my efforts to practice public speaking skills in college, but my talks had hardly got out of the classroom. Lecturing for 1 hour and 50 minutes in a conference room of over fifty people, all of whom are more senior than I am, was definitely a challenge for me.</p>
+
+<p>It wasn&#8217;t perfect all along, though. The unstable Internet connection made my beginning a little messed up (sweat on my forehead). I also had a hard time getting everyone on the same page early into the technical part, and I realized I should&#8217;ve walked slower and clearer through the steps. But when I slowed down, I soon managed to find the &#8220;flow&#8221; of presenting what I&#8217;d prepared the night before. I had lots of interactions with the audience, which also encouraged more elaborated explanations. I tried hard to make what I was saying coherent and understandable, but I wasn&#8217;t entirely sure how I did until after the talk, a girl with a communication degree (meaning zero programming background) told me that I was good and that she could make sense of the coding part that I&#8217;d demoed. It meant a lot to me. It was amazing to see how I was able to communicate what I know, and be appreciated by my audience.</p>
+
+<p>What&#8217;s even more surprising is that, the next morning when I woke up, I saw an email from a stranger saying that he saw <a href="http://scottcheng.github.com/d3js-101/">my slides for this talk</a> on <a href="https://news.ycombinator.com/item?id=5164195">Hacker News</a> and he liked it. Turns out someone else had posted the link on HN. I was <em>thrilled</em>. I hurriedly opened the HN thread, and apart from some complaints about the confusion caused by two-dimensional layout of slides (and I clarified in my <a href="https://news.ycombinator.com/item?id=5164195#up_5169390">comment</a>), people liked the content. What followed was expectable: tons of visits to <a href="http://scottcheng.github.com/d3js-101/">the slides</a>, a bunch of stargazers of <a href="https://github.com/scottcheng/d3js-101">the slides repo</a>, and a couple of <a href="https://github.com/scottcheng/followers">GitHub followers</a>. I think that&#8217;s the most amazing aspect of the open source community &#8211; it&#8217;s open, and everyone is welcomed to join to carnival. I&#8217;m starting to feel that I&#8217;m part of them.</p>
+
+<p>As a brief reflection to speaking, I think speaking is like blogging, in that they are both about sharing ideas and knowledge with others. But speaking is more instantaneous, engaging and interactive, which make it even more fun. Like composing a blog post, preparing for a talk requires much effort and well-rounded knowledge on the topic to be presented. So I took this opportunity and had a closer look at how things really work in D3, for example the mechanisms of <a href="http://scottcheng.github.com/d3js-101/#/enter-exit">enter and exit</a>, and formulated some thoughts like <a href="http://scottcheng.github.com/d3js-101/#/data-binding">&#8220;visualization is all about binding data to visual elements&#8221;</a>. I learned a lot in the preparation process.</p>
+
+<p>I&#8217;d thank my lab advisor, Prof. [Xiaoru Yuan](http://vis.pku.edu.cn/yuanxiaoru/index_en.html, for giving me this incredible opportunity, and for teaching me how to teach. I&#8217;m really looking forward to my next talk, and hopefully someday I&#8217;ll be talking about something built by myself.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setting Up Existing Octopress Blog on a New Computer]]></title>
