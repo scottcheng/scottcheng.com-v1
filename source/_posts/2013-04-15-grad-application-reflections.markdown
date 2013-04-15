@@ -9,6 +9,8 @@ keywords: graduate school, application, Stanford, MSCS
 
 Two weeks ago I accepted the offer of admission to [Stanford's MSCS program](http://cs.stanford.edu/education/masters), which concludes my graduate school application process. I'd like to record some key reflections that I have on this process. The following is based on my experience of applying for Master programs in CS / HCI, but should apply to applications for other degree programs as well.
 
+<!-- more -->
+
 Rule #1 for fellow Chinese applicants: *no agencies whatsoever*. I know you probably heard this from everyone, but I'd say it again. If you want to get in a good program, get your own hands dirty, and don't depend on others. Yes, going through the entire application process can be excruciating, but it's worth it.
 
 Really know what you want from grad school, and build up your profile and application package accordingly to support your purpose. I'm a big believer of going for what you love, and grad application is no different. If you know exactly why you want to study in a program, you probably have a much better chance than many of your competitors. I've seen people who don't have a dream school. I've seen people who apply for a program because everyone else does (they aren't even motivated enough to read the program's admission FAQ). I've seen people who choose to study abroad because their parents tell them to. How can they convince the admission committee that they are motivated to succeed in the program? How can they possibly tell good stories in the Statement of Purpose?
