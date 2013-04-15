@@ -3,7 +3,7 @@ layout: post
 title: "Speaking is Fun"
 date: 2013-02-10 18:53
 comments: true
-categories: 
+categories: event
 ---
 
 Last weekend marked [the first long technical talk](http://scottcheng.github.com/d3js-101/) of my life. I spoke about [D3.js](http://d3js.org/) at [State Grid](http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China), a global Fortune 500 company (in fact it [ranked 7 in 2012](http://money.cnn.com/magazines/fortune/global500/2012/snapshots/10840.html)).
