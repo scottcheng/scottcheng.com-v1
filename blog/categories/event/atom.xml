@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: event | Scott Cheng]]></title>
+  <link href="http://scottcheng.com/blog/categories/event/atom.xml" rel="self"/>
+  <link href="http://scottcheng.com/"/>
+  <updated>2013-04-15T17:35:28+08:00</updated>
+  <id>http://scottcheng.com/</id>
+  <author>
+    <name><![CDATA[Scott Cheng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Speaking is Fun]]></title>
+    <link href="http://scottcheng.com/blog/2013/02/speaking-is-fun/"/>
+    <updated>2013-02-10T18:53:00+08:00</updated>
+    <id>http://scottcheng.com/blog/2013/02/speaking-is-fun</id>
+    <content type="html"><![CDATA[<p>Last weekend marked <a href="http://scottcheng.github.com/d3js-101/">the first long technical talk</a> of my life. I spoke about <a href="http://d3js.org/">D3.js</a> at <a href="http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China">State Grid</a>, a global Fortune 500 company (in fact it <a href="http://money.cnn.com/magazines/fortune/global500/2012/snapshots/10840.html">ranked 7 in 2012</a>).
+If there's one thing I've taken away from this first time experience, it's that I learned just how much fun speaking can be.</p>
+
+<p style="text-align:center;font-style:italic">
+  <a style="border:none" href="http://instagram.com/p/VQASKlt0WY/"><img width="306" height="306" src="http://distilleryimage8.s3.amazonaws.com/5bb657f06d9f11e2bf8b22000a1fb004_7.jpg" /><br />Sunset from the State Grid tower, after the talk</a>
+</p>
+
+
+
+
+<!-- more -->
+
+
+<p>I wasn't nearly as terrified as I thought I would be as a first time speaker. I have never been the most talkative guy among my peers. I was "the PPT guy behind the scene" for every single presentation back in high school (partly because I made gorgeous PPT slides :) I did make my efforts to practice public speaking skills in college, but my talks had hardly got out of the classroom. Lecturing for 1 hour and 50 minutes in a conference room of over fifty people, all of whom are more senior than I am, was definitely a challenge for me.</p>
+
+<p>It wasn't perfect all along, though. The unstable Internet connection made my beginning a little messed up (sweat on my forehead). I also had a hard time getting everyone on the same page early into the technical part, and I realized I should've walked slower and clearer through the steps. But when I slowed down, I soon managed to find the "flow" of presenting what I'd prepared the night before. I had lots of interactions with the audience, which also encouraged more elaborated explanations. I tried hard to make what I was saying coherent and understandable, but I wasn't entirely sure how I did until after the talk, a girl with a communication degree (meaning zero programming background) told me that I was good and that she could make sense of the coding part that I'd demoed. It meant a lot to me. It was amazing to see how I was able to communicate what I know, and be appreciated by my audience.</p>
+
+<p>What's even more surprising is that, the next morning when I woke up, I saw an email from a stranger saying that he saw <a href="http://scottcheng.github.com/d3js-101/">my slides for this talk</a> on <a href="https://news.ycombinator.com/item?id=5164195">Hacker News</a> and he liked it. Turns out someone else had posted the link on HN. I was <em>thrilled</em>. I hurriedly opened the HN thread, and apart from some complaints about the confusion caused by two-dimensional layout of slides (and I clarified in my <a href="https://news.ycombinator.com/item?id=5164195#up_5169390">comment</a>), people liked the content. What followed was expectable: tons of visits to <a href="http://scottcheng.github.com/d3js-101/">the slides</a>, a bunch of stargazers of <a href="https://github.com/scottcheng/d3js-101">the slides repo</a>, and a couple of <a href="https://github.com/scottcheng/followers">GitHub followers</a>. I think that's the most amazing aspect of the open source community -- it's open, and everyone is welcomed to join to carnival. I'm starting to feel that I'm part of them.</p>
+
+<p>As a brief reflection to speaking, I think speaking is like blogging, in that they are both about sharing ideas and knowledge with others. But speaking is more instantaneous, engaging and interactive, which make it even more fun. Like composing a blog post, preparing for a talk requires much effort and well-rounded knowledge on the topic to be presented. So I took this opportunity and had a closer look at how things really work in D3, for example the mechanisms of <a href="http://scottcheng.github.com/d3js-101/#/enter-exit">enter and exit</a>, and formulated some thoughts like <a href="http://scottcheng.github.com/d3js-101/#/data-binding">"visualization is all about binding data to visual elements"</a>. I learned a lot in the preparation process.</p>
+
+<p>I'd thank my lab advisor, Prof. <a href="http://vis.pku.edu.cn/yuanxiaoru/index_en.html">Xiaoru Yuan</a>, for giving me this incredible opportunity, and for teaching me how to teach. I'm really looking forward to my next talk, and hopefully someday I'll be talking about something built by myself.</p>
+]]></content>
+  </entry>
+  
+</feed>

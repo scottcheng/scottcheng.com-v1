@@ -9,7 +9,7 @@
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="Last weekend marked the first long technical talk of my life. I spoke about D3.js at State Grid, a global Fortune 500 company (in fact it ranked 7 in &hellip;">
+  <meta name="description" content="Two weeks ago I accepted the offer of admission to Stanford&#8217;s MSCS program, which concludes my graduate school application process. I&#8217;d &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-15T15:41:00+08:00" pubdate data-updated="true">April 15, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/grad-application-reflections/">Grad Application Reflections</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Two weeks ago I accepted the offer of admission to <a href="http://cs.stanford.edu/education/masters">Stanford&#8217;s MSCS program</a>, which concludes my graduate school application process. I&#8217;d like to record some key reflections that I have on this process. The following is based on my experience of applying for Master programs in CS / HCI, but should apply to applications for other degree programs as well.</p>
+
+<p>Rule #1 for fellow Chinese applicants: <em>no agencies whatsoever</em>. I know you probably heard this from everyone, but I&#8217;d say it again. If you want to get in a good program, get your own hands dirty, and don&#8217;t depend on others. Yes, going through the entire application process can be excruciating, but it&#8217;s worth it.</p>
+
+<p>Really know what you want from grad school, and build up your profile and application package accordingly to support your purpose. I&#8217;m a big believer of going for what you love, and grad application is no different. If you know exactly why you want to study in a program, you probably have a much better chance than many of your competitors. I&#8217;ve seen people who don&#8217;t have a dream school. I&#8217;ve seen people who apply for a program because everyone else does (they aren&#8217;t even motivated enough to read the program&#8217;s admission FAQ). I&#8217;ve seen people who choose to study abroad because their parents tell them to. How can they convince the admission committee that they are motivated to succeed in the program? How can they possibly tell good stories in the Statement of Purpose?</p>
+
+<p>Research your target programs. Are their any interesting faculty that you might want to work with? What tracks / courses do they offer that interest you? Anything about the university / department / location that attracts you in particular? Again, know what you want from each of your chosen programs (though your rationales are probably similar to one another), and make it clear in your application materials.</p>
+
+<p>Spend solid time on your essays. Vince Gotera <a href="http://www.uni.edu/~gotera/gradapp/stmtpurpose.htm">said</a>, &#8220;The Statement of Purpose required by grad schools is probably the hardest thing you will ever write.&#8221; I kind of agree. Nobody is born knowing how to compose good grad school essays. Before you start to prepare the essay, read what others say about it (you can find <em>a lot</em> online). When you are happy with your draft, ask people to read it, especially experienced people. If you are able to find good hands, you don&#8217;t need to ask too many people, because one sophisticated reviewer can be more helpful than ten novices. Based on my experience, two types of people might be good helpers here: (successful) former applicants, and professionals who help students apply. I was fortunate to receive help from both these kinds of people: my girlfriend Ivy who got into Stanford Graduate School of Education last year, and Joanne who has many years of experience helping people apply for college. Though undergrad application is quite different from grad application, Joanne&#8217;s expertise of SoP critique made a tremendous difference to many aspects of my essay. Now you have the feedback, revise, even rewrite. I made three major revisions before I finally got my SoP in good shape.</p>
+
+<p>These are what I have in mind for now. Graduate school application is really all about how much you <em>want</em> to get in your dream program. If you <em>really</em> want it (and, of course, work really hard for it), chances are that you&#8217;ll eventually get it. Where there is a will, there is a way.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -275,198 +321,6 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
 <p>I totally understand that footer is a default web element, but please think twice before going with traditions, especially when trying out something unprecedented. Don&#8217;t take rules for granted &#8211; they may be flawed, even fallacious. Think about why things are the way they are, and how they can be tweaked or redesigned to better fit a specific case. Question authorities; question everything.</p>
 
 <p>This is my little complaint after 20 seconds of unsuccessful attempts to catch the contacts in the footer of <a href="http://www.meishimeike.com/">Meishimeike</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-04T22:24:00+08:00" pubdate data-updated="true">October 04, 2012</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/beauty-of-loop/">Beauty of Loop</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of numbers or enumerables (e.g. calculating a Fibonacci number). If the problem space is dynamic (e.g. calculating the sum of 1 to <em>n</em>), loop is often the standard way of traversal (the alternative is recursion); otherwise, it contributes to DRY code by avoiding duplication (compared to an unraveled loop).</p>
-
-<p>However, loop doesn&#8217;t easily come to mind when handling a fixed data set that you would have to hard-code anyway. For example, when writing a table of names and titles on a webpage (in Jade), the common approach is:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">table</span>
-</span><span class='line'>  <span class="nt">tbody</span>
-</span><span class='line'>    <span class="nt">tr</span>
-</span><span class='line'>      <span class="nt">th</span> Chairman
-</span><span class='line'>      <span class="nt">td</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://alice.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Alice
-</span><span class='line'>    <span class="nt">tr</span>
-</span><span class='line'>      <span class="nt">th</span> Recruiting
-</span><span class='line'>      <span class="nt">td</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://bob.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Bob
-</span><span class='line'>    <span class="nt">tr</span>
-</span><span class='line'>      <span class="nt">th</span> Marketing
-</span><span class='line'>      <span class="nt">td</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://chris.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Chris
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>We see the repetitive pattern of table rows, containing a data set that is not literally an array. Repetition is evil, so we should <em>make an array</em> out of the data and loop through it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="c">//- Turn the data into an array</span>
-</span><span class='line'><span class="p">-</span> <span class="k">var</span> <span class="n">people</span> <span class="k">=</span> <span class="o">[]</span>
-</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chariman</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Alice</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://alice.com/</span><span class="err">&#39;</span><span class="o">}</span>
-</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Recruiting</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Bob</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://bob.com/</span><span class="err">&#39;</span><span class="o">}</span>
-</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">2</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Marketing</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chris</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://chris.com/</span><span class="err">&#39;</span><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">table</span>
-</span><span class='line'>  <span class="nt">tbody</span>
-</span><span class='line'>    <span class="nt">each</span> person in people
-</span><span class='line'>      <span class="nt">tr</span>
-</span><span class='line'>        <span class="nt">th</span><span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">position</span>
-</span><span class='line'>        <span class="nt">td</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;#{person.link}&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>)<span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This way, we only have to define the format of each person once, which conforms to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY principle</a> (of course, DRY principle is a lot deeper than creating loops):</p>
-
-<blockquote><p>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</p></blockquote>
-
-<p>The code becomes cleaner, more maintainable, and less error-prone. You could imagine how much benefit it could bring if there are 50 people in the list.</p>
-
-<p>However, generalization comes at the cost of flexibility, which I&#8217;ve discussed a bit in <a href="/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">a previous post</a>. For example, if there are two Marketing people, and one of them doesn&#8217;t have a website, then the table should look like:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">table</span>
-</span><span class='line'>  <span class="nt">tbody</span>
-</span><span class='line'>    <span class="nt">tr</span>
-</span><span class='line'>      <span class="nt">th</span> Chairman
-</span><span class='line'>      <span class="nt">td</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://alice.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Alice
-</span><span class='line'>    <span class="nt">tr</span>
-</span><span class='line'>      <span class="nt">th</span>(<span class="na">rowspan=</span><span class="s">&#39;2&#39;</span>) Marketing
-</span><span class='line'>      <span class="nt">td</span> Bob
-</span><span class='line'>    <span class="nt">tr</span>
-</span><span class='line'>      <span class="nt">td</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://chris.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Chris
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And the loop solution would be:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="p">-</span> <span class="k">var</span> <span class="n">positions</span> <span class="k">=</span> <span class="o">[]</span>
-</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chairman</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">people</span><span class="k">:</span> <span class="err">[]</span><span class="o">}</span>
-</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">0</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Alice</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://alice.com/</span><span class="err">&#39;</span><span class="o">}</span>
-</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Marketing</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">people</span><span class="k">:</span> <span class="err">[]</span><span class="o">}</span>
-</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Bob</span><span class="err">&#39;</span><span class="o">}</span>
-</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chris</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://chris.com/</span><span class="err">&#39;</span><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">mixin</span> person(person)
-</span><span class='line'>  <span class="nt">if</span> person.link
-</span><span class='line'>    <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;#{person.link}&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>)<span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span>
-</span><span class='line'>  <span class="nt">else</span>
-</span><span class='line'>    <span class="err">= </span><span class="nt">person</span><span class="nc">.name</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">table</span>
-</span><span class='line'>  <span class="nt">tbody</span>
-</span><span class='line'>    <span class="nt">each</span> pos in positions
-</span><span class='line'>      <span class="nt">tr</span>
-</span><span class='line'>        <span class="nt">th</span>(<span class="na">rowspan=</span><span class="s">&#39;#{pos.people.length}&#39;</span>)<span class="p">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">position</span>
-</span><span class='line'>        <span class="nt">td</span>
-</span><span class='line'>          <span class="nt">mixin</span> person(pos.people[0])
-</span><span class='line'>      <span class="p">-</span> <span class="k">for</span> <span class="o">(</span><span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-</span><span class='line'>        <span class="nt">tr</span>
-</span><span class='line'>          <span class="nt">td</span>
-</span><span class='line'>            <span class="nt">mixin</span> person(pos.people[i])
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So it&#8217;s always a trade-off. If there are not many items to operate on and the operation for each item is simple (or in some cases, wildly different from each other), perhaps loop isn&#8217;t the best way out. Despite of that, I&#8217;d advocate applying loops whenever possible, because they can make your code a lot more beautiful, and you&#8217;ll find your life so much easier because of them.</p>
-
-<p>Bottom line is, don&#8217;t make a <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET cart</a> :)</p>
 </div>
   
   

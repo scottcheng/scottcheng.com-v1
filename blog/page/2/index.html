@@ -9,7 +9,7 @@
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not &hellip;">
+  <meta name="description" content="Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,198 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-04T22:24:00+08:00" pubdate data-updated="true">October 04, 2012</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/beauty-of-loop/">Beauty of Loop</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of numbers or enumerables (e.g. calculating a Fibonacci number). If the problem space is dynamic (e.g. calculating the sum of 1 to <em>n</em>), loop is often the standard way of traversal (the alternative is recursion); otherwise, it contributes to DRY code by avoiding duplication (compared to an unraveled loop).</p>
+
+<p>However, loop doesn&#8217;t easily come to mind when handling a fixed data set that you would have to hard-code anyway. For example, when writing a table of names and titles on a webpage (in Jade), the common approach is:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Chairman
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://alice.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Alice
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Recruiting
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://bob.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Bob
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Marketing
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://chris.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Chris
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We see the repetitive pattern of table rows, containing a data set that is not literally an array. Repetition is evil, so we should <em>make an array</em> out of the data and loop through it.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="c">//- Turn the data into an array</span>
+</span><span class='line'><span class="p">-</span> <span class="k">var</span> <span class="n">people</span> <span class="k">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chariman</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Alice</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://alice.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Recruiting</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Bob</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://bob.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">people</span><span class="o">[</span><span class="err">2</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Marketing</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chris</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://chris.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">each</span> person in people
+</span><span class='line'>      <span class="nt">tr</span>
+</span><span class='line'>        <span class="nt">th</span><span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">position</span>
+</span><span class='line'>        <span class="nt">td</span>
+</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;#{person.link}&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>)<span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This way, we only have to define the format of each person once, which conforms to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY principle</a> (of course, DRY principle is a lot deeper than creating loops):</p>
+
+<blockquote><p>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</p></blockquote>
+
+<p>The code becomes cleaner, more maintainable, and less error-prone. You could imagine how much benefit it could bring if there are 50 people in the list.</p>
+
+<p>However, generalization comes at the cost of flexibility, which I&#8217;ve discussed a bit in <a href="/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">a previous post</a>. For example, if there are two Marketing people, and one of them doesn&#8217;t have a website, then the table should look like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span> Chairman
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://alice.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Alice
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">th</span>(<span class="na">rowspan=</span><span class="s">&#39;2&#39;</span>) Marketing
+</span><span class='line'>      <span class="nt">td</span> Bob
+</span><span class='line'>    <span class="nt">tr</span>
+</span><span class='line'>      <span class="nt">td</span>
+</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;http://chris.com/&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>) Chris
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And the loop solution would be:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="p">-</span> <span class="k">var</span> <span class="n">positions</span> <span class="k">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chairman</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">people</span><span class="k">:</span> <span class="err">[]</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">0</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Alice</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://alice.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">position</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Marketing</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">people</span><span class="k">:</span> <span class="err">[]</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">0</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Bob</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'><span class="p">-</span> <span class="n">positions</span><span class="o">[</span><span class="err">1</span><span class="o">].</span><span class="n">people</span><span class="o">[</span><span class="err">1</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span><span class="n">name</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">Chris</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">link</span><span class="k">:</span> <span class="err">&#39;</span><span class="kt">http://chris.com/</span><span class="err">&#39;</span><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">mixin</span> person(person)
+</span><span class='line'>  <span class="nt">if</span> person.link
+</span><span class='line'>    <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;#{person.link}&#39;</span><span class="err">,</span> <span class="na">target=</span><span class="s">&#39;_blank&#39;</span>)<span class="p">=</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span>
+</span><span class='line'>  <span class="nt">else</span>
+</span><span class='line'>    <span class="err">= </span><span class="nt">person</span><span class="nc">.name</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">table</span>
+</span><span class='line'>  <span class="nt">tbody</span>
+</span><span class='line'>    <span class="nt">each</span> pos in positions
+</span><span class='line'>      <span class="nt">tr</span>
+</span><span class='line'>        <span class="nt">th</span>(<span class="na">rowspan=</span><span class="s">&#39;#{pos.people.length}&#39;</span>)<span class="p">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">position</span>
+</span><span class='line'>        <span class="nt">td</span>
+</span><span class='line'>          <span class="nt">mixin</span> person(pos.people[0])
+</span><span class='line'>      <span class="p">-</span> <span class="k">for</span> <span class="o">(</span><span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+</span><span class='line'>        <span class="nt">tr</span>
+</span><span class='line'>          <span class="nt">td</span>
+</span><span class='line'>            <span class="nt">mixin</span> person(pos.people[i])
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So it&#8217;s always a trade-off. If there are not many items to operate on and the operation for each item is simple (or in some cases, wildly different from each other), perhaps loop isn&#8217;t the best way out. Despite of that, I&#8217;d advocate applying loops whenever possible, because they can make your code a lot more beautiful, and you&#8217;ll find your life so much easier because of them.</p>
+
+<p>Bottom line is, don&#8217;t make a <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET cart</a> :)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -380,232 +572,6 @@
 <p>I also used this multi-transition trick to create the trailing dots effect of <a href="/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
 
 <p>It&#8217;s just exhilarating to explore new power of familiar tools.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-28T07:51:00+08:00" pubdate data-updated="true">August 28, 2012</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">Elegantly Highlight the Current Nav Item in Template</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&#8217;s one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
-
-<p><img src="/images/posts/beijing3ds-navbar.png"></p>
-
-<p>Some suggest a <a href="http://hicksdesign.co.uk/journal/highlighting-current-page-with-css">CSS solution</a>, which introduces additional coupling between CSS rules and navigation HTML markup. Some use simple JavaScript hacks and match the current location against the nav link, something like:</p>
-
-<figure class='code'><figcaption><span>A jQuery solution</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;nav li &gt; a[href*=&quot;&#39;</span> <span class="o">+</span> <span class="nx">link</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Which brings, well, additional script to run.</p>
-
-<p>A JavaScript fan though I am, I believe that this &#8220;active&#8221; style is static, and all static styles should be accomplished by the server, rather than by client-side script. None of the templating languages that I&#8217;ve used, however, natively provides an graceful way of doing this ordinary task (they <em>should!</em>).</p>
-
-<p>I&#8217;ll take my current favorite templating engine, <a href="http://jade-lang.com/">Jade</a>, for example. Here is a most direct method:</p>
-
-<figure class='code'><figcaption><span>Straightforward method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
-</span><span class='line'>  <span class="nt">ul</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c">//- Suppose we have a local variable `menu`</span>
-</span><span class='line'>    <span class="c">//- indicating the nav item to highlight</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">if</span> menu === &#39;home&#39;
-</span><span class='line'>      <span class="nt">li</span><span class="nc">.active</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/&#39;</span>) Home
-</span><span class='line'>    <span class="nt">else</span>
-</span><span class='line'>      <span class="nt">li</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/&#39;</span>) Home
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">if</span> menu === &#39;blog&#39;
-</span><span class='line'>      <span class="nt">li</span><span class="nc">.active</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/blog&#39;</span>) Blog
-</span><span class='line'>    <span class="nt">else</span>
-</span><span class='line'>      <span class="nt">li</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/blog&#39;</span>) Blog
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">if</span> menu === &#39;about&#39;
-</span><span class='line'>      <span class="nt">li</span><span class="nc">.active</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/about&#39;</span>) About
-</span><span class='line'>    <span class="nt">else</span>
-</span><span class='line'>      <span class="nt">li</span>
-</span><span class='line'>        <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/about&#39;</span>) About
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Too much duplication! When the code is <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET</a>, we can almost always <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY</a> things up a bit with loops (inspired by <a href="http://peterlyons.com/">Peter</a>&#8217;s <a href="http://stackoverflow.com/questions/10713923/node-js-jade-express-how-can-i-create-a-navigation-that-will-set-class-acti#answer-10714267">solution</a>):</p>
-
-<figure class='code'><figcaption><span>Loop method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
-</span><span class='line'>  <span class="nt">ul</span>
-</span><span class='line'>    <span class="nt">each</span> nav in [&#39;home&#39;, &#39;blog&#39;, &#39;about&#39;]
-</span><span class='line'>      <span class="nt">if</span> menu === nav
-</span><span class='line'>        <span class="nt">li</span><span class="nc">.active</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
-</span><span class='line'>          <span class="c">//- Use CSS to control case, e.g.,</span>
-</span><span class='line'>          <span class="c">//- `text-transform: capitalize`</span>
-</span><span class='line'>      <span class="nt">else</span>
-</span><span class='line'>        <span class="nt">li</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Lookin&#8217; neat, except the &#8220;Home&#8221; link should point to root instead of <code>/home</code>. A dirty hack will do:</p>
-
-<figure class='code'><figcaption><span>Revised loop method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
-</span><span class='line'>  <span class="nt">ul</span>
-</span><span class='line'>    <span class="nt">each</span> nav in [&#39;home&#39;, &#39;blog&#39;, &#39;about&#39;]
-</span><span class='line'>      <span class="nt">if</span> menu === nav
-</span><span class='line'>        <span class="nt">li</span><span class="nc">.active</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav === &#39;</span><span class="na">home</span><span class="err">&#39;</span> <span class="err">?</span> <span class="err">&#39;&#39;</span> <span class="na">:</span> <span class="na">nav</span><span class="err">}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
-</span><span class='line'>      <span class="nt">else</span>
-</span><span class='line'>        <span class="nt">li</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav === &#39;</span><span class="na">home</span><span class="err">&#39;</span> <span class="err">?</span> <span class="err">&#39;&#39;</span> <span class="na">:</span> <span class="na">nav</span><span class="err">}&#39;</span>)<span class="p">=</span> <span class="n">nav</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This looks good, as long as it meets the need. However, what if we want some anchor text <em>wildly</em> different from the links? We can further tweak it:</p>
-
-<figure class='code'><figcaption><span>Further revised loop method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
-</span><span class='line'>  <span class="nt">ul</span>
-</span><span class='line'>    <span class="nt">each</span> nav in [{link: &#39;&#39;, caption: &#39;home&#39;}, {link: &#39;blog&#39;, caption: &#39;Essays&#39;}, {link: &#39;about&#39;, caption: &#39;Bio&#39;}]
-</span><span class='line'>
-</span><span class='line'>      <span class="c">//- Suppose we have a local variable `navlink`</span>
-</span><span class='line'>      <span class="c">//- indicating the link of the nav item to highlight</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="nt">if</span> navlink === nav.link
-</span><span class='line'>        <span class="nt">li</span><span class="nc">.active</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav.link}&#39;</span>)<span class="p">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">caption</span>
-</span><span class='line'>      <span class="nt">else</span>
-</span><span class='line'>        <span class="nt">li</span>
-</span><span class='line'>          <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/#{nav.link}&#39;</span>)<span class="p">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">caption</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Works, with one caveat: Jade <a href="https://github.com/visionmedia/jade/issues/502">doesn&#8217;t support</a> multi-line array literal or JavaScript code, which means the entire navigation array (all the <code>link</code>s and <code>caption</code>s) has to be packed into a single line of code! Unreadable, hard to maintain &#8211; not so appealing to me.</p>
-
-<p>Here I&#8217;d like to propose a solution without too much in a line. It requires some repetition, but doesn&#8217;t feel too WET:</p>
-
-<figure class='code'><figcaption><span>My favorite method</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='jade'><span class='line'><span class="nt">nav</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c">//- pass `menu` to li class attribute</span>
-</span><span class='line'>  <span class="c">//- through a dictionary `nav`</span>
-</span><span class='line'>  <span class="p">-</span> <span class="k">var</span> <span class="n">nav</span> <span class="k">=</span> <span class="o">{};</span> <span class="n">nav</span><span class="o">[</span><span class="kt">menu</span><span class="o">]</span> <span class="k">=</span> <span class="-Symbol">&#39;active</span><span class="err">&#39;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nt">ul</span>
-</span><span class='line'>    <span class="nt">li</span>(<span class="na">class=</span><span class="s">&#39;#{nav.home}&#39;</span>)
-</span><span class='line'>      <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/&#39;</span>) Home
-</span><span class='line'>    <span class="nt">li</span>(<span class="na">class=</span><span class="s">&#39;#{nav.blog}&#39;</span>)
-</span><span class='line'>      <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/blog&#39;</span>) Essays
-</span><span class='line'>    <span class="nt">li</span>(<span class="na">class=</span><span class="s">&#39;#{nav.about}&#39;</span>)
-</span><span class='line'>      <span class="nt">a</span>(<span class="na">href=</span><span class="s">&#39;/about&#39;</span>) Bio
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I love it because (a) it&#8217;s truly flexible, and (b) it&#8217;s clever enough to take out the <code>if</code>. The key here is &#8220;invert mapping&#8221; &#8211; from <code>menu -&gt; &lt;nav-item&gt;</code> to <code>&lt;nav-item&gt; -&gt; active</code>, made possible by a &#8220;dictionary&#8221; (Python jargon, I think more appropriate than &#8220;map&#8221; or &#8220;object&#8221; here).</p>
-
-<p>Not perfect, but more elegant than the rest.</p>
 </div>
   
   
