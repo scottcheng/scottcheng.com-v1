@@ -8,10 +8,6 @@ footer: true
 
 I enjoy crafting things. Here are some of my creations.
 
-<h3><a href="http://scottcheng.github.com/d3js-101/">D3.js 101: A Technical Intro</a></h3>
-
-I gave my first long technical talk in the tech division of [State Grid](http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China). The topic was [D3.js](http://d3js.org/), the JavaScript visualization library for the Web. You can read more about what happened in [my blog post](/blog/2013/02/speaking-is-fun/), or see the [slides](http://scottcheng.github.com/d3js-101/).
-
 <h3><a href="http://scottcheng.github.com/weibo-time-vis/" class="external">Weibo Visualization</a></h3>
 
 An experimental visualization of a Weibo dataset, trying to illustrate the time-wise evolution of topics.
