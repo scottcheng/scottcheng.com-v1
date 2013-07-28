@@ -6,7 +6,7 @@ sharing: true
 footer: true
 ---
 
-{% img right /images/scott.jpg 190 %}
+{% img center /images/scott.jpg 300 %}
 
 Hello there, my name is 程烨 (CHENG Ye). Call me Scott.
 
