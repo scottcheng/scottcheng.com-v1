@@ -109,11 +109,11 @@ body > nav {
     }
     &:before {
       top: -24px;
-      @include box-shadow(0 9px 9px -9px rgba(#000, .3));
+      @include box-shadow(0 3px 3px -3px rgba(#000, .3));
     }
     &:after {
       bottom: -24px;
-      @include box-shadow(0 -9px 9px -9px rgba(#000, .3));
+      @include box-shadow(0 -3px 3px -3px rgba(#000, .3));
     }
   }
 
