@@ -8,6 +8,12 @@ footer: true
 
 I enjoy crafting things. Here are some of my creations.
 
+<h3><a href="http://www.sparkl.us/" class="external">Sparkl</a></h3>
+
+Virtual brainstorming for creative teams. Work in progress.
+
+<p><a href="http://sparkl.us/"><img src="/images/projects/sparkl/splash.png" /></a></p>
+
 <h3><a href="http://scottcheng.github.com/weibo-time-vis/" class="external">Weibo Visualization</a></h3>
 
 An experimental visualization of a Weibo dataset, trying to illustrate the time-wise evolution of topics.
@@ -29,20 +35,6 @@ A non-technical intro to CSS level 3, made with [impress.js](http://bartaz.githu
 [{% img /images/projects/revolutionary-css3/scrshot.png %}](http://scottcheng.github.com/revolutionary-css3/)
 
 
-<h3><a href="https://chrome.google.com/webstore/detail/30s-neck-stretch/pcdcihhemnmdojkkhloildjcoobklnhb" class="external">30s Neck Stretch</a></h3>
-
-This is my friend [Ivy](http://ivyguo.squarespace.com/)'s course project at Stanford's [Behavior Design](http://captology.stanford.edu/projects/behaviordesign.html) course. Our purpose is to raise awareness of everyday neck health and desk health, let people know that their health conditions can be improved through tiny behaviors, and actually help them take action.
-
-<p style="text-align:center"><a href="https://chrome.google.com/webstore/detail/30s-neck-stretch/pcdcihhemnmdojkkhloildjcoobklnhb"><img src="/images/projects/neck-stretch/logo.png" class="no-shadow" width="96" height="96" /></a></p>
-
-
-<h3><a href="save2drive/">Save2Drive</a></h3>
-
-A simple Chrome extension that saves links, images, HTML5 audio and videos directly from Chrome to Google Drive.
-
-[{% img /images/projects/save2drive/promo.jpg %}](save2drive/)
-
-
 <h3><a href="outliner/">Outliner</a></h3>
 
 A Chrome extension that generates a table of contents of a web page.
@@ -55,13 +47,6 @@ A Chrome extension that generates a table of contents of a web page.
 I was fortunate to be one of the student organizers of the inaugural Beijing 3 Day Startup event, where I met lots of awesome people. I created the Bootstrap-based front-end of [the website](http://www.beijing3ds.org/), and [Zifei](http://www.zifeishan.org/) built the Python back-end to handle application forms. I also had a chance to [interview](/blog/2012/10/what-i-learned-as-an-interviewer/) some of the applicants as part of the selection process.
 
 [{% img /images/projects/beijing3ds-2012/banner.png %}](http://www.beijing3ds.org/)
-
-
-<h3><a href="talking-gmail/">Talking Gmail</a></h3>
-
-A Chrome extension that reads your Gmail messages for you.
-
-[{% img /images/projects/talking-gmail/promo.jpg %}](talking-gmail/)
 
 
 <h3><a href="omni-image-search/">Omni Image Search</a></h3>
@@ -78,18 +63,11 @@ A Chrome extension that enables you to download an entire Renren album with one 
 [{% img /images/projects/renren-album-downloader/promo.jpg %}](renren-album-downloader/)
 
 
-<!-- <h3><a href="yourong/">友容 (Yourong)</a></h3> -->
-
-<!-- TODO -->
-
-
 <h3><a href="jieprofile/" class="external">街旁档案 (Jiepang Profile)</a></h3>
 
 Jiepang Profile is a web application that analyzes and visualizes the data of individual Jiepang users.
 
 <p style="text-align:center"><a href="jieprofile/"><img src="/images/projects/jieprofile/splash.png" width="418" class="no-shadow" /></a></p>
-
-<!-- find the splash form vaio z -->
 
 
 - - -
