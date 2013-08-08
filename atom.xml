@@ -4,7 +4,7 @@
   <title><![CDATA[Scott Cheng]]></title>
   <link href="http://scottcheng.com/atom.xml" rel="self"/>
   <link href="http://scottcheng.com/"/>
-  <updated>2013-08-02T23:44:47+08:00</updated>
+  <updated>2013-08-09T02:57:15+08:00</updated>
   <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ember vs Backbone: Event Model]]></title>
+    <link href="http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/"/>
+    <updated>2013-08-09T00:05:00+08:00</updated>
+    <id>http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model</id>
+    <content type="html"><![CDATA[<p>Lately I&#8217;ve been playing with <a href="http://emberjs.com/">Ember</a> and <a href="http://backbonejs.org/">Backbone</a>, and enjoying these modern tools for building modern web applications (I&#8217;ll try <a href="http://angularjs.org/">Angular</a> next.) Ember and Backbone are different <a href="http://smus.com/backbone-and-ember/">in many ways</a>. While writing apps with them, I have realized that, apart from all the architectural/philosophical divergence, they employ very different approaches to event subscription, which is a critical part of any UI application.</p>
+
+<!-- more -->
+
+
+<p>Backbone apps depend heavily upon Backbone&#8217;s <a href="http://backbonejs.org/#Events">event model</a>. The idea is simple: object A listens to object B&#8217;s event C, and gets notified whenever C is triggered on B. Ember does it differently. Instead of having one unified event model, Ember breaks the publish/subscribe pattern into <a href="http://emberjs.com/guides/object-model/bindings/">Bindings</a>, <a href="http://emberjs.com/guides/object-model/observers/">Observers</a>, and <a href="http://emberjs.com/guides/object-model/computed-properties/">Computed Properties</a>, while not providing explicit event listening. The breakdown is insightful, and <a href="http://emberjs.com/guides/object-model/what-do-i-use-when/">each has different uses</a>. However, I&#8217;ve found cases where none of them is as helpful as the old event pub/sub pattern.</p>
+
+<p>When building <a href="http://www.sparkl.us">Sparkl</a>, I needed to animate the interface whenever a user likes an item. Any user, not just the person in front of this interface. Therefore, I&#8217;m triggering a &#8220;getting liked&#8221; event from the model. This would be straightforward in Backbone:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@trigger</span> <span class="s">&#39;liked&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In View</span>
+</span><span class='line'><span class="nv">initialize: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="nx">@listenTo</span> <span class="nx">@model</span><span class="p">,</span> <span class="s">&#39;liked&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
+</span><span class='line'>    <span class="c1"># Animate</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When I tried to use Ember&#8217;s observer, however, I realized that I can only observe property updates. &#8220;Getting liked&#8221; is an event, and there is no property here to be observed! Therefore I would have to make up a variable to record the event of &#8220;getting liked&#8221;. It won&#8217;t work if the variable stores information of the user liking it, because if a user likes the item, unlikes it, and likes it again, this variable won&#8217;t update at the second like, and the observer won&#8217;t fire. So I decided to track the time when the item gets liked, and observe this property from view:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@set</span> <span class="s">&#39;latestLikeDate&#39;</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In view</span>
+</span><span class='line'><span class="nv">animateLike: </span><span class="p">(</span> <span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Animate</span>
+</span><span class='line'><span class="p">).</span><span class="nx">observes</span> <span class="s">&#39;controller.model.latestLikeDate&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending to server. So while Ember provides new approaches to common problems, perhaps traditional solutions are still good to have.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Grad Application Reflections]]></title>

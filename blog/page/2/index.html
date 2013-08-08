@@ -9,7 +9,7 @@
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of &hellip;">
+  <meta name="description" content="Popularized by Pinterest, waterfall layout is a smart invention because it could elegantly take up the entire window with flexible positioning. By &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,50 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-09T15:57:00+08:00" pubdate data-updated="true">October 09, 2012</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/waterfall-and-footnote/">Waterfall and Footnote</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Popularized by <a href="http://pinterest.com/">Pinterest</a>, waterfall layout is a smart invention because it could elegantly take up the entire window with flexible positioning. By default, waterfall doesn&#8217;t paginate; instead, &#8220;pages&#8221; are automatically loaded and appended as a user reaches the bottom of the page, providing a non-stop browsing experience, which, in itself, is nice.</p>
+
+<p>So people start to mock it, as they always would, and some of these implementations left a page footer there, right below the waterfall. Predictably, the poor footer gets constantly &#8220;flushed&#8221; downwards every time I try to have a good look at it, and I can <em>never</em> reach it. (Here is a workaround: disconnect the Internet and the page will stop growing)</p>
+
+<p>If some part of a webpage can never be read and clicked on under reasonably good network condition, what is the point of it being there at all? It gets especially annoying if that part is somewhat intriguing that people want to interact with.</p>
+
+<p>I totally understand that footer is a default web element, but please think twice before going with traditions, especially when trying out something unprecedented. Don&#8217;t take rules for granted &#8211; they may be flawed, even fallacious. Think about why things are the way they are, and how they can be tweaked or redesigned to better fit a specific case. Question authorities; question everything.</p>
+
+<p>This is my little complaint after 20 seconds of unsuccessful attempts to catch the contacts in the footer of <a href="http://www.meishimeike.com/">Meishimeike</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -471,107 +515,6 @@
 <p>P.S. As I was trying to find out what others have to say on this topic on Stack Overflow, <a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors#answer-9618795">an answer</a> took me to <a href="http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/">Nicolas Gallagher&#8217;s master list of solutions to this very problem</a>, with analyses on each of his five methods. Great work!</p>
 
 <p>P.P.S. Pardon my ignorance, but what is the official terminology of the &#8220;in-page link&#8221; I&#8217;ve talked about in this post? &#8220;Jump link&#8221;? I found a few uses of &#8220;jump link&#8221; after Googling, but honestly I&#8217;ve never heard of this term before, and it doesn&#8217;t look very much like <em>the</em> way it&#8217;s called to me.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-29T01:36:00+08:00" pubdate data-updated="true">August 29, 2012</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/css-multi-transition-trick/">CSS Multi-Transition Trick</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p><em>It&#8217;s one thing to know a tool, another to make the most of it.</em></p>
-
-<p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
-
-<figure class='code'><figcaption><span>Smooth hover color change (anchor)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">a</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">transiton</span><span class="o">:</span> <span class="k">color</span> <span class="m">.25s</span><span class="p">;</span>  <span class="c">/* vendor prefix emitted */</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#ed6812</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is how I&#8217;ve always learned to use the transition property &#8211; only apply one transition rule to the element. However, what if we declare another different transition property in the <code>:hover</code> block?</p>
-
-<p>Turns out it does magic. Try moving your mouse in and out of the bar:</p>
-
-<div id="multi-transition-demo-bar">
-  <div id="multi-transition-demo-bar-inner"></div>
-</div>
-
-
-
-
-<figure class='code'><figcaption><span>Gentle-growing & rapid-dropping</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nf">#bar-inner</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c">/* transition rule when not hovered */</span>
-</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">.5s</span> <span class="m">.5s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nf">#bar</span><span class="nd">:hover</span> <span class="o">&gt;</span> <span class="nf">#bar-inner</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c">/* transition rule when hovered */</span>
-</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">10s</span> <span class="m">0</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here I defined different transition properties on the different &#8220;states&#8221; (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.</p>
-
-<p>I also used this multi-transition trick to create the trailing dots effect of <a href="/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
-
-<p>It&#8217;s just exhilarating to explore new power of familiar tools.</p>
 </div>
   
   

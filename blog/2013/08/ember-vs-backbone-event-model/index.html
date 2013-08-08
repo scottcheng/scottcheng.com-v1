@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>CSS Multi-Transition Trick - Scott Cheng</title>
+  <title>Ember vs Backbone: Event Model - Scott Cheng</title>
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="It&#8217;s one thing to know a tool, another to make the most of it. Transition is one of my favorite features that CSS3 has brought to the front-end &hellip;">
-  <meta name="keywords" content="css, css3, css transition, css trick">
+  <meta name="description" content="Lately I&#8217;ve been playing with Ember and Backbone, and enjoying these modern tools for building modern web applications (I&#8217;ll try Angular &hellip;">
+  <meta name="keywords" content="ember, backbone, web app, spa, single page application, event, event model, publish/subscribe">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://scottcheng.com/blog/2012/08/css-multi-transition-trick/">
+  <link rel="canonical" href="http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/">
   <link href="/stylesheets/fonts.css" rel="stylesheet", type="text/css">  <!-- localized google web fonts -->
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -104,49 +104,26 @@
   
 
 
-<time datetime="2012-08-29T01:36:00+08:00" pubdate data-updated="true">August 29, 2012</time>
+<time datetime="2013-08-09T00:05:00+08:00" pubdate data-updated="true">August 09, 2013</time>
         
       </p>
     
     
-      <h1 class="entry-title">CSS Multi-Transition Trick</h1>
+      <h1 class="entry-title">Ember vs Backbone: Event Model</h1>
     
   </header>
 
 
-<div class="entry-content"><p><em>It&#8217;s one thing to know a tool, another to make the most of it.</em></p>
+<div class="entry-content"><p>Lately I&#8217;ve been playing with <a href="http://emberjs.com/">Ember</a> and <a href="http://backbonejs.org/">Backbone</a>, and enjoying these modern tools for building modern web applications (I&#8217;ll try <a href="http://angularjs.org/">Angular</a> next.) Ember and Backbone are different <a href="http://smus.com/backbone-and-ember/">in many ways</a>. While writing apps with them, I have realized that, apart from all the architectural/philosophical divergence, they employ very different approaches to event subscription, which is a critical part of any UI application.</p>
 
-<p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
-
-<figure class='code'><figcaption><span>Smooth hover color change (anchor)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">a</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">transiton</span><span class="o">:</span> <span class="k">color</span> <span class="m">.25s</span><span class="p">;</span>  <span class="c">/* vendor prefix emitted */</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#ed6812</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<!-- more -->
 
 
-<p>This is how I&#8217;ve always learned to use the transition property &#8211; only apply one transition rule to the element. However, what if we declare another different transition property in the <code>:hover</code> block?</p>
+<p>Backbone apps depend heavily upon Backbone&#8217;s <a href="http://backbonejs.org/#Events">event model</a>. The idea is simple: object A listens to object B&#8217;s event C, and gets notified whenever C is triggered on B. Ember does it differently. Instead of having one unified event model, Ember breaks the publish/subscribe pattern into <a href="http://emberjs.com/guides/object-model/bindings/">Bindings</a>, <a href="http://emberjs.com/guides/object-model/observers/">Observers</a>, and <a href="http://emberjs.com/guides/object-model/computed-properties/">Computed Properties</a>, while not providing explicit event listening. The breakdown is insightful, and <a href="http://emberjs.com/guides/object-model/what-do-i-use-when/">each has different uses</a>. However, I&#8217;ve found cases where none of them is as helpful as the old event pub/sub pattern.</p>
 
-<p>Turns out it does magic. Try moving your mouse in and out of the bar:</p>
+<p>When building <a href="http://www.sparkl.us">Sparkl</a>, I needed to animate the interface whenever a user likes an item. Any user, not just the person in front of this interface. Therefore, I&#8217;m triggering a &#8220;getting liked&#8221; event from the model. This would be straightforward in Backbone:</p>
 
-<div id="multi-transition-demo-bar">
-  <div id="multi-transition-demo-bar-inner"></div>
-</div>
-
-
-
-
-<figure class='code'><figcaption><span>Gentle-growing & rapid-dropping</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -155,31 +132,42 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nf">#bar-inner</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@trigger</span> <span class="s">&#39;liked&#39;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="c">/* transition rule when not hovered */</span>
-</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">.5s</span> <span class="m">.5s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nf">#bar</span><span class="nd">:hover</span> <span class="o">&gt;</span> <span class="nf">#bar-inner</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c">/* transition rule when hovered */</span>
-</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">10s</span> <span class="m">0</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c1"># In View</span>
+</span><span class='line'><span class="nv">initialize: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="nx">@listenTo</span> <span class="nx">@model</span><span class="p">,</span> <span class="s">&#39;liked&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
+</span><span class='line'>    <span class="c1"># Animate</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Here I defined different transition properties on the different &#8220;states&#8221; (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.</p>
+<p>When I tried to use Ember&#8217;s observer, however, I realized that I can only observe property updates. &#8220;Getting liked&#8221; is an event, and there is no property here to be observed! Therefore I would have to make up a variable to record the event of &#8220;getting liked&#8221;. It won&#8217;t work if the variable stores information of the user liking it, because if a user likes the item, unlikes it, and likes it again, this variable won&#8217;t update at the second like, and the observer won&#8217;t fire. So I decided to track the time when the item gets liked, and observe this property from view:</p>
 
-<p>I also used this multi-transition trick to create the trailing dots effect of <a href="/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@set</span> <span class="s">&#39;latestLikeDate&#39;</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In view</span>
+</span><span class='line'><span class="nv">animateLike: </span><span class="p">(</span> <span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Animate</span>
+</span><span class='line'><span class="p">).</span><span class="nx">observes</span> <span class="s">&#39;controller.model.latestLikeDate&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>It&#8217;s just exhilarating to explore new power of familiar tools.</p>
+
+<p>Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending to server. So while Ember provides new approaches to common problems, perhaps traditional solutions are still good to have.</p>
 </div>
 
 
@@ -202,7 +190,7 @@
   
 
 
-<time datetime="2012-08-29T01:36:00+08:00" pubdate data-updated="true">August 29, 2012</time>
+<time datetime="2013-08-09T00:05:00+08:00" pubdate data-updated="true">August 09, 2013</time>
       
 
 <span class="categories">
@@ -223,10 +211,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/" title="Previous Post: Elegantly Highlight the Current Nav Item in Template">&laquo; Elegantly Highlight the Current Nav Item in Template</a>
+        <a class="basic-alignment left" href="/blog/2013/04/grad-application-reflections/" title="Previous Post: Grad Application Reflections">&laquo; Grad Application Reflections</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/" title="Next Post: Pulling Anchor Targets out of the Fixed Header">Pulling Anchor Targets out of the Fixed Header &raquo;</a>
       
     </p>
   </footer>
@@ -288,8 +274,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://scottcheng.com/blog/2012/08/css-multi-transition-trick/';
-        var disqus_url = 'http://scottcheng.com/blog/2012/08/css-multi-transition-trick/';
+        var disqus_identifier = 'http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/';
+        var disqus_url = 'http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/';
         var disqus_script = 'embed.js';
       
     (function () {

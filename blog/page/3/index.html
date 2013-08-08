@@ -9,7 +9,7 @@
   <meta name="author" content="Scott Cheng">
 
   
-  <meta name="description" content="It&#8217;s one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See my latest work for a &hellip;">
+  <meta name="description" content="It&#8217;s one thing to know a tool, another to make the most of it. Transition is one of my favorite features that CSS3 has brought to the front-end &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,107 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-29T01:36:00+08:00" pubdate data-updated="true">August 29, 2012</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/css-multi-transition-trick/">CSS Multi-Transition Trick</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>It&#8217;s one thing to know a tool, another to make the most of it.</em></p>
+
+<p><a href="http://www.webdesignerdepot.com/2010/01/css-transitions-101/">Transition</a> is one of my favorite features that CSS3 has brought to the front-end toolkit. Smooth color change on hover can be achieved as easily as the following (see <a href="#">links</a> on this site for live examples):</p>
+
+<figure class='code'><figcaption><span>Smooth hover color change (anchor)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">a</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">transiton</span><span class="o">:</span> <span class="k">color</span> <span class="m">.25s</span><span class="p">;</span>  <span class="c">/* vendor prefix emitted */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#ed6812</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is how I&#8217;ve always learned to use the transition property &#8211; only apply one transition rule to the element. However, what if we declare another different transition property in the <code>:hover</code> block?</p>
+
+<p>Turns out it does magic. Try moving your mouse in and out of the bar:</p>
+
+<div id="multi-transition-demo-bar">
+  <div id="multi-transition-demo-bar-inner"></div>
+</div>
+
+
+
+
+<figure class='code'><figcaption><span>Gentle-growing & rapid-dropping</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nf">#bar-inner</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">/* transition rule when not hovered */</span>
+</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">.5s</span> <span class="m">.5s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">#bar</span><span class="nd">:hover</span> <span class="o">&gt;</span> <span class="nf">#bar-inner</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">/* transition rule when hovered */</span>
+</span><span class='line'>  <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">10s</span> <span class="m">0</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here I defined different transition properties on the different &#8220;states&#8221; (hover and non-hover) of the same element, and made the bar move much slower when hovered (growing) than otherwise (dropping). Also, different delays and timing functions are applied to the different states.</p>
+
+<p>I also used this multi-transition trick to create the trailing dots effect of <a href="/lab/grid/">this experiment</a>, where the dots fade in fast and fade out slowly.</p>
+
+<p>It&#8217;s just exhilarating to explore new power of familiar tools.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -465,47 +566,6 @@
 <p><img src="/images/posts/octopress-on-xperia-s.png"></p>
 </div>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-27T01:36:00+08:00" pubdate data-updated="true">July 27, 2012</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/playing-with-git-branches/">Playing With Git Branches</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Though it has been almost half a year since the first time I &#8220;gitted&#8221; (and I love it!), all git commands I&#8217;ve ever used are <code>clone</code>, <code>add</code>, <code>commit</code>, <code>pull</code> and <code>push</code>. But when I created <a href="http://scottcheng.github.com/revolutionary-css3/">my first GitHub page</a>, I had to start dealing with branches. It&#8217;s like a rewarding &#8220;stepping out of the comfort zone&#8221; experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/07/playing-with-git-branches/">Read on &rarr;</a>
-    </footer>
   
 
 
