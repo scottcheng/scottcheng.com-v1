@@ -41,4 +41,22 @@ animateLike: ( ->
 ).observes 'controller.model.latestLikeDate'
 ```
 
-Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending to server. So while Ember provides new approaches to common problems, perhaps traditional solutions are still good to have.
+Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending model to server. So while Ember provides new approaches to address common problems, perhaps traditional solutions are still good to have.
+
+## Update: Ember.Evented
+
+I discovered that Ember has an [Evented mixin](https://github.com/emberjs/ember.js/blob/v1.0.0-rc.6/packages/ember-runtime/lib/mixins/evented.js), which supports similar event pub/sub as in Backbone. Now I'm using this:
+
+``` coffeescript
+# In model
+like: ->
+  # Update model
+  @trigger 'isLiked'
+
+# In view
+init: ->
+  @get('controller.model').on 'isLiked', ->
+    # Animate
+```
+
+Much better.
