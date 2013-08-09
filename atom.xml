@@ -4,7 +4,7 @@
   <title><![CDATA[Scott Cheng]]></title>
   <link href="http://scottcheng.com/atom.xml" rel="self"/>
   <link href="http://scottcheng.com/"/>
-  <updated>2013-08-09T02:57:15+08:00</updated>
+  <updated>2013-08-09T20:57:40+08:00</updated>
   <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
@@ -71,7 +71,34 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending to server. So while Ember provides new approaches to common problems, perhaps traditional solutions are still good to have.</p>
+<p>Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending model to server. So while Ember provides new approaches to address common problems, perhaps traditional solutions are still good to have.</p>
+
+<h2>Update: Ember.Evented</h2>
+
+<p>I discovered that Ember has an <a href="https://github.com/emberjs/ember.js/blob/v1.0.0-rc.6/packages/ember-runtime/lib/mixins/evented.js">Evented mixin</a>, which supports similar event pub/sub as in Backbone. Now I&#8217;m using this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@trigger</span> <span class="s">&#39;isLiked&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In view</span>
+</span><span class='line'><span class="nv">init: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="nx">@get</span><span class="p">(</span><span class="s">&#39;controller.model&#39;</span><span class="p">).</span><span class="kc">on</span> <span class="s">&#39;isLiked&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
+</span><span class='line'>    <span class="c1"># Animate</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Much better.</p>
 ]]></content>
   </entry>
   
