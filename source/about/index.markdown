@@ -10,7 +10,7 @@ footer: true
 
 Hello there, my name is 程烨 (CHENG Ye). Call me Scott.
 
-I'm a technology enthusiast, a design lover, and a [CS](http://en.wikipedia.org/wiki/Computer_science) undergrad at [Peking University](http://www.pku.edu.cn/). I enjoy crafting stuffs that people love.
+I'm a technology enthusiast, a design lover, and a Master student in Computer Science at Stanford. I enjoy crafting stuff that people love.
 
 I believe that skills are cheap; passion and taste make all the difference.
 
