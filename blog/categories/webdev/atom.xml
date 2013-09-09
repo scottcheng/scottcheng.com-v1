@@ -4,7 +4,7 @@
   <title><![CDATA[Category: webdev | Scott Cheng]]></title>
   <link href="http://scottcheng.com/blog/categories/webdev/atom.xml" rel="self"/>
   <link href="http://scottcheng.com/"/>
-  <updated>2013-08-09T20:57:40+08:00</updated>
+  <updated>2013-09-09T11:48:17-07:00</updated>
   <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Ember vs Backbone: Event Model]]></title>
     <link href="http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/"/>
-    <updated>2013-08-09T00:05:00+08:00</updated>
+    <updated>2013-08-09T00:05:00-07:00</updated>
     <id>http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model</id>
     <content type="html"><![CDATA[<p>Lately I've been playing with <a href="http://emberjs.com/">Ember</a> and <a href="http://backbonejs.org/">Backbone</a>, and enjoying these modern tools for building modern web applications (I'll try <a href="http://angularjs.org/">Angular</a> next.) Ember and Backbone are different <a href="http://smus.com/backbone-and-ember/">in many ways</a>. While writing apps with them, I have realized that, apart from all the architectural/philosophical divergence, they employ very different approaches to event subscription, which is a critical part of any UI application.</p>
 
@@ -93,7 +93,7 @@
   <entry>
     <title type="html"><![CDATA[Pulling Anchor Targets out of the Fixed Header]]></title>
     <link href="http://scottcheng.com/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
-    <updated>2012-09-01T22:23:00+08:00</updated>
+    <updated>2012-09-01T22:23:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
     <content type="html"><![CDATA[<p>I've been using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> in <a href="http://www.beijing3ds.org/">my latest website</a> (if you haven't tried Bootstrap, you really should! It makes lots of things <em>worlds</em> easier, and has taught me a handful of good practices), where I used a fix-positioned navigation header, one that always stays at the top of the window. In <a href="http://www.beijing3ds.org/about/">longer pages</a>, I used a secondary in-page navigation.</p>
 
@@ -133,7 +133,7 @@
   <entry>
     <title type="html"><![CDATA[CSS Multi-Transition Trick]]></title>
     <link href="http://scottcheng.com/blog/2012/08/css-multi-transition-trick/"/>
-    <updated>2012-08-29T01:36:00+08:00</updated>
+    <updated>2012-08-29T01:36:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/08/css-multi-transition-trick</id>
     <content type="html"><![CDATA[<p><em>It's one thing to know a tool, another to make the most of it.</em></p>
 
@@ -191,7 +191,7 @@ a:hover {
   <entry>
     <title type="html"><![CDATA[Elegantly Highlight the Current Nav Item in Template]]></title>
     <link href="http://scottcheng.com/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
-    <updated>2012-08-28T07:51:00+08:00</updated>
+    <updated>2012-08-28T07:51:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
     <content type="html"><![CDATA[<p>It's one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
 
@@ -337,7 +337,7 @@ li(class='#{nav.about}')
   <entry>
     <title type="html"><![CDATA["S" in CSS]]></title>
     <link href="http://scottcheng.com/blog/2012/08/s-in-css/"/>
-    <updated>2012-08-01T12:39:00+08:00</updated>
+    <updated>2012-08-01T12:39:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/08/s-in-css</id>
     <content type="html"><![CDATA[<p>By "S" I'm not referring to "style" or "sheets"... I'm talking about the "S" in my logo -- I remade it with CSS (Take a look at upper left if you haven't noticed it). It's largely inspired by Nicolas Gallagher's genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
 

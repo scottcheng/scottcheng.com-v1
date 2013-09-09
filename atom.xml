@@ -4,7 +4,7 @@
   <title><![CDATA[Scott Cheng]]></title>
   <link href="http://scottcheng.com/atom.xml" rel="self"/>
   <link href="http://scottcheng.com/"/>
-  <updated>2013-08-09T20:57:40+08:00</updated>
+  <updated>2013-09-09T11:48:17-07:00</updated>
   <id>http://scottcheng.com/</id>
   <author>
     <name><![CDATA[Scott Cheng]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Ember vs Backbone: Event Model]]></title>
     <link href="http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/"/>
-    <updated>2013-08-09T00:05:00+08:00</updated>
+    <updated>2013-08-09T00:05:00-07:00</updated>
     <id>http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model</id>
     <content type="html"><![CDATA[<p>Lately I&#8217;ve been playing with <a href="http://emberjs.com/">Ember</a> and <a href="http://backbonejs.org/">Backbone</a>, and enjoying these modern tools for building modern web applications (I&#8217;ll try <a href="http://angularjs.org/">Angular</a> next.) Ember and Backbone are different <a href="http://smus.com/backbone-and-ember/">in many ways</a>. While writing apps with them, I have realized that, apart from all the architectural/philosophical divergence, they employ very different approaches to event subscription, which is a critical part of any UI application.</p>
 
@@ -105,7 +105,7 @@
   <entry>
     <title type="html"><![CDATA[Grad Application Reflections]]></title>
     <link href="http://scottcheng.com/blog/2013/04/grad-application-reflections/"/>
-    <updated>2013-04-15T15:41:00+08:00</updated>
+    <updated>2013-04-15T15:41:00-07:00</updated>
     <id>http://scottcheng.com/blog/2013/04/grad-application-reflections</id>
     <content type="html"><![CDATA[<p>Two weeks ago I accepted the offer of admission to <a href="http://cs.stanford.edu/education/masters">Stanford&#8217;s MSCS program</a>, which concludes my graduate school application process. I&#8217;d like to record some key reflections that I have on this process. The following is based on my experience of applying for Master programs in CS / HCI, but should apply to applications for other degree programs as well.</p>
 
@@ -127,7 +127,7 @@
   <entry>
     <title type="html"><![CDATA[Speaking is Fun]]></title>
     <link href="http://scottcheng.com/blog/2013/02/speaking-is-fun/"/>
-    <updated>2013-02-10T18:53:00+08:00</updated>
+    <updated>2013-02-10T18:53:00-08:00</updated>
     <id>http://scottcheng.com/blog/2013/02/speaking-is-fun</id>
     <content type="html"><![CDATA[<p>Last weekend marked <a href="http://scottcheng.github.com/d3js-101/">the first long technical talk</a> of my life. I spoke about <a href="http://d3js.org/">D3.js</a> at <a href="http://en.wikipedia.org/wiki/State_Grid_Corporation_of_China">State Grid</a>, a global Fortune 500 company (in fact it <a href="http://money.cnn.com/magazines/fortune/global500/2012/snapshots/10840.html">ranked 7 in 2012</a>).
 If there&#8217;s one thing I&#8217;ve taken away from this first time experience, it&#8217;s that I learned just how much fun speaking can be.</p>
@@ -157,7 +157,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Setting Up Existing Octopress Blog on a New Computer]]></title>
     <link href="http://scottcheng.com/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/"/>
-    <updated>2012-11-07T23:14:00+08:00</updated>
+    <updated>2012-11-07T23:14:00-08:00</updated>
     <id>http://scottcheng.com/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer</id>
     <content type="html"><![CDATA[<p>A good blogging system must support users to easily start composing and publishing from multiple devices. However, the Octopress website only teaches <a href="http://octopress.org/docs/setup/">how to create a fresh blog</a>, but talks nothing about setting up an existing blog on a fresh computer. This operation turned out to be somewhat confusing to me, and obviously I&#8217;m <a href="https://github.com/imathis/octopress/issues/755">not alone on this</a>. So here I record the process, partly for my later reference, partly in hope to help others.</p>
 
@@ -186,7 +186,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[What I Learned as an Interviewer]]></title>
     <link href="http://scottcheng.com/blog/2012/10/what-i-learned-as-an-interviewer/"/>
-    <updated>2012-10-20T01:18:00+08:00</updated>
+    <updated>2012-10-20T01:18:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/10/what-i-learned-as-an-interviewer</id>
     <content type="html"><![CDATA[<p>Recently I got an unexpected opportunity to interview some applicants for <a href="http://www.beijing3ds.org/">a startup event</a>. It was a unique experience that gave me a fresh perspective, and I&#8217;d like to share some of my discoveries as a first time interviewer (may sound extremely naive and stupid to you :p).</p>
 
@@ -203,7 +203,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Waterfall and Footnote]]></title>
     <link href="http://scottcheng.com/blog/2012/10/waterfall-and-footnote/"/>
-    <updated>2012-10-09T15:57:00+08:00</updated>
+    <updated>2012-10-09T15:57:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/10/waterfall-and-footnote</id>
     <content type="html"><![CDATA[<p>Popularized by <a href="http://pinterest.com/">Pinterest</a>, waterfall layout is a smart invention because it could elegantly take up the entire window with flexible positioning. By default, waterfall doesn&#8217;t paginate; instead, &#8220;pages&#8221; are automatically loaded and appended as a user reaches the bottom of the page, providing a non-stop browsing experience, which, in itself, is nice.</p>
 
@@ -220,7 +220,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Beauty of Loop]]></title>
     <link href="http://scottcheng.com/blog/2012/10/beauty-of-loop/"/>
-    <updated>2012-10-04T22:24:00+08:00</updated>
+    <updated>2012-10-04T22:24:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/10/beauty-of-loop</id>
     <content type="html"><![CDATA[<p>Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of numbers or enumerables (e.g. calculating a Fibonacci number). If the problem space is dynamic (e.g. calculating the sum of 1 to <em>n</em>), loop is often the standard way of traversal (the alternative is recursion); otherwise, it contributes to DRY code by avoiding duplication (compared to an unraveled loop).</p>
 
@@ -385,7 +385,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Respond to Me]]></title>
     <link href="http://scottcheng.com/blog/2012/09/respond-to-me/"/>
-    <updated>2012-09-19T18:04:00+08:00</updated>
+    <updated>2012-09-19T18:04:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/09/respond-to-me</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always been a big fan of UI responsiveness, and I believe it&#8217;s one of the indispensable features of a successful UI. I&#8217;m not talking about the lightning speed that <a href="https://speakerdeck.com/u/mikeyk/p/secrets-to-lightning-fast-mobile-design">Instagram has achieved</a>, but that the UI should provide <em>instantaneous feedback</em> to every meaningful action the user performs &#8211; <em>respond to him</em>.</p>
 
@@ -444,7 +444,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[iPad is Best Naked]]></title>
     <link href="http://scottcheng.com/blog/2012/09/ipad-is-best-naked/"/>
-    <updated>2012-09-17T10:19:00+08:00</updated>
+    <updated>2012-09-17T10:19:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/09/ipad-is-best-naked</id>
     <content type="html"><![CDATA[<p>If your iPad wears a screen protector like mine used to, I suggest you rip it off right now. I took the film off three days ago, and the screen has become <em>way more gorgeous</em> than what I had been looking at for an entire summer &#8211; the peerless retina display is finally rescued from being completely obscured. And the screen feels much more smooth and sleek too!</p>
 
@@ -459,7 +459,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Pulling Anchor Targets out of the Fixed Header]]></title>
     <link href="http://scottcheng.com/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header/"/>
-    <updated>2012-09-01T22:23:00+08:00</updated>
+    <updated>2012-09-01T22:23:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/09/pulling-anchor-targets-out-of-the-fixed-header</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> in <a href="http://www.beijing3ds.org/">my latest website</a> (if you haven&#8217;t tried Bootstrap, you really should! It makes lots of things <em>worlds</em> easier, and has taught me a handful of good practices), where I used a fix-positioned navigation header, one that always stays at the top of the window. In <a href="http://www.beijing3ds.org/about/">longer pages</a>, I used a secondary in-page navigation.</p>
 
@@ -501,7 +501,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[CSS Multi-Transition Trick]]></title>
     <link href="http://scottcheng.com/blog/2012/08/css-multi-transition-trick/"/>
-    <updated>2012-08-29T01:36:00+08:00</updated>
+    <updated>2012-08-29T01:36:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/08/css-multi-transition-trick</id>
     <content type="html"><![CDATA[<p><em>It&#8217;s one thing to know a tool, another to make the most of it.</em></p>
 
@@ -575,7 +575,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Elegantly Highlight the Current Nav Item in Template]]></title>
     <link href="http://scottcheng.com/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/"/>
-    <updated>2012-08-28T07:51:00+08:00</updated>
+    <updated>2012-08-28T07:51:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template</id>
     <content type="html"><![CDATA[<p>It&#8217;s one of the most common practices in web design to highlight the current navigation tab that the user is browsing. See <a href="http://www.beijing3ds.org/">my latest work</a> for a live example:</p>
 
@@ -774,7 +774,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA["S" in CSS]]></title>
     <link href="http://scottcheng.com/blog/2012/08/s-in-css/"/>
-    <updated>2012-08-01T12:39:00+08:00</updated>
+    <updated>2012-08-01T12:39:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/08/s-in-css</id>
     <content type="html"><![CDATA[<p>By &#8220;S&#8221; I&#8217;m not referring to &#8220;style&#8221; or &#8220;sheets&#8221;&#8230; I&#8217;m talking about the &#8220;S&#8221; in my logo &#8211; I remade it with CSS (Take a look at upper left if you haven&#8217;t noticed it). It&#8217;s largely inspired by Nicolas Gallagher&#8217;s genius <a href="http://nicolasgallagher.com/pure-css-gui-icons/">pure CSS GUI icons</a>.</p>
 
@@ -901,7 +901,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Tags and #Hashtags]]></title>
     <link href="http://scottcheng.com/blog/2012/07/tags-and-hashtags/"/>
-    <updated>2012-07-30T15:54:00+08:00</updated>
+    <updated>2012-07-30T15:54:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/07/tags-and-hashtags</id>
     <content type="html"><![CDATA[<p><a href="http://karrisaarinen.com/">Karri Saarinen</a> from <a href="https://kippt.com/">Kippt</a> <a href="http://blog.kippt.com/2012/07/17/tags-are-here/">hates</a> <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>, and brought <a href="http://en.wikipedia.org/wiki/Hashtag">#hashtags</a> to his bookmarking service.</p>
 
@@ -924,7 +924,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[(Probably) the Easiest Way to Test Websites on Mobile]]></title>
     <link href="http://scottcheng.com/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/"/>
-    <updated>2012-07-29T01:52:00+08:00</updated>
+    <updated>2012-07-29T01:52:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/07/the-easiest-way-to-test-websites-on-mobile</id>
     <content type="html"><![CDATA[<p>This is probably <em>the</em> easiest way to test your websites on a mobile device, especially if you don&#8217;t have a server to host your site: (and it came to me when I wanted to test mine last night)</p>
 
@@ -947,7 +947,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Playing With Git Branches]]></title>
     <link href="http://scottcheng.com/blog/2012/07/playing-with-git-branches/"/>
-    <updated>2012-07-27T01:36:00+08:00</updated>
+    <updated>2012-07-27T01:36:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/07/playing-with-git-branches</id>
     <content type="html"><![CDATA[<p>Though it has been almost half a year since the first time I &#8220;gitted&#8221; (and I love it!), all git commands I&#8217;ve ever used are <code>clone</code>, <code>add</code>, <code>commit</code>, <code>pull</code> and <code>push</code>. But when I created <a href="http://scottcheng.github.com/revolutionary-css3/">my first GitHub page</a>, I had to start dealing with branches. It&#8217;s like a rewarding &#8220;stepping out of the comfort zone&#8221; experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.</p>
 
@@ -1082,7 +1082,7 @@ If there&#8217;s one thing I&#8217;ve taken away from this first time experience
   <entry>
     <title type="html"><![CDATA[Why I Start to Blog]]></title>
     <link href="http://scottcheng.com/blog/2012/07/why-i-start-to-blog/"/>
-    <updated>2012-07-24T02:21:00+08:00</updated>
+    <updated>2012-07-24T02:21:00-07:00</updated>
     <id>http://scottcheng.com/blog/2012/07/why-i-start-to-blog</id>
     <content type="html"><![CDATA[<p>I have longed to start blogging for quite a while, but I never had a drive strong enough to make it real. Recently I read what <a href="http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html">Jeff Atwood</a> and <a href="https://sites.google.com/site/steveyegge2/you-should-write-blogs">Steve Yegge</a> said about blogging, where I realized tons of good reasons to start off, and start right now.</p>
 
