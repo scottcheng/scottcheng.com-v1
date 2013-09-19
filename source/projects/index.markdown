@@ -14,6 +14,14 @@ Virtual brainstorming for creative teams. Work in progress.
 
 <p><a href="http://sparkl.us/"><img src="/images/projects/sparkl/splash.png" /></a></p>
 
+
+<h3><a href="http://scottcheng.github.io/an-ocean-apart/" class="external">An Ocean Apart</a></h3>
+
+A gift for <a href="http://ivyguo.com/">Ivy</a> on Qixi Festival 2013.
+
+<p><a href="http://scottcheng.github.io/an-ocean-apart/"><img src="/images/projects/an-ocean-apart/scrshot.png" /></a></p>
+
+
 <h3><a href="http://scottcheng.github.com/weibo-time-vis/" class="external">Weibo Visualization</a></h3>
 
 An experimental visualization of a Weibo dataset, trying to illustrate the time-wise evolution of topics.
