@@ -8,11 +8,18 @@ footer: true
 
 I enjoy crafting things. Here are some of my creations.
 
-<h3><a href="http://www.sparkl.us/" class="external">Sparkl</a></h3>
+<h3><a href="https://www.sparkl.us/" class="external">Sparkl</a></h3>
 
 Virtual brainstorming for creative teams. Work in progress.
 
-<p><a href="http://sparkl.us/"><img src="/images/projects/sparkl/splash.png" /></a></p>
+<p><a href="https://sparkl.us/"><img src="/images/projects/sparkl/splash.png" /></a></p>
+
+
+<h3><a href="https://co-found.herokuapp.com/" class="external">Co.found</a></h3>
+
+Cofounder networking platform for the Stanford community.
+
+<p><a href="https://co-found.herokuapp.com/"><img src="/images/projects/co-found/splash.png" class="no-shadow" /></a></p>
 
 
 <h3><a href="http://scottcheng.github.io/an-ocean-apart/" class="external">An Ocean Apart</a></h3>
