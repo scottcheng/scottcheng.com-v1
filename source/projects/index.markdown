@@ -18,6 +18,7 @@ Virtual brainstorming for creative teams. Work in progress.
 <h3><a href="https://co-found.herokuapp.com/" class="external">Co.found</a></h3>
 
 Cofounder networking platform for the Stanford community.
+Class project for [CS147](http://hci.stanford.edu/courses/cs147/2014/).
 
 <p><a href="https://co-found.herokuapp.com/"><img src="/images/projects/co-found/splash.png" class="no-shadow" /></a></p>
 
