@@ -1,0 +1,122 @@
+@import 'reset.css'
+@import '../stylesheets/libs/mixins.styl'
+@import '../stylesheets/libs/stybr.styl'
+
+$highlight-color = #ed6812
+$light-color = #f6f6f6
+$dark-color = #3a3a3a
+
+html, body
+  height 100%
+  overflow hidden
+
+body
+  background-image url(/images/low_contrast_linen.png)
+
+#upper,
+#lower
+  background-repeat repeat
+  position relative
+  .bg
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+
+#upper
+  height 62%
+  background-color #fff
+
+  .bg
+    background-image url(/images/cross_scratches.png)
+    opacity .5
+
+  #name
+    position absolute
+    right 50%
+    bottom 30px
+    font-size 4.2em
+    text-align right
+    margin 0
+    font-family 'Poiret One', sans-serif
+    text-shadow 0 2px #fff
+    z-index 100
+    color $dark-color
+    transition color 1s
+    &:hover
+      color $highlight-color
+      transition color .25s
+    
+    &::selection
+      background $highlight-color
+      color $light-color
+      text-shadow none
+
+    &::-moz-selection
+      background $highlight-color
+      color $light-color
+
+#lower
+  height 38%
+  background-color transparent
+  box-shadow inset 0 6px 6px rgba(#000, .25)
+  user-select none
+  
+  #links
+    float-wrapper()
+    font-family 'Cantarell', sans-serif
+    position absolute
+    left 50%
+    top 30px
+    font-size 1.35em
+    text-transform lowercase
+    z-index 100
+    .link
+      margin-right 15px
+      color #000
+      text-shadow 0 1px rgba(#fff, .15)
+      &:nth-child(n+2):before
+        content '|'
+        margin-right 15px
+      a
+        color inherit
+        text-decoration none
+        transition color .5s, text-shadow .5s
+        &:hover
+          color $light-color
+          text-shadow none
+          transition color .25s, text-shadow .25s
+
+.crcl-wrapper
+  width 0
+  position absolute
+  overflow hidden
+  transition width .5s cubic-bezier(.45, .45, .25, 1)
+  .crcl
+    position absolute
+    width 200%
+    height 200%
+    border-radius 100%
+    overflow hidden
+    border 3px solid transparent
+    box-sizing border-box
+
+#upper-crcl-wrapper
+  left 20%
+  bottom 38%
+  #upper-crcl
+    top 0
+    left 0
+    background transparent
+    border-color $dark-color
+
+#lower-crcl-wrapper
+  right 20%
+  top 62%
+  background transparent
+  #lower-crcl
+    bottom 0
+    right 0
+    border-color $light-color
+    box-shadow 0 3px 1px rgba(#000, .25)

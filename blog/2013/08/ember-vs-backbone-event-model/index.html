@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ember vs Backbone: Event Model - Scott Cheng</title>
+  <meta name="author" content="Scott Cheng">
+
+  
+  <meta name="description" content="Lately I&#8217;ve been playing with Ember and Backbone, and enjoying these modern tools for building modern web applications (I&#8217;ll try Angular &hellip;">
+  <meta name="keywords" content="ember, backbone, web app, spa, single page application, event, event model, publish/subscribe">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/">
+  <link href="/stylesheets/fonts.css" rel="stylesheet", type="text/css">  <!-- localized google web fonts -->
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Scott Cheng" type="application/atom+xml">
+  <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cantarell:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'> -->
+
+<link rel='shortcut icon' href='/favicon.ico'>
+<link rel='apple-touch-icon' href='/apple-touch-icon-57.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/apple-touch-icon-72.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/apple-touch-icon-114.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/apple-touch-icon-144.png'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33587842-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1>
+    <a href="/">
+      <div class="logo" alt="S"></div>
+      cott Cheng
+    </a>
+  </h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:scottcheng.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/blog/archives/">Archives</a></li>
+  <li><a href="/projects/">Projects</a></li>
+  <!-- <li><a href="/lab/">Lab</a></li> -->
+  <li><a href="/photos/">Photos</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-09T00:05:00-07:00" pubdate data-updated="true">August 09, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title">Ember vs Backbone: Event Model</h1>
+    
+  </header>
+
+
+<div class="entry-content"><p>Lately I&#8217;ve been playing with <a href="http://emberjs.com/">Ember</a> and <a href="http://backbonejs.org/">Backbone</a>, and enjoying these modern tools for building modern web applications (I&#8217;ll try <a href="http://angularjs.org/">Angular</a> next.) Ember and Backbone are different <a href="http://smus.com/backbone-and-ember/">in many ways</a>. While writing apps with them, I have realized that, apart from all the architectural/philosophical divergence, they employ very different approaches to event subscription, which is a critical part of any UI application.</p>
+
+<!-- more -->
+
+
+<p>Backbone apps depend heavily upon Backbone&#8217;s <a href="http://backbonejs.org/#Events">event model</a>. The idea is simple: object A listens to object B&#8217;s event C, and gets notified whenever C is triggered on B. Ember does it differently. Instead of having one unified event model, Ember breaks the publish/subscribe pattern into <a href="http://emberjs.com/guides/object-model/bindings/">Bindings</a>, <a href="http://emberjs.com/guides/object-model/observers/">Observers</a>, and <a href="http://emberjs.com/guides/object-model/computed-properties/">Computed Properties</a>, while not providing explicit event listening. The breakdown is insightful, and <a href="http://emberjs.com/guides/object-model/what-do-i-use-when/">each has different uses</a>. However, I&#8217;ve found cases where none of them is as helpful as the old event pub/sub pattern.</p>
+
+<p>When building <a href="http://www.sparkl.us">Sparkl</a>, I needed to animate the interface whenever a user likes an item. Any user, not just the person in front of this interface. Therefore, I&#8217;m triggering a &#8220;getting liked&#8221; event from the model. This would be straightforward in Backbone:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@trigger</span> <span class="s">&#39;liked&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In View</span>
+</span><span class='line'><span class="nv">initialize: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="nx">@listenTo</span> <span class="nx">@model</span><span class="p">,</span> <span class="s">&#39;liked&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
+</span><span class='line'>    <span class="c1"># Animate</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When I tried to use Ember&#8217;s observer, however, I realized that I can only observe property updates. &#8220;Getting liked&#8221; is an event, and there is no property here to be observed! Therefore I would have to make up a variable to record the event of &#8220;getting liked&#8221;. It won&#8217;t work if the variable stores information of the user liking it, because if a user likes the item, unlikes it, and likes it again, this variable won&#8217;t update at the second like, and the observer won&#8217;t fire. So I decided to track the time when the item gets liked, and observe this property from view:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@set</span> <span class="s">&#39;latestLikeDate&#39;</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In view</span>
+</span><span class='line'><span class="nv">animateLike: </span><span class="p">(</span> <span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Animate</span>
+</span><span class='line'><span class="p">).</span><span class="nx">observes</span> <span class="s">&#39;controller.model.latestLikeDate&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Not very complex code, but a little tricky. Another downside is that extraneous properties are introduced to the model, and needs to be filtered out when sending model to server. So while Ember provides new approaches to address common problems, perhaps traditional solutions are still good to have.</p>
+
+<h2>Update: Ember.Evented</h2>
+
+<p>I discovered that Ember has an <a href="https://github.com/emberjs/ember.js/blob/v1.0.0-rc.6/packages/ember-runtime/lib/mixins/evented.js">Evented mixin</a>, which supports similar event pub/sub as in Backbone. Now I&#8217;m using this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># In model</span>
+</span><span class='line'><span class="nv">like: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="c1"># Update model</span>
+</span><span class='line'>  <span class="nx">@trigger</span> <span class="s">&#39;isLiked&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># In view</span>
+</span><span class='line'><span class="nv">init: </span><span class="o">-&gt;</span>
+</span><span class='line'>  <span class="nx">@get</span><span class="p">(</span><span class="s">&#39;controller.model&#39;</span><span class="p">).</span><span class="kc">on</span> <span class="s">&#39;isLiked&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
+</span><span class='line'>    <span class="c1"># Animate</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Much better.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Scott Cheng</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-09T00:05:00-07:00" pubdate data-updated="true">August 09, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/webdev/'>webdev</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/grad-application-reflections/" title="Previous Post: Grad Application Reflections">&laquo; Grad Application Reflections</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/ember-vs-backbone-event-model/">Ember vs Backbone: Event Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/grad-application-reflections/">Grad Application Reflections</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/speaking-is-fun/">Speaking is Fun</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/">Setting Up Existing Octopress Blog on a New Computer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/what-i-learned-as-an-interviewer/">What I Learned as an Interviewer</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://scottcheng.com">Scott Cheng</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and Hosted on <a href="http://pages.github.com/">GitHub</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'scottcheng';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/';
+        var disqus_url = 'http://scottcheng.com/blog/2013/08/ember-vs-backbone-event-model/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

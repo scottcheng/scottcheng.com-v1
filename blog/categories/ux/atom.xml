@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ux | Scott Cheng]]></title>
+  <link href="http://scottcheng.com/blog/categories/ux/atom.xml" rel="self"/>
+  <link href="http://scottcheng.com/"/>
+  <updated>2014-09-01T23:26:09-07:00</updated>
+  <id>http://scottcheng.com/</id>
+  <author>
+    <name><![CDATA[Scott Cheng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Waterfall and Footnote]]></title>
+    <link href="http://scottcheng.com/blog/2012/10/waterfall-and-footnote/"/>
+    <updated>2012-10-09T15:57:00-07:00</updated>
+    <id>http://scottcheng.com/blog/2012/10/waterfall-and-footnote</id>
+    <content type="html"><![CDATA[<p>Popularized by <a href="http://pinterest.com/">Pinterest</a>, waterfall layout is a smart invention because it could elegantly take up the entire window with flexible positioning. By default, waterfall doesn't paginate; instead, "pages" are automatically loaded and appended as a user reaches the bottom of the page, providing a non-stop browsing experience, which, in itself, is nice.</p>
+
+<p>So people start to mock it, as they always would, and some of these implementations left a page footer there, right below the waterfall. Predictably, the poor footer gets constantly "flushed" downwards every time I try to have a good look at it, and I can <em>never</em> reach it. (Here is a workaround: disconnect the Internet and the page will stop growing)</p>
+
+<p>If some part of a webpage can never be read and clicked on under reasonably good network condition, what is the point of it being there at all? It gets especially annoying if that part is somewhat intriguing that people want to interact with.</p>
+
+<p>I totally understand that footer is a default web element, but please think twice before going with traditions, especially when trying out something unprecedented. Don't take rules for granted -- they may be flawed, even fallacious. Think about why things are the way they are, and how they can be tweaked or redesigned to better fit a specific case. Question authorities; question everything.</p>
+
+<p>This is my little complaint after 20 seconds of unsuccessful attempts to catch the contacts in the footer of <a href="http://www.meishimeike.com/">Meishimeike</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Respond to Me]]></title>
+    <link href="http://scottcheng.com/blog/2012/09/respond-to-me/"/>
+    <updated>2012-09-19T18:04:00-07:00</updated>
+    <id>http://scottcheng.com/blog/2012/09/respond-to-me</id>
+    <content type="html"><![CDATA[<p>I've always been a big fan of UI responsiveness, and I believe it's one of the indispensable features of a successful UI. I'm not talking about the lightning speed that <a href="https://speakerdeck.com/u/mikeyk/p/secrets-to-lightning-fast-mobile-design">Instagram has achieved</a>, but that the UI should provide <em>instantaneous feedback</em> to every meaningful action the user performs -- <em>respond to him</em>.</p>
+
+<p>Hover effect is a good example of responsiveness. On this website, <a href="#">links</a> turn orange when you move your mouse over them, assuring you that "you are pointing to the link, click ahead".</p>
+
+<p>Responsiveness is more crucial for user actions to which the handler would take some time to "return". A UI does not have to be lightning fast (though it's definitely good to be). In fact, the processing speed is sometimes out of the developers' control, e.g. if remote API calls are involved. A user can wait, but the UI has to <em>explicitly tell the user</em> that "your request is being processed, please wait". Otherwise, the user would wonder: did I really click the button? Should I keep waiting, or should I repeat the click? What is going on behind the screen? Put another way, the UI should be upfront about what it is doing, so that the user doesn't have to guess.</p>
+
+<h2>Pocket over Readability</h2>
+
+<p>I prefer Pocket over Readability, because Pocket's Chrome extension is more responsive than its competitor. When I press Ctrl+Shift+P (Pocket's shortcut), it instantly pops up a banner that reads "Saving to Pocket", and after a brief wait, the text changes to "Page saved". When I hit Shift+` (Readability's shortcut), however, I'll have to wait several seconds before anything happens, which I find extremely annoying.</p>
+
+<p><img src="/images/posts/responsiveness-pocket.png"></p>
+
+<h2>My Practices</h2>
+
+<p>I've been striving to offer best responsiveness in the UIs I build.</p>
+
+<p>In <a href="https://chrome.google.com/webstore/detail/deoibeabfchdpckcmamaadeccohilbkp">Save2Drive</a>, after user clicks "Save to Drive", I first pop up a <a href="http://www.html5rocks.com/en/tutorials/notifications/quick/">desktop notification</a> that says "Saving link to Google Drive":</p>
+
+<p><img src="/images/posts/responsiveness-s2d-saving.png"></p>
+
+<p>Then I send the HTTP request. After the callback fires, it either changes to "Link saved to Google Drive":</p>
+
+<p><img src="/images/posts/responsiveness-s2d-saved.png"></p>
+
+<p>Or "Failed to save link to Google Drive":</p>
+
+<p><img src="/images/posts/responsiveness-s2d-failed.png"></p>
+
+<p><a href="https://chrome.google.com/webstore/detail/enmkdplopmpkfnlefdldpkbcmihgcdec">Renren Album Downloader</a> is a bit more complicated. After the user asks to download an album, the extension will follow these steps, all with explicit real-time status update (UI update happens <em>before</em> the corresponding code runs):</p>
+
+<ol>
+  <li>
+    <p>Look for photo URLs in the HTML:</p>
+    <p><img src="http://scottcheng.com/images/posts/responsiveness-rad-analyzing.png" /></p>
+  </li>
+  <li>
+    <p>Fetch the photos:</p>
+    <p><img src="http://scottcheng.com/images/posts/responsiveness-rad-fetching.png" /></p>
+  </li>
+  <li>
+    <p>Put everything into a zip:</p>
+    <p><img src="http://scottcheng.com/images/posts/responsiveness-rad-zipping.png" /></p>
+  </li>
+  <li>
+    <p>Finally, tell user it's done:</p>
+    <p><img src="http://scottcheng.com/images/posts/responsiveness-rad-done.png" /><p>
+  </li>
+</ol>
+
+
+<p>Rule of thumb: if you have the user waiting, tell him he's waiting, and preferably tell him what he's waiting for.</p>
+]]></content>
+  </entry>
+  
+</feed>

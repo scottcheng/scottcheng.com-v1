@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Playing With Git Branches - Scott Cheng</title>
+  <meta name="author" content="Scott Cheng">
+
+  
+  <meta name="description" content="Though it has been almost half a year since the first time I &#8220;gitted&#8221; (and I love it!), all git commands I&#8217;ve ever used are clone, &hellip;">
+  <meta name="keywords" content="git, branch, checkout, github pages">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://scottcheng.com/blog/2012/07/playing-with-git-branches/">
+  <link href="/stylesheets/fonts.css" rel="stylesheet", type="text/css">  <!-- localized google web fonts -->
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Scott Cheng" type="application/atom+xml">
+  <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cantarell:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'> -->
+
+<link rel='shortcut icon' href='/favicon.ico'>
+<link rel='apple-touch-icon' href='/apple-touch-icon-57.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/apple-touch-icon-72.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/apple-touch-icon-114.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/apple-touch-icon-144.png'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33587842-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1>
+    <a href="/">
+      <div class="logo" alt="S"></div>
+      cott Cheng
+    </a>
+  </h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:scottcheng.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/blog/archives/">Archives</a></li>
+  <li><a href="/projects/">Projects</a></li>
+  <!-- <li><a href="/lab/">Lab</a></li> -->
+  <li><a href="/photos/">Photos</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-27T01:36:00-07:00" pubdate data-updated="true">July 27, 2012</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title">Playing With Git Branches</h1>
+    
+  </header>
+
+
+<div class="entry-content"><p>Though it has been almost half a year since the first time I &#8220;gitted&#8221; (and I love it!), all git commands I&#8217;ve ever used are <code>clone</code>, <code>add</code>, <code>commit</code>, <code>pull</code> and <code>push</code>. But when I created <a href="http://scottcheng.github.com/revolutionary-css3/">my first GitHub page</a>, I had to start dealing with branches. It&#8217;s like a rewarding &#8220;stepping out of the comfort zone&#8221; experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.</p>
+
+<!-- more -->
+
+
+<h2>Branching 101</h2>
+
+<p>First, the very basics of branch management:</p>
+
+<ul>
+<li>Use <code>git branch &lt;branchname&gt;</code> or <code>git checkout -b &lt;branchname&gt;</code> to create a new branch.
+
+<ul>
+<li>If you want the new branch to exist on the remote, push it with <code>git push origin &lt;branchname&gt;</code>.</li>
+</ul>
+</li>
+<li>Use <code>git branch</code> to view all branches, and find out what branch you are at.</li>
+<li>Use <code>git checkout &lt;branchname&gt;</code> to switch between branches.</li>
+<li>Use <code>git branch -d &lt;branchname&gt;</code> to delete a branch locally.</li>
+<li>Use <code>git push origin :&lt;branchname&gt;</code> (with the colon) to delete it on the remote.</li>
+</ul>
+
+
+<h2>Merging and Rebasing</h2>
+
+<p>Branches often need to interact by merging their changes. There are at least two ways to &#8220;merge&#8221; changes in different branches: <code>git merge</code> and <code>git rebase</code>. By <code>git merge &lt;branchname&gt;</code>, e.g. <code>git merge dev</code> on the master branch, the following happens:</p>
+
+<ol>
+<li>Commits in dev branch are merged into master.
+
+<ul>
+<li>Handle conflicts if necessary.</li>
+</ul>
+</li>
+<li>A new merge commit is created on top of the two branches.</li>
+</ol>
+
+
+<p>By <code>git rebase &lt;branchname&gt;</code>, e.g. <code>git rebase dev</code> on the master branch, the following will happen:</p>
+
+<ol>
+<li>Commits between the last merge and present on the master branch will be erased (and kept somewhere temporarily).</li>
+<li>Commits on dev branch will be appended to the original <code>HEAD</code> on master (the last merge point).</li>
+<li>Your changes are put back on top of the dev commits in new commits.
+
+<ul>
+<li>Handle conflicts if necessary.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>If you are interested in the detailed mechanism, <a href="http://git-scm.com/">git-scm.com</a> has more on <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">branching / merging</a> and <a href="http://git-scm.com/book/en/Git-Branching-Rebasing">rebasing</a>. Jarrod Spillers <a href="http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/">elaborated in a post</a> the difference between <code>git merge</code> and <code>git rebase</code> as well as when to use which, thought <a href="http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/#dsq-comment-375332553">slightly flawed</a>.</p>
+
+<p>I also found it interesting to learn that <code>git pull</code> is actually <code>git fetch</code> then <code>git merge</code>, whereas <code>git pull --rebase</code> is <code>git fetch</code> then <code>git rebase</code>, as is documented on the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-pull.html">man page</a>.</p>
+
+<p>One thing that kinda surprised me is that different branches actually coexist in the same directory! As you switch branches using <code>git checkout &lt;branchname&gt;</code>, the files in that folder would actually change with it. It&#8217;s like the <a href="http://harrypotter.wikia.com/wiki/Room_of_Requirement">Room  of Requirement</a> in Harry Potter &#8211; it&#8217;s the same room, but you can go in and see different things. Amazing. The interesting part is that when I create a file in the repo, it is visible in all branches; but when I <code>add</code> and <code>commit</code> it in a branch, it becomes &#8220;private&#8221; and vanishes in other branches. Similarly, when a file is modified in a branch, the change is visible everywhere. Sometimes, however, Git does not allow me to switch branches when there are modified files, and I have not figured out why:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="c"># On dev branch and modified devonly.md</span>
+</span><span class='line'><span class="nv">$ </span>git checkout master
+</span><span class='line'>  error: Your <span class="nb">local </span>changes to the following files would be
+</span><span class='line'>  overwritten by checkout:
+</span><span class='line'>    devonly.md
+</span><span class='line'>  Please, commit your changes or stash them before you can
+</span><span class='line'>  switch branches.
+</span><span class='line'>  Aborting
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Branching gh-pages</h2>
+
+<p>Now I&#8217;ll put the branching theory to practice and build my GitHub page. The <a href="https://help.github.com/articles/creating-project-pages-manually">GitHub pages documentation</a> is perfect if you want to create a page from scratch. I believe this is useful for most projects, but not for <a href="https://github.com/scottcheng/revolutionary-css3">mine</a>, where I want the project itself to be the GitHub page.</p>
+
+<figure class='code'><figcaption><span>Create gh-pages branch</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git checkout -b gh-pages
+</span><span class='line'><span class="nv">$ </span>git push origin gh-pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now gh-pages and master branch are on the same &#8220;page&#8221;. From this point on, If you want to keep the gh-pages in sync with master branch, you should only commit changes to the master branch, and merge them to gh-pages when the page is ready to go public, using <code>git merge master</code> or <code>git rebase master</code> (as Lea Verou <a href="http://lea.verou.me/2011/10/easily-keep-gh-pages-in-sync-with-master/">does it</a>) on the gh-pages branch.</p>
+
+<p>However, my need is somewhat different: I don&#8217;t want the <code>src</code> directory in gh-pages branch; the HTML, CSS and JavaScirpt are sufficient for my static page. So I did <code>git rm -r src</code> on gh-pages branch. The problem is, future merges will most probably pose conflicts, since I will constantly update <code>src</code> on the master branch which I just deleted on the gh-pages branch. No worries, here is a solution. As Nicolas Gallagher <a href="http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/">points out</a>, instead of merging the entire branch, I can choose to only merge changes in specific files:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git checkout gh-pages
+</span><span class='line'><span class="nv">$ </span>git checkout master -- index.html style.css
+</span><span class='line'>  <span class="c"># Only merge index.html and style.css</span>
+</span><span class='line'><span class="nv">$ </span>git commit -m <span class="s1">&#39;commit message&#39;</span>
+</span><span class='line'><span class="nv">$ </span>git push
+</span><span class='line'>  <span class="c"># Add `origin gh-pages` if you don&#39;t want to push to master</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Side note: if the project is all about the web page, Oli Studholme offered <a href="http://oli.jp/2011/github-pages-workflow/#setup">another solution</a> to simply delete the master branch and only keep gh-pages. This could also work for me.</p>
+
+<p>This is pretty much all I need to know to handle my page, but there&#8217;s more. I&#8217;ve learned from <a href="http://get.inject.io/n/XxsZ6RE7">this snippet</a> that a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">git hook</a> can be used to automate this syncing process, and I have tailored it to my use case:</p>
+
+<figure class='code'><figcaption><span>post-commit</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
+</span><span class='line'>git checkout gh-pages
+</span><span class='line'>git checkout master -- index.html style.css
+</span><span class='line'>git commit -m <span class="s1">&#39;updated gh page&#39;</span>  <span class="c"># Commit loop!</span>
+</span><span class='line'>git checkout master
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Name it as <code>post-commit</code>, put it under <code>repo/.git/hooks</code>, and the script will run after each commit (as the name &#8220;post-commit&#8221; suggests). This way, gh-pages branch will automagically sync with master! Just don&#8217;t forget to make sure <code>post-commit</code> is executable.</p>
+
+<p>The caveat here is the <code>git commit</code> in the hook script (line 4) &#8211; it will cause an unwanted commit loop. There seems <a href="http://comments.gmane.org/gmane.comp.version-control.git/69365">no way</a> to bypass the post-commit hook (<code>--no-verify</code> or <code>-n</code> only bypasses <a href="http://www.kernel.org/pub/software/scm/git/docs/githooks.html#_pre_commit">pre-commit</a> and <a href="http://www.kernel.org/pub/software/scm/git/docs/githooks.html#_commit_msg">commit_msg</a>). Fortunately, git is smart enough to kill the loop soon enough before it goes bad, so basically this hook works alright.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Scott Cheng</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-27T01:36:00-07:00" pubdate data-updated="true">July 27, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/dev/'>dev</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/why-i-start-to-blog/" title="Previous Post: Why I Start to Blog">&laquo; Why I Start to Blog</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/07/the-easiest-way-to-test-websites-on-mobile/" title="Next Post: (Probably) the Easiest Way to Test Websites on Mobile">(Probably) the Easiest Way to Test Websites on Mobile &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/ember-vs-backbone-event-model/">Ember vs Backbone: Event Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/grad-application-reflections/">Grad Application Reflections</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/speaking-is-fun/">Speaking is Fun</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/setting-up-existing-octopress-blog-on-a-new-computer/">Setting Up Existing Octopress Blog on a New Computer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/what-i-learned-as-an-interviewer/">What I Learned as an Interviewer</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://scottcheng.com">Scott Cheng</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and Hosted on <a href="http://pages.github.com/">GitHub</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'scottcheng';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://scottcheng.com/blog/2012/07/playing-with-git-branches/';
+        var disqus_url = 'http://scottcheng.com/blog/2012/07/playing-with-git-branches/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

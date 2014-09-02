@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dev | Scott Cheng]]></title>
+  <link href="http://scottcheng.com/blog/categories/dev/atom.xml" rel="self"/>
+  <link href="http://scottcheng.com/"/>
+  <updated>2014-09-01T23:26:09-07:00</updated>
+  <id>http://scottcheng.com/</id>
+  <author>
+    <name><![CDATA[Scott Cheng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Beauty of Loop]]></title>
+    <link href="http://scottcheng.com/blog/2012/10/beauty-of-loop/"/>
+    <updated>2012-10-04T22:24:00-07:00</updated>
+    <id>http://scottcheng.com/blog/2012/10/beauty-of-loop</id>
+    <content type="html"><![CDATA[<p>Loops are most commonly used to deal with arrays (e.g. finding the maximum number in an array of integers), or perform similar actions for a range of numbers or enumerables (e.g. calculating a Fibonacci number). If the problem space is dynamic (e.g. calculating the sum of 1 to <em>n</em>), loop is often the standard way of traversal (the alternative is recursion); otherwise, it contributes to DRY code by avoiding duplication (compared to an unraveled loop).</p>
+
+<p>However, loop doesn't easily come to mind when handling a fixed data set that you would have to hard-code anyway. For example, when writing a table of names and titles on a webpage (in Jade), the common approach is:</p>
+
+<p>``` jade</p>
+
+<p>table
+  tbody</p>
+
+<pre><code>tr
+  th Chairman
+  td
+    a(href='http://alice.com/', target='_blank') Alice
+tr
+  th Recruiting
+  td
+    a(href='http://bob.com/', target='_blank') Bob
+tr
+  th Marketing
+  td
+    a(href='http://chris.com/', target='_blank') Chris
+</code></pre>
+
+<p>```</p>
+
+<p>We see the repetitive pattern of table rows, containing a data set that is not literally an array. Repetition is evil, so we should <em>make an array</em> out of the data and loop through it.</p>
+
+<p>``` jade</p>
+
+<p>//- Turn the data into an array
+- var people = []
+- people[0] = {position: 'Chariman', name: 'Alice', link: 'http://alice.com/'}
+- people[1] = {position: 'Recruiting', name: 'Bob', link: 'http://bob.com/'}
+- people[2] = {position: 'Marketing', name: 'Chris', link: 'http://chris.com/'}</p>
+
+<p>table
+  tbody</p>
+
+<pre><code>each person in people
+  tr
+    th= person.position
+    td
+      a(href='#{person.link}', target='_blank')= person.name
+</code></pre>
+
+<p>```</p>
+
+<p>This way, we only have to define the format of each person once, which conforms to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself">DRY principle</a> (of course, DRY principle is a lot deeper than creating loops):</p>
+
+<blockquote><p>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</p></blockquote>
+
+<p>The code becomes cleaner, more maintainable, and less error-prone. You could imagine how much benefit it could bring if there are 50 people in the list.</p>
+
+<p>However, generalization comes at the cost of flexibility, which I've discussed a bit in <a href="/blog/2012/08/elegantly-highlight-the-current-nav-item-in-template/">a previous post</a>. For example, if there are two Marketing people, and one of them doesn't have a website, then the table should look like:</p>
+
+<p>``` jade</p>
+
+<p>table
+  tbody</p>
+
+<pre><code>tr
+  th Chairman
+  td
+    a(href='http://alice.com/', target='_blank') Alice
+tr
+  th(rowspan='2') Marketing
+  td Bob
+tr
+  td
+    a(href='http://chris.com/', target='_blank') Chris
+</code></pre>
+
+<p>```</p>
+
+<p>And the loop solution would be:</p>
+
+<p>``` jade</p>
+
+<ul>
+<li>var positions = []</li>
+<li>positions[0] = {position: 'Chairman', people: []}</li>
+<li>positions[0].people[0] = {name: 'Alice', link: 'http://alice.com/'}</li>
+<li>positions[1] = {position: 'Marketing', people: []}</li>
+<li>positions[1].people[0] = {name: 'Bob'}</li>
+<li>positions[1].people[1] = {name: 'Chris', link: 'http://chris.com/'}</li>
+</ul>
+
+
+<p>mixin person(person)
+  if person.link</p>
+
+<pre><code>a(href='#{person.link}', target='_blank')= person.name
+</code></pre>
+
+<p>  else</p>
+
+<pre><code>= person.name
+</code></pre>
+
+<p>table
+  tbody</p>
+
+<pre><code>each pos in positions
+  tr
+    th(rowspan='#{pos.people.length}')= pos.position
+    td
+      mixin person(pos.people[0])
+  - for (var i = 1; i &lt; pos.people.length; i++)
+    tr
+      td
+        mixin person(pos.people[i])
+</code></pre>
+
+<p>```</p>
+
+<p>So it's always a trade-off. If there are not many items to operate on and the operation for each item is simple (or in some cases, wildly different from each other), perhaps loop isn't the best way out. Despite of that, I'd advocate applying loops whenever possible, because they can make your code a lot more beautiful, and you'll find your life so much easier because of them.</p>
+
+<p>Bottom line is, don't make a <a href="http://thedailywtf.com/Articles/The-WET-Cart.aspx">WET cart</a> :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing With Git Branches]]></title>
+    <link href="http://scottcheng.com/blog/2012/07/playing-with-git-branches/"/>
+    <updated>2012-07-27T01:36:00-07:00</updated>
+    <id>http://scottcheng.com/blog/2012/07/playing-with-git-branches</id>
+    <content type="html"><![CDATA[<p>Though it has been almost half a year since the first time I "gitted" (and I love it!), all git commands I've ever used are <code>clone</code>, <code>add</code>, <code>commit</code>, <code>pull</code> and <code>push</code>. But when I created <a href="http://scottcheng.github.com/revolutionary-css3/">my first GitHub page</a>, I had to start dealing with branches. It's like a rewarding "stepping out of the comfort zone" experience. I very much enjoyed this brief exploration, and would like to write down what I learned about branching in the process.</p>
+
+<!-- more -->
+
+
+<h2>Branching 101</h2>
+
+<p>First, the very basics of branch management:</p>
+
+<ul>
+<li>Use <code>git branch &lt;branchname&gt;</code> or <code>git checkout -b &lt;branchname&gt;</code> to create a new branch.
+
+<ul>
+<li>If you want the new branch to exist on the remote, push it with <code>git push origin &lt;branchname&gt;</code>.</li>
+</ul>
+</li>
+<li>Use <code>git branch</code> to view all branches, and find out what branch you are at.</li>
+<li>Use <code>git checkout &lt;branchname&gt;</code> to switch between branches.</li>
+<li>Use <code>git branch -d &lt;branchname&gt;</code> to delete a branch locally.</li>
+<li>Use <code>git push origin :&lt;branchname&gt;</code> (with the colon) to delete it on the remote.</li>
+</ul>
+
+
+<h2>Merging and Rebasing</h2>
+
+<p>Branches often need to interact by merging their changes. There are at least two ways to "merge" changes in different branches: <code>git merge</code> and <code>git rebase</code>. By <code>git merge &lt;branchname&gt;</code>, e.g. <code>git merge dev</code> on the master branch, the following happens:</p>
+
+<ol>
+<li>Commits in dev branch are merged into master.
+
+<ul>
+<li>Handle conflicts if necessary.</li>
+</ul>
+</li>
+<li>A new merge commit is created on top of the two branches.</li>
+</ol>
+
+
+<p>By <code>git rebase &lt;branchname&gt;</code>, e.g. <code>git rebase dev</code> on the master branch, the following will happen:</p>
+
+<ol>
+<li>Commits between the last merge and present on the master branch will be erased (and kept somewhere temporarily).</li>
+<li>Commits on dev branch will be appended to the original <code>HEAD</code> on master (the last merge point).</li>
+<li>Your changes are put back on top of the dev commits in new commits.
+
+<ul>
+<li>Handle conflicts if necessary.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>If you are interested in the detailed mechanism, <a href="http://git-scm.com/">git-scm.com</a> has more on <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">branching / merging</a> and <a href="http://git-scm.com/book/en/Git-Branching-Rebasing">rebasing</a>. Jarrod Spillers <a href="http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/">elaborated in a post</a> the difference between <code>git merge</code> and <code>git rebase</code> as well as when to use which, thought <a href="http://www.jarrodspillers.com/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell/#dsq-comment-375332553">slightly flawed</a>.</p>
+
+<p>I also found it interesting to learn that <code>git pull</code> is actually <code>git fetch</code> then <code>git merge</code>, whereas <code>git pull --rebase</code> is <code>git fetch</code> then <code>git rebase</code>, as is documented on the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-pull.html">man page</a>.</p>
+
+<p>One thing that kinda surprised me is that different branches actually coexist in the same directory! As you switch branches using <code>git checkout &lt;branchname&gt;</code>, the files in that folder would actually change with it. It's like the <a href="http://harrypotter.wikia.com/wiki/Room_of_Requirement">Room  of Requirement</a> in Harry Potter -- it's the same room, but you can go in and see different things. Amazing. The interesting part is that when I create a file in the repo, it is visible in all branches; but when I <code>add</code> and <code>commit</code> it in a branch, it becomes "private" and vanishes in other branches. Similarly, when a file is modified in a branch, the change is visible everywhere. Sometimes, however, Git does not allow me to switch branches when there are modified files, and I have not figured out why:</p>
+
+<p>``` bash
+  # On dev branch and modified devonly.md
+$ git checkout master
+  error: Your local changes to the following files would be
+  overwritten by checkout:</p>
+
+<pre><code>devonly.md
+</code></pre>
+
+<p>  Please, commit your changes or stash them before you can
+  switch branches.
+  Aborting
+```</p>
+
+<h2>Branching gh-pages</h2>
+
+<p>Now I'll put the branching theory to practice and build my GitHub page. The <a href="https://help.github.com/articles/creating-project-pages-manually">GitHub pages documentation</a> is perfect if you want to create a page from scratch. I believe this is useful for most projects, but not for <a href="https://github.com/scottcheng/revolutionary-css3">mine</a>, where I want the project itself to be the GitHub page.</p>
+
+<p><code>bash Create gh-pages branch
+$ git checkout -b gh-pages
+$ git push origin gh-pages
+</code></p>
+
+<p>Now gh-pages and master branch are on the same "page". From this point on, If you want to keep the gh-pages in sync with master branch, you should only commit changes to the master branch, and merge them to gh-pages when the page is ready to go public, using <code>git merge master</code> or <code>git rebase master</code> (as Lea Verou <a href="http://lea.verou.me/2011/10/easily-keep-gh-pages-in-sync-with-master/">does it</a>) on the gh-pages branch.</p>
+
+<p>However, my need is somewhat different: I don't want the <code>src</code> directory in gh-pages branch; the HTML, CSS and JavaScirpt are sufficient for my static page. So I did <code>git rm -r src</code> on gh-pages branch. The problem is, future merges will most probably pose conflicts, since I will constantly update <code>src</code> on the master branch which I just deleted on the gh-pages branch. No worries, here is a solution. As Nicolas Gallagher <a href="http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/">points out</a>, instead of merging the entire branch, I can choose to only merge changes in specific files:</p>
+
+<p><code>bash
+$ git checkout gh-pages
+$ git checkout master -- index.html style.css
+  # Only merge index.html and style.css
+$ git commit -m 'commit message'
+$ git push
+  # Add `origin gh-pages` if you don't want to push to master
+</code></p>
+
+<p>Side note: if the project is all about the web page, Oli Studholme offered <a href="http://oli.jp/2011/github-pages-workflow/#setup">another solution</a> to simply delete the master branch and only keep gh-pages. This could also work for me.</p>
+
+<p>This is pretty much all I need to know to handle my page, but there's more. I've learned from <a href="http://get.inject.io/n/XxsZ6RE7">this snippet</a> that a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">git hook</a> can be used to automate this syncing process, and I have tailored it to my use case:</p>
+
+<p>``` bash post-commit</p>
+
+<h1>!/bin/sh</h1>
+
+<p>git checkout gh-pages
+git checkout master -- index.html style.css
+git commit -m 'updated gh page'  # Commit loop!
+git checkout master
+```</p>
+
+<p>Name it as <code>post-commit</code>, put it under <code>repo/.git/hooks</code>, and the script will run after each commit (as the name "post-commit" suggests). This way, gh-pages branch will automagically sync with master! Just don't forget to make sure <code>post-commit</code> is executable.</p>
+
+<p>The caveat here is the <code>git commit</code> in the hook script (line 4) -- it will cause an unwanted commit loop. There seems <a href="http://comments.gmane.org/gmane.comp.version-control.git/69365">no way</a> to bypass the post-commit hook (<code>--no-verify</code> or <code>-n</code> only bypasses <a href="http://www.kernel.org/pub/software/scm/git/docs/githooks.html#_pre_commit">pre-commit</a> and <a href="http://www.kernel.org/pub/software/scm/git/docs/githooks.html#_commit_msg">commit_msg</a>). Fortunately, git is smart enough to kill the loop soon enough before it goes bad, so basically this hook works alright.</p>
+]]></content>
+  </entry>
+  
+</feed>
